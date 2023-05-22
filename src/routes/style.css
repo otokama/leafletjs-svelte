@@ -1,0 +1,15 @@
+@import '@fontsource/nunito';
+@import '@fontsource/nunito/600.css';
+/* @import '@fontsource-variable/nunito'; */
+body {
+  margin: 0;
+  background: #e2e2e2;
+  color: #252525;
+}
+
+main {
+  margin: 2rem auto;
+  max-width: 70rem;
+  color: black;
+  font-family: 'Nunito';
+}

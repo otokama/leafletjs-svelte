@@ -1,5 +1,4 @@
 <script lang='ts'>
-  import 'leaflet/dist/leaflet.css';
   import type {
     Map,
     MapOptions,
@@ -7,7 +6,7 @@
   } from 'leaflet';
   import Leaflet from '$lib/components/Leaflet.svelte';
   import TileLayer from '$lib/components/TileLayer.svelte';
-  
+
   let map: Map;
   const mapURL = 'https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}@2x.png?key=5RRPejawRNE6xUzV3e5M';
   const satelliteURL = 'https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=f9BfrPfH9duxJflw5vTh';
@@ -28,7 +27,7 @@
     Sandbox - leafletjs-svelte
   </title>
 </svelte:head>
-<div class='w-full h-[100vh]'>
+<div class='h-[800px] mx-5 shadow-lg'>
   <Leaflet options={mapOption}>
     <TileLayer tileURL={satelliteURL} options={tileLayerOption} />
   </Leaflet>
