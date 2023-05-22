@@ -16,8 +16,8 @@
     Sandbox
   </a>
   <a
-    class={$page.url.pathname === '/docs' ? 'active-link' : ''}
-    href='/docs'
+    class={$page.url.pathname.split('/')[1] === 'docs' ? 'active-link' : ''}
+    href='/docs/getting-started'
   >
     Docs
   </a>
@@ -32,11 +32,15 @@
 
 <style>
   nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     flex-direction: row-reverse;
     font-family: 'Nunito Variable', sans-serif;
     font-weight: 400;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 0 0.5rem;
+    box-shadow: rgb(210, 210, 210) 0 0 0.6rem;
+    background-color: white;
   }
 
   nav a {
@@ -48,11 +52,11 @@
   }
 
   nav a:hover {
-    color: rgb(0, 82, 114);
+    color: rgb(0, 77, 202);
   }
 
   .active-link {
-    color: rgb(0, 82, 114);
+    color: rgb(0, 116, 248);
   }
 
   #title:hover {

@@ -1,1 +1,3 @@
-# TODO: README
+# Leafletjs-svelte 
+
+Doing README soon...
