@@ -3,11 +3,6 @@
 </script>
 
 <nav>
-  <a
-    href='/'
-  >
-    LeafletJS-Svelte
-  </a>
   <!-- <a
     class='md:hover:text-blue-700 duration-150 text-lg'
     href='/' 
@@ -15,26 +10,33 @@
     Demo
   </a> -->
   <a
+    class={$page.url.pathname === '/sandbox' ? 'active-link' : ''}
+    href='/sandbox'
+  >
+    Sandbox
+  </a>
+  <a
     class={$page.url.pathname === '/docs' ? 'active-link' : ''}
     href='/docs'
   >
     Docs
   </a>
   <a
-    class={$page.url.pathname === '/sandbox' ? 'active-link' : ''}
-    href='/sandbox'
+    id='title'
+    href='/'
+    style='margin-left: 1rem; margin-right: auto;'
   >
-    Sandbox
+    LeafletJS-Svelte
   </a>
 </nav>
 
 <style>
   nav {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    font-family: "Nunito";
-    font-weight: 600;
+    flex-direction: row-reverse;
+    font-family: 'Nunito Variable', sans-serif;
+    font-weight: 400;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 0.5rem;
   }
 
   nav a {
@@ -51,6 +53,10 @@
 
   .active-link {
     color: rgb(0, 82, 114);
+  }
+
+  #title:hover {
+    color: rgb(0, 93, 26);
   }
 
 </style>

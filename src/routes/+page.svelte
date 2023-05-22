@@ -28,7 +28,7 @@
   </title>
 </svelte:head>
 
-<div class='h-[550px] mx-5 shadow-lg'>
+<div class='map-container'>
   <Leaflet options={mapOption}>
     <TileLayer tileURL={mapURL} options={tileLayerOption} />
   </Leaflet>

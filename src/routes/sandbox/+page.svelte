@@ -27,7 +27,7 @@
     Sandbox - leafletjs-svelte
   </title>
 </svelte:head>
-<div class='h-[800px] mx-5 shadow-lg'>
+<div class='map-container'>
   <Leaflet options={mapOption}>
     <TileLayer tileURL={satelliteURL} options={tileLayerOption} />
   </Leaflet>

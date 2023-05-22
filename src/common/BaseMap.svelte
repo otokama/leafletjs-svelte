@@ -16,23 +16,19 @@
     zoom: 13
   };
   const tileLayerOption: TileLayerOptions = {
-    attribution: `<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>`,
+    attribution: `<a href="https://www.maptiler.com/copyright/" target="_blank">
+    &copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">
+    &copy; OpenStreetMap contributors</a>`,
     maxNativeZoom: 20,
     maxZoom: 23 
   };
   
 </script>
 
-<div class='map-container'>
+<div 
+  class='map-container'
+>
   <Leaflet options={mapOption}>
     <TileLayer tileURL={mapURL} options={tileLayerOption} />
   </Leaflet>
 </div>
-
-<style>
-  .map-container {
-    height: 550px;
-    margin: auto 1rem;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 1rem;
-  }
-</style>
