@@ -35,6 +35,7 @@
     font-weight: 400;
     box-shadow: rgb(210, 210, 210) 0 0 0.6rem;
     background-color: white;
+    z-index: 10;
   }
 
   nav a {

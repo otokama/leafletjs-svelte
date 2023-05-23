@@ -26,13 +26,18 @@
 <style>
 	ul {
 		position: fixed;
-		top: 5em;
-		left: 0.5em;
+    height: 100%;
+		top: 0;
+		left: 0;
+    width: 9rem;
+    padding: 4.5em 2em 0 1.7em;
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: 0.5em;
 		font-family: 'Overpass Variable', sans-serif;
 		list-style-type: none;
+    box-shadow: rgb(221, 221, 221) 0 0 0.6rem;
+    z-index: 5;
 	}
 
 	li {
