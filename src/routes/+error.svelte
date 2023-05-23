@@ -4,13 +4,18 @@
 </script>
 
 <div style='width: 100%; margin: auto 10rem;'>
-  <p class='error'>{$page.status} - {$page.error.message}</p>
+  {#if $page.error}
+    <p class='error'>{$page.error.message}</p>
+  {:else}
+    <p class='error'>Unknown error has occured</p>
+  {/if}
 </div>
 
 <style>
   .error {
     font-family: 'Overpass Variable', sans-serif;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
+    color: rgb(238, 0, 0);
   }
 </style>
