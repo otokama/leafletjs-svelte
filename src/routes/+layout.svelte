@@ -1,7 +1,10 @@
 <script>
-  import "../tailwind.css";
+  import '/src/styles/style.css';
+  import Navbar from "../common/Navbar.svelte";
+  import 'leaflet/dist/leaflet.css';
 </script>
 
-<div class='h-full w-full'>
-  <slot/>
-</div>
+<Navbar />
+<main>
+  <slot />
+</main>
