@@ -1,6 +1,7 @@
 ---
 title: Installation
 category: Getting Started
+order: 1
 ---
 <script>
   import BaseMap from '/src/common/BaseMap.svelte';

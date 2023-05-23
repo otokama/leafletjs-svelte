@@ -6,49 +6,54 @@
 </script>
 
 {#if docsSummary && docsSummary.size > 0}
-	<ul>
+	<ul class='sidenav'>
 		{#each categories as category}
-			<li><span class="nav-title">{category}</span></li>
-			{#each docsSummary.get(category) as doc}
-				<li>
-					<a 
-            href={doc.path}
-            class={$page.url.pathname === doc.path ? 'active-link' : ''}
-          >
-						{doc.title}
-					</a>
-				</li>
-			{/each}
+			<span class="nav-title">{category}</span>
+      <ul>
+        {#each docsSummary.get(category) as doc}
+          <li>
+            <a 
+              href={doc.path}
+              class={$page.url.pathname === doc.path ? 'active-link' : ''}
+            >
+              {doc.title}
+            </a>
+          </li>
+        {/each}
+      </ul>
 		{/each}
 	</ul>
 {/if}
 
 <style>
-	ul {
+	.sidenav {
 		position: fixed;
     height: 100%;
 		top: 0;
 		left: 0;
     width: 9rem;
-    padding: 4.5em 2em 0 1.7em;
+    padding: 4.5em 2em 0 1.5em;
 		display: flex;
 		flex-direction: column;
-		gap: 0.5em;
 		font-family: 'Overpass Variable', sans-serif;
 		list-style-type: none;
     box-shadow: rgb(221, 221, 221) 0 0 0.6rem;
     z-index: 5;
 	}
 
+  ul ul {
+    padding-left: 1em;
+  }
+
 	li {
 		display: flex;
 		justify-items: center;
 		align-items: center;
 		text-align: center;
+    margin: 0.4em auto;
 	}
 
 	li a {
-		margin-left: 0.8em;
 		text-decoration: none;
 		color: rgb(93, 93, 93);
 		font-weight: 500;

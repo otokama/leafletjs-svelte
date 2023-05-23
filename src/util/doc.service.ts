@@ -1,19 +1,22 @@
-import type { Docs } from "../routes/docs/types.js";
+import type { DocFrontmatter, Docs } from "../routes/docs/types.js";
 export async function getCategorizedDocs() {
   const allDocsFiles = import.meta.glob('/src/routes/docs/*.md');
   const iterableDocFiles = Object.entries(allDocsFiles);
   const allDocs = await Promise.all(
     iterableDocFiles.map(async ([path, resolver]) => {
       const { metadata } = await resolver();
+      const docMeta: DocFrontmatter = metadata;
       const postPath = path.slice(11, -3);
       return {
-        meta: metadata,
+        meta: docMeta,
         path: postPath,
       };
     })
   );
-  let categorizedSummary = new Map<string, Docs[]>();
 
+  allDocs.sort((doc1, doc2) => doc1.meta.order - doc2.meta.order);
+
+  let categorizedSummary = new Map<string, Docs[]>();
   for (let doc of allDocs) {
     const { meta, path } = doc;
     if (!categorizedSummary.has(meta.category)) {
