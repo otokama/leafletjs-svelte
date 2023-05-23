@@ -9,7 +9,7 @@
 
   let map: Map;
   const mapURL = 'https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}@2x.png?key=5RRPejawRNE6xUzV3e5M';
-  const satelliteURL = 'https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=f9BfrPfH9duxJflw5vTh';
+  // const satelliteURL = 'https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=f9BfrPfH9duxJflw5vTh';
   const mapOption: MapOptions = {
     center: [40.7249822, -74.006205],
     zoom: 13
@@ -20,6 +20,12 @@
     maxZoom: 23 
   };
 
+  $: if (map) {
+    map.on('click', () => {
+      alert('clicked on map!');
+    });
+  }
+
 </script>
 
 <svelte:head>
@@ -27,8 +33,9 @@
     Sandbox - leafletjs-svelte
   </title>
 </svelte:head>
+
 <div class='map-container'>
-  <Leaflet options={mapOption}>
-    <TileLayer tileURL={satelliteURL} options={tileLayerOption} />
+  <Leaflet bind:map={map} options={mapOption}>
+    <TileLayer tileURL={mapURL} options={tileLayerOption} />
   </Leaflet>
 </div>

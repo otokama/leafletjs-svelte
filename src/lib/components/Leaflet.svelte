@@ -1,15 +1,17 @@
 <script lang='ts'>
-  import { createEventDispatcher, setContext } from 'svelte';
   import L from 'leaflet';
+  import { createEventDispatcher, setContext } from 'svelte';
   import type {
     Map,
     MapOptions,
     LatLngBounds
   } from 'leaflet';
 
-  export let options: MapOptions;
+  export let map: Map | undefined = undefined;
+  export let options: MapOptions | undefined = undefined;
   export let bounds: LatLngBounds | undefined = undefined;
-  let map: Map;
+  export let height: string = '100%';
+  export let width: string = '100%';
 
   setContext(L, () => map);
 
@@ -20,14 +22,19 @@
     };
     return {
       destroy: () => {
-        map.remove();
+        if (map) {
+          map.remove();
+        }
       }
     };
   }
 
 </script>
 
-<div style="height:100%; width:100%;" use:initLeaflet>
+<div
+  style={`height:${height}; width:${width};`}
+  use:initLeaflet
+>
   {#if map}
     <slot/>
   {/if}
