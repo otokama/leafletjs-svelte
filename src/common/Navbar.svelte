@@ -3,12 +3,6 @@
 </script>
 
 <nav>
-  <!-- <a
-    class='md:hover:text-blue-700 duration-150 text-lg'
-    href='/' 
-  >
-    Demo
-  </a> -->
   <a
     class={$page.url.pathname === '/sandbox' ? 'active-link' : ''}
     href='/sandbox'
@@ -17,7 +11,7 @@
   </a>
   <a
     class={$page.url.pathname.split('/')[1] === 'docs' ? 'active-link' : ''}
-    href='/docs/getting-started'
+    href='/docs/1-getting-started'
   >
     Docs
   </a>

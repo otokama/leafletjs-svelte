@@ -11,7 +11,7 @@ export default defineConfig({
     fs: {
       allow: [
         searchForWorkspaceRoot(process.cwd()),
-        'README.md'
+        'README.md',
       ]
     }
   }

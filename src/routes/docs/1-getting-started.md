@@ -1,13 +1,10 @@
+---
+title: Installation
+category: Getting Started
+---
 <script>
   import BaseMap from '/src/common/BaseMap.svelte';
 </script>
-
-<svelte:head>
-  <title>
-    Installation - Docs - leafletjs-svelte
-  </title>
-</svelte:head>
-
 # Installation
 
 Make sure you have at least `node v14.0` installed.
