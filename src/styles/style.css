@@ -20,6 +20,12 @@ main {
 }
 
 /* Markdown Styling*/
+
+.home-doc {
+  margin: 5em 4em 5em 10em;
+  font-family: 'Overpass Variable', sans-serif;
+}
+
 .doc {
   margin: 0 0 0 15rem;
   font-family: 'Overpass Variable', sans-serif;
