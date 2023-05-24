@@ -36,6 +36,7 @@
     "@fontsource-variable/nunito": "^5.0.0",
     "@fontsource-variable/overpass": "^5.0.1",
     "@fontsource/dejavu-mono": "^5.0.0",
+    "@fontsource/fira-mono": "^5.0.1",
     "@fontsource/jetbrains-mono": "^5.0.0",
     "@playwright/test": "^1.34.0",
     "@sveltejs/adapter-auto": "^2.1.0",
