@@ -1,8 +1,7 @@
 <script lang='ts'>
   import {
     getContext,
-    onDestroy,
-    onMount
+    onDestroy
   } from 'svelte';
   import L from 'leaflet';
   import type {

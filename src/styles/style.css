@@ -1,6 +1,9 @@
+@import 'leaflet/dist/leaflet.css';
+
 @import '@fontsource-variable/nunito';
 @import '@fontsource-variable/overpass';
 @import '@fontsource/jetbrains-mono';
+@import '@fontsource/fira-mono';
 
 body {
   margin: 0;
@@ -31,10 +34,11 @@ main {
   font-family: 'Overpass Variable', sans-serif;
 }
 
+/* inline code */
 .doc p code {
   padding: 0.15em 0.3em 0.15em 0.3em;
   margin: 0.2em;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgb(233, 233, 233);
   border-radius: 0.2em;
   font-size: 0.85em;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
