@@ -7,6 +7,16 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with geospatial annotat
 
 - [x] Map
 
+**Vector Drawing**
+- [ ] Circle
+- [ ] CircleMarker
+- [ ] Line
+- [ ] Marker
+- [ ] Polyline
+- [ ] Polygon
+- [ ] Rectangle
+- [ ] Multi-Rectangle
+ 
 **UI layers:**
 - [ ] Marker
 - [ ] Popup
