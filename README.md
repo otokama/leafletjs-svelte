@@ -6,16 +6,6 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with geospatial annotat
 ## Supported Components:
 
 - [x] Map
-
-**Vector Drawing**
-- [ ] Circle
-- [ ] CircleMarker
-- [ ] Line
-- [ ] Marker
-- [ ] Polyline
-- [ ] Polygon
-- [ ] Rectangle
-- [ ] Multi-Rectangle
  
 **UI layers:**
 - [ ] Marker
@@ -47,3 +37,14 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with geospatial annotat
 - [ ] Attribution
 - [ ] Layers
 - [ ] Scale
+
+## Vector Drawing:
+
+- [ ] Circle
+- [ ] CircleMarker
+- [ ] Line
+- [ ] Marker
+- [ ] Polyline
+- [ ] Polygon
+- [ ] Rectangle
+- [ ] Multi-Rectangle
