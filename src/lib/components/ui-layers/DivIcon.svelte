@@ -10,11 +10,13 @@
 	let divIconHtml: HTMLElement;
 
 	$: if (!divIcon && divIconHtml) {
-		divIcon = L.divIcon({
-			html: divIconHtml.innerHTML,
-			className: 'div-icon-marker',
-      ...options
-		});
+    if (divIconHtml.innerHTML) {
+      divIcon = L.divIcon({
+        html: divIconHtml.innerHTML,
+        className: 'div-icon-marker',
+        ...options
+      });
+    }
 
 		getMarker().setIcon(divIcon);
 	}
