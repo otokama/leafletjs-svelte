@@ -10,8 +10,8 @@ body {
 }
 
 main {
-  margin: 6rem auto;
-  max-width: 70rem;
+  margin: 6em auto 5em auto;
+  max-width: 70em;
 }
 
 /* map container in examples */
@@ -25,12 +25,17 @@ main {
 /* Markdown Styling*/
 
 .home-doc {
-  margin: 5em 4em 5em 10em;
+  margin: 5em 7em; 
   font-family: 'Overpass Variable', sans-serif;
 }
 
+.home-doc h2 {
+  padding: auto 2em;
+  border-block-end: solid 3px #1EB300;  
+}
+
 .doc {
-  margin: 0 0 0 15rem;
+  margin: 0 1.5em 0 14.5rem;
   font-family: 'Overpass Variable', sans-serif;
 }
 
@@ -42,4 +47,8 @@ main {
   border-radius: 0.2em;
   font-size: 0.85em;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+.div-icon-marker {
+  background-color: transparent;
 }

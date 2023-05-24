@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getContext, onDestroy } from 'svelte';
+	import { getContext, setContext, onDestroy } from 'svelte';
 	import L from 'leaflet';
 	import type { Map, Marker, MarkerOptions, LatLng } from 'leaflet';
 
@@ -7,12 +7,21 @@
 	export let options: MarkerOptions | undefined = undefined;
 
 	const getMap: () => Map = getContext(L);
-	let marker: Marker;
+	export let marker: Marker | undefined = undefined;
+
+  setContext(L.Marker, () => marker);
+
 	$: if (!marker) {
 		marker = L.marker(latLng, options).addTo(getMap());
 	}
 
 	onDestroy(() => {
-		marker.removeFrom(getMap());
+    if (marker) {
+      marker.removeFrom(getMap());
+    }
 	});
 </script>
+
+{#if marker}
+  <slot/>
+{/if}

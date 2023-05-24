@@ -5,7 +5,7 @@
     TileLayerOptions
   } from 'leaflet';
   import Leaflet from '$lib/components/Leaflet.svelte';
-  import TileLayer from '$lib/components/TileLayer.svelte';
+  import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 
   let map: Map;
   const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
