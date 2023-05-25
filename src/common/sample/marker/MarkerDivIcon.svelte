@@ -5,56 +5,28 @@
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 	import Marker from '$lib/components/ui-layers/Marker.svelte';
   import DivIcon from '$lib/components/ui-layers/DivIcon.svelte';
-  import Icon from '$lib/components/ui-layers/Icon.svelte';
 
 	let map: Map;
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
   const mapOption: MapOptions = {
-    center: [40.7249822, -74.006205],
+    center: [40.785091, -73.968285],
     zoom: 11
   };
   const tileLayerOption: TileLayerOptions = {
     attribution: `&copy;<a href="https://www.openstreetmap.org/copyright"
-      target="_blank">OpenStreetMap</a>&copy;
-      <a href="https://carto.com/attributions" target="_blank">CARTO</a>`,
+      target="_blank">OpenStreetMap</a>
+      &copy;<a href="https://carto.com/attributions" target="_blank">CARTO</a>`,
     maxNativeZoom: 21,
     maxZoom: 20,
     subdomains: 'abcd'
   };
-  
-  const markerIconOptions: IconOptions = {
-    iconUrl: 'svelte_logo.svg',
-    iconSize: [35, 35]
-  };
-
-  let marker: L.Marker;
-
-  $: if (marker) {
-    marker.on('mouseover', () => {
-      let icon = marker.getIcon();
-      icon.options.iconSize = [50, 50];
-      marker.setIcon(icon);
-    });
-    marker.on('mouseout', () => {
-      let icon = marker.getIcon();
-      icon.options.iconSize = [30, 30];
-      marker.setIcon(icon);
-    });
-  }
 
 </script>
-
-<svelte:head>
-	<title>Sandbox - leafletjs-svelte</title>
-</svelte:head>
 
 <div class="map-container">
 	<Leaflet bind:map options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
-		<Marker latLng={L.latLng([40.7249822, -74.006205])} />
-    <Marker latLng={L.latLng([40.6501, -73.9495800])} bind:marker={marker}>
-      <Icon options={markerIconOptions} />
-    </Marker>
+
     <Marker latLng={L.latLng([40.771133, -73.974187])}>
       <DivIcon options={{iconAnchor: [54, 54]}}>
         <div class='div-icon'>
@@ -79,12 +51,5 @@
     font-size: 14px;
     font-weight: 800;
     font-family: 'Overpass Variable', sans-serif;
-  }
-
-  .map-container {
-    height: 550px;
-    min-width: 600px;
-    margin: 0.5em 1em;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 1rem;
   }
 </style>

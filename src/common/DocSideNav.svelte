@@ -38,7 +38,7 @@
 		font-family: 'Overpass Variable', sans-serif;
 		list-style-type: none;
     background-color: #676778;
-    box-shadow: rgb(87, 87, 87) 0 0 0.6rem;
+    box-shadow: rgba(67, 67, 67, 0.6) 0 0 0.5em;
     z-index: 5;
 	}
 

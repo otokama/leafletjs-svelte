@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import { getContext, onDestroy } from "svelte";
+  import { getContext } from "svelte";
   import type { Marker, Icon, IconOptions } from 'leaflet';
   import L from 'leaflet';
 
