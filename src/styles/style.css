@@ -30,8 +30,13 @@ main {
 }
 
 .doc {
-  margin: 0 1.5em 0 14.5rem;
   font-family: 'Overpass Variable', sans-serif;
+  transition: 150ms;
+  margin: 0 2em 0 2em;
+}
+
+.sidenav-doc {
+  margin: 0 1.5em 0 14.5rem;
 }
 
 /* inline code */
