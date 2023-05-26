@@ -3,12 +3,12 @@
 </script>
 
 <nav>
-  <a
+  <!-- <a
     class={$page.url.pathname === '/sandbox' ? 'active-link' : ''}
     href='/sandbox'
   >
     Sandbox
-  </a>
+  </a> -->
   <a
     class={$page.url.pathname.split('/')[1] === 'docs' ? 'active-link' : ''}
     href='/docs/1-getting-started'

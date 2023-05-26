@@ -20,7 +20,7 @@ Used to display clickable/draggable icons on the map.
 | `latLng` | [`LatLng`](https://leafletjs.com/reference.html#latlng) | `undefined` | Coordinates of the marker | `true` |
 | `options` | [`MarkerOptions`](https://leafletjs.com/reference.html#marker) | `undefined` | Describes the property of the marker | `false` |
 | `marker` | [`Marker`](https://leafletjs.com/reference.html#marker-l-marker) | `undefined` | The underlying Leaflet Marker object instance | `false` |
-<br><br>
+<br>
 
 ## Basic Marker
 
