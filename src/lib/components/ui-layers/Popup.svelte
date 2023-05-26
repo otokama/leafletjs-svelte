@@ -4,8 +4,8 @@
   import L from 'leaflet';
 
   export let options: PopupOptions = {};
-
-  let popup: Popup;
+  export let popup: Popup | undefined = undefined;
+  
   let getMarker: () => Marker = getContext(L.Marker);
   let popupHtml: HTMLElement;
 
