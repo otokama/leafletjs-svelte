@@ -5,8 +5,9 @@
 
 	export let tileURL: string;
 	export let options: TileLayerOptions | undefined = undefined;
+	export let tileLayer: TileLayer | undefined = undefined;
+  
 	const getMap: () => Map = getContext(L);
-	let tileLayer: TileLayer;
 
 	$: {
 		if (!tileLayer) {
@@ -14,5 +15,9 @@
 		}
 	}
 
-	onDestroy(() => tileLayer.removeFrom(getMap()));
+	onDestroy(() => {
+    if (tileLayer) {
+      tileLayer.removeFrom(getMap())
+    }
+  });
 </script>
