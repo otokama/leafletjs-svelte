@@ -18,21 +18,15 @@ main {
   z-index: 1;
 }
 
-/* map container in examples */
-.map-container {
-  height: 300px;
-}
-
 /* Markdown Styling*/
-
 .home-doc {
-  margin: 5em 7em; 
+  margin: 5em 7em;
   font-family: 'Overpass Variable', sans-serif;
 }
 
 .home-doc h2 {
   padding: auto 2em;
-  border-block-end: solid 3px #1EB300;  
+  border-block-end: solid 3px #1EB300;
 }
 
 .doc {
@@ -51,6 +45,36 @@ main {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
+/* table */
+.doc table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.doc table td, th {
+  border: 1px solid #eeeeee;
+  padding: 0.5em 1em;
+}
+
+.doc table th {
+  padding-top: 0.6em;
+  padding-bottom: 0.3em;
+  text-align: left;
+  background-color: #ececec;
+  font-size: 15px;
+}
+
+.doc table td {
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.doc table td code {
+  font-size: 13px;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-weight: bold;
+}
+
 .language-svelte {
   margin: 0;
 }
@@ -60,8 +84,14 @@ main {
 }
 
 .example {
-  margin: auto 2em;
+  margin: auto 5em;
   border: solid 1px rgb(219, 219, 219);
   border-radius: 0.4em;
   overflow: hidden;
+  box-shadow: rgb(224, 224, 224) 1px 2px 0.5em;
+}
+
+/* map container in examples */
+.map-container {
+  height: 300px;
 }

@@ -14,6 +14,9 @@ Below is a minimal effort to setup a Leaflet map:
 
 <div class='example'>
 
+  <MapUsage/>
+
+
   ```Svelte
   <script>
     import {
@@ -49,12 +52,10 @@ Below is a minimal effort to setup a Leaflet map:
 
   <style>
     .map-container {
-      height: 550px;
+      height: 300px;
       width: 100%;
     }
   </style>
   ```
-
-  <MapUsage/>
 
 </div>

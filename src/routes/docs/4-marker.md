@@ -12,9 +12,19 @@ order: 4
 # Marker
 Used to display clickable/draggable icons on the map.
 
-## Usage
+### Marker Properties
+
+| Props | Type | Default | Description | Required |
+| --- | --- | --- | --- | --| 
+| `latLng` | [`LatLng`](https://leafletjs.com/reference.html#latlng) | **`undefined`** | Coordinates of the marker | `true` |
+| `options` | [`MarkerOptions`](https://leafletjs.com/reference.html#marker) | **`undefined`** | Describes the property of the marker | `false` |
+| `marker` | [`Marker`](https://leafletjs.com/reference.html#marker-l-marker) | **`undefined`** | The underlying Leaflet Marker object instance | `false` |
+<br><br>
+
+## Basic Marker
 
 <div class='example'>
+  <MarkerExample />
 
   ```svelte
   <Leaflet options={mapOption}>
@@ -23,13 +33,22 @@ Used to display clickable/draggable icons on the map.
     <Marker latLng={L.latLng([40.7249822, -74.006205])} />
   </Leaflet>
   ```
-  <MarkerExample />
+
 </div>
 <br>
 
-### Marker with icon
+## Marker with icon
+Displays an icon for a marker.
+### Icon Properties
+
+| Props | Type | Default | Description | Required |
+| --- | --- | --- | --- | -- | 
+| `options` | [`IconOptions`](https://leafletjs.com/reference.html#icon) | **`undefined`** | Describes property of the icon | `true`
+
+<br><br>
 
 <div class='example'>
+  <MarkerIconExample />
 
   ```svelte
   <script>
@@ -49,14 +68,24 @@ Used to display clickable/draggable icons on the map.
 
   </Leaflet>
   ```
-  <MarkerIconExample />
+
 </div>
 
 <br>
 
-### Marker with DivIcon
+## Marker with DivIcon
+Display a lightweight icon for markers that uses a simple `<div>` element
+
+### DivIcon Properties
+
+| Props | Type | Default | Description | Required |
+| --- | --- | --- | --- | -- |
+| `options` | [`DivIconOptions`](https://leafletjs.com/reference.html#divicon) | **`undefined`** | Describes property of the DivIcon | `true`
+
+<br><br>
 
 <div class='example'>
+  <MarkerDivIconExample />
 
   ```svelte
   <Leaflet options={mapOption}>
@@ -75,27 +104,4 @@ Used to display clickable/draggable icons on the map.
   </Leaflet>
   ```
 
-  <MarkerDivIconExample />
-
 </div>
-<br>
-
-## Properties
-
-### Marker
-
-<a href='https://leafletjs.com/reference.html#marker' target="_blank">
-  MarkerOptions
-</a>
-
-### Marker Icon
-
-<a href='https://leafletjs.com/reference.html#icon' target="_blank">
-  IconOptions
-</a>
-
-### DivIcon
-
-<a href='https://leafletjs.com/reference.html#divicon' target="_blank">
-  DivIconOptions
-</a>

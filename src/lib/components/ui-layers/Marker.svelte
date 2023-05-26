@@ -2,7 +2,6 @@
 	import { getContext, setContext, onDestroy } from 'svelte';
 	import L from 'leaflet';
 	import type { Map, Marker, MarkerOptions, LatLng } from 'leaflet';
-
 	export let latLng: LatLng;
 	export let options: MarkerOptions | undefined = undefined;
 
@@ -12,7 +11,10 @@
   setContext(L.Marker, () => marker);
 
 	$: if (!marker) {
-		marker = L.marker(latLng, options).addTo(getMap());
+    // update the default marker icon and shadow url
+    L.Icon.Default.prototype.options.iconUrl = '/marker-icon.png';
+    L.Icon.Default.prototype.options.shadowUrl = '/marker-shadow.png';
+    marker = L.marker(latLng, options).addTo(getMap());
 	}
 
 	onDestroy(() => {
