@@ -17,9 +17,9 @@ Used to display clickable/draggable icons on the map.
 
 | Props | Type | Default | Description | Required |
 | --- | --- | --- | --- | --| 
-| `latLng` | [`LatLng`](https://leafletjs.com/reference.html#latlng) | **`undefined`** | Coordinates of the marker | `true` |
-| `options` | [`MarkerOptions`](https://leafletjs.com/reference.html#marker) | **`undefined`** | Describes the property of the marker | `false` |
-| `marker` | [`Marker`](https://leafletjs.com/reference.html#marker-l-marker) | **`undefined`** | The underlying Leaflet Marker object instance | `false` |
+| `latLng` | [`LatLng`](https://leafletjs.com/reference.html#latlng) | `undefined` | Coordinates of the marker | `true` |
+| `options` | [`MarkerOptions`](https://leafletjs.com/reference.html#marker) | `undefined` | Describes the property of the marker | `false` |
+| `marker` | [`Marker`](https://leafletjs.com/reference.html#marker-l-marker) | `undefined` | The underlying Leaflet Marker object instance | `false` |
 <br><br>
 
 ## Basic Marker
@@ -46,7 +46,7 @@ Displays an icon for a marker.
 
 | Props | Type | Default | Description | Required |
 | --- | --- | --- | --- | -- | 
-| `options` | [`IconOptions`](https://leafletjs.com/reference.html#icon) | **`undefined`** | Describes property of the icon | `true`
+| `options` | [`IconOptions`](https://leafletjs.com/reference.html#icon) | `undefined` | Describes property of the icon | `true`
 
 <br><br>
 
@@ -84,7 +84,7 @@ Display a lightweight icon for markers that uses a simple `<div>` element
 
 | Props | Type | Default | Description | Required |
 | --- | --- | --- | --- | -- |
-| `options` | [`DivIconOptions`](https://leafletjs.com/reference.html#divicon) | **`undefined`** | Describes property of the DivIcon | `true`
+| `options` | [`DivIconOptions`](https://leafletjs.com/reference.html#divicon) | `undefined` | Describes property of the DivIcon | `true`
 
 <br><br>
 
