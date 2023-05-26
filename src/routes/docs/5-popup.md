@@ -16,8 +16,8 @@ Used to open popups in certain places of the map.
 
 | Props | Type | Default | Description | Required |
 | --- | --- | --- | --- | --| 
-| `options` | [`PopupOptions`](https://leafletjs.com/reference.html#popup) | **`undefined`** | Describes the property of the marker | `false` |
-| `popup` | [`Popup`](https://leafletjs.com/reference.html#popup) | **`undefined`** | The underlying Leaflet Popup object instance | `false` |
+| `options` | [`PopupOptions`](https://leafletjs.com/reference.html#popup) | `undefined` | Describes the property of the marker | `false` |
+| `popup` | [`Popup`](https://leafletjs.com/reference.html#popup) | `undefined` | The underlying Leaflet Popup object instance | `false` |
 <br>
 
 ## Example
