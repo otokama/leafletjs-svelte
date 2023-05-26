@@ -28,8 +28,7 @@ Used to load and display tile layers on the map.
 
   ```svelte
   <script>
-    import Leaflet from '$lib/components/Leaflet.svelte';
-    import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
+    import { Leaflet, TileLayer } from 'leafletjs-svelte';
 
     const tileLayerOption = {
       attribution: `&copy;<a href="https://www.openstreetmap.org/copyright"
