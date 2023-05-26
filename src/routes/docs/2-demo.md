@@ -6,5 +6,4 @@ order: 2
 
 # Demo
 
-A Demo App
-
+Coming Soon...
