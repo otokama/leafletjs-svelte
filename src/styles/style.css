@@ -70,9 +70,8 @@ main {
 }
 
 .doc table td code {
-  font-size: 13px;
+  font-size: 14px;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-weight: bold;
 }
 
 .language-svelte {

@@ -11,7 +11,7 @@
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
   const mapOption: MapOptions = {
     center: [40.7249822, -74.006205],
-    zoom: 11
+    zoom: 10
   };
   const tileLayerOption: TileLayerOptions = {
     attribution: `&copy;<a href="https://www.openstreetmap.org/copyright"
@@ -24,28 +24,19 @@
 
 </script>
 
-<svelte:head>
-	<title>Sandbox - leafletjs-svelte</title>
-</svelte:head>
-
 <div class="map-container">
-	<Leaflet bind:map options={mapOption}>
-		<TileLayer tileURL={mapURL} options={tileLayerOption} />
-
+  <Leaflet bind:map options={mapOption}>
+    <TileLayer tileURL={mapURL} options={tileLayerOption} />
+  
+    <Marker latLng={L.latLng([40.7249822, -74.006205])}>
+      <Popup options={{content: '<p>This is New York</p>'}} />
+    </Marker>
+  
     <Marker latLng={L.latLng([40.6501, -73.9495800])} >
       <Popup>
         <p>This is Brooklyn</p>
       </Popup>
     </Marker>
-
-	</Leaflet>
+  
+  </Leaflet>
 </div>
-
-<style>
-  .map-container {
-    height: 550px;
-    min-width: 600px;
-    margin: 0.5em 1em;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 1rem;
-  }
-</style>

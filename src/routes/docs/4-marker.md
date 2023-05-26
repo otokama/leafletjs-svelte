@@ -10,6 +10,7 @@ order: 4
 </script>
 
 # Marker
+
 Used to display clickable/draggable icons on the map.
 
 ### Marker Properties
@@ -38,7 +39,9 @@ Used to display clickable/draggable icons on the map.
 <br>
 
 ## Marker with icon
+
 Displays an icon for a marker.
+
 ### Icon Properties
 
 | Props | Type | Default | Description | Required |
@@ -74,6 +77,7 @@ Displays an icon for a marker.
 <br>
 
 ## Marker with DivIcon
+
 Display a lightweight icon for markers that uses a simple `<div>` element
 
 ### DivIcon Properties
