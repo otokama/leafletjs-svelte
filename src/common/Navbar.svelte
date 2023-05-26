@@ -1,8 +1,17 @@
-<script lang='ts'>
+<script>
   import { page } from '$app/stores';
+  import Fa from 'svelte-fa';
+  import { faGithub } from '@fortawesome/free-brands-svg-icons';
 </script>
 
 <nav>
+  <a
+    id='title'
+    href='/'
+    style='margin-left: 1rem; margin-right: auto;'
+  >
+    LeafletJS-Svelte
+  </a>
   <!-- <a
     class={$page.url.pathname === '/sandbox' ? 'active-link' : ''}
     href='/sandbox'
@@ -15,12 +24,12 @@
   >
     Docs
   </a>
+
   <a
-    id='title'
-    href='/'
-    style='margin-left: 1rem; margin-right: auto;'
+    href='https://github.com/otokama/leafletjs-svelte'
+    target="_blank"
   >
-    LeafletJS-Svelte
+    <Fa icon={faGithub} />
   </a>
 </nav>
 
@@ -30,7 +39,6 @@
     top: 0;
     width: 100%;
     display: flex;
-    flex-direction: row-reverse;
     font-family: 'Nunito Variable', sans-serif;
     font-weight: 400;
     box-shadow: rgb(48, 48, 48, 0.3) 0 0 0.5em;
@@ -41,7 +49,7 @@
   nav a {
     text-decoration: none;
     font-size: large;
-    margin: 1rem;
+    margin: 1em 1em 1em 0;
     transition: 200ms;
     color: black;
   }
