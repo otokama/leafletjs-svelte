@@ -5,10 +5,23 @@
   import DocSideNav from '../../common/DocSideNav.svelte';
   import type { Docs } from './types.js';
   export let data;
+
   const docsSummary: Map<string, Docs[]> = data.categorizedDocs;
+  let expandSideNav: boolean = true;
+  let pageWidth: number = 0;
+  
+  $: if (pageWidth < 850) {
+    expandSideNav = false;
+  } else {
+    expandSideNav = true;
+  }
 </script>
 
-<DocSideNav {docsSummary}/>
-<div class='doc'>
+<DocSideNav {docsSummary} bind:expandSideNav={expandSideNav}/>
+<div
+  class={expandSideNav ? 'sidenav-doc doc' : 'doc'}
+>
   <slot/>
 </div>
+
+<div bind:clientWidth={pageWidth}/>
