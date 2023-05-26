@@ -9,7 +9,7 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing sup
  
 **UI layers:**
 - [x] Marker
-- [ ] Popup
+- [x] Popup
 - [ ] Tooltip
 
 **Raster layers:**
