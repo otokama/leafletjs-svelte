@@ -9,13 +9,24 @@ order: 3
 
 # Map
 
+### Map Properties
+
+| Props | Type | Default | Description | Required |
+| --- | --- | --- | --- | -- |
+| `options` | [`MapOptions`](https://leafletjs.com/reference.html#map-option) | `undefined` | Describes the property of the Map. | `false` |
+| `map` | [`Map`](https://leafletjs.com/reference.html#map) | `undefined` | The underlying Leaflet Map object instance. | `false` |
+| `bounds` | [`LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds) | `undefined` | Fit the map to the specified bounds. | `false` |
+| `height` | string | `100%` | The height of the map in a map container. Make sure the map container or the map has a defined height. | `false` |
+| `width` | string | `100%` | The width of the map in a map container. | `false` |
+ 
+<br>
+
 ## Usage Example
 Below is a minimal effort to setup a Leaflet map:
 
 <div class='example'>
 
   <MapUsage/>
-
 
   ```Svelte
   <script>

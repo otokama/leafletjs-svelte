@@ -23,10 +23,6 @@
 
 </script>
 
-<svelte:head>
-	<title>Sandbox - leafletjs-svelte</title>
-</svelte:head>
-
 <div class="map-container">
 	<Leaflet bind:map options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
@@ -43,12 +39,3 @@
 
 	</Leaflet>
 </div>
-
-<style>
-  .map-container {
-    height: 550px;
-    min-width: 600px;
-    margin: 0.5em 1em;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 1rem;
-  }
-</style>
