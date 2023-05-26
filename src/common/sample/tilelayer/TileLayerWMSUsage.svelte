@@ -9,7 +9,7 @@
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
   const mapOption: MapOptions = {
     center: [37.09024, -95.712891],
-    zoom: 4
+    zoom: 3
   };
   const tileLayerOption: TileLayerOptions = {
     attribution: `&copy;<a href="https://www.openstreetmap.org/copyright"
@@ -22,10 +22,6 @@
 
 </script>
 
-<svelte:head>
-	<title>Sandbox - leafletjs-svelte</title>
-</svelte:head>
-
 <div class="map-container">
 	<Leaflet bind:map options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
@@ -36,18 +32,10 @@
         layers: 'mrms_p72h',
         format: 'image/png',
         transparent: true,
-        attribution: "Weather data © 2012 IEM MRMS"
+        attribution: "Weather data © 2023 IEM MRMS",
+        opacity: 0.37
       }}
     />
 
 	</Leaflet>
 </div>
-
-<style>
-  .map-container {
-    height: 550px;
-    min-width: 600px;
-    margin: 0.5em 1em;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 1rem;
-  }
-</style>

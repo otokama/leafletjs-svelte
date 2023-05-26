@@ -14,7 +14,7 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing sup
 
 **Raster layers:**
 - [x] TileLayer
-- [ ] TileLayer.WMS
+- [x] TileLayer.WMS
 - [ ] ImageOverlay
 - [ ] VideoOverlay
 
