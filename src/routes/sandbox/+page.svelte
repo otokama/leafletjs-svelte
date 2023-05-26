@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { Map, MapOptions, TileLayerOptions, IconOptions } from 'leaflet';
-	import L from 'leaflet';
+  import L from 'leaflet';
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 	import Marker from '$lib/components/ui-layers/Marker.svelte';
-  import DivIcon from '$lib/components/ui-layers/DivIcon.svelte';
-  import Icon from '$lib/components/ui-layers/Icon.svelte';
+  import Popup from '$lib/components/ui-layers/Popup.svelte';
+  import '/src/styles/style.css';
 
 	let map: Map;
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
@@ -21,26 +21,6 @@
     maxZoom: 20,
     subdomains: 'abcd'
   };
-  
-  const markerIconOptions: IconOptions = {
-    iconUrl: 'svelte_logo.svg',
-    iconSize: [35, 35]
-  };
-
-  let marker: L.Marker;
-
-  $: if (marker) {
-    marker.on('mouseover', () => {
-      let icon = marker.getIcon();
-      icon.options.iconSize = [50, 50];
-      marker.setIcon(icon);
-    });
-    marker.on('mouseout', () => {
-      let icon = marker.getIcon();
-      icon.options.iconSize = [30, 30];
-      marker.setIcon(icon);
-    });
-  }
 
 </script>
 
@@ -51,36 +31,17 @@
 <div class="map-container">
 	<Leaflet bind:map options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
-		<Marker latLng={L.latLng([40.7249822, -74.006205])} />
-    <Marker latLng={L.latLng([40.6501, -73.9495800])} bind:marker={marker}>
-      <Icon options={markerIconOptions} />
+
+    <Marker latLng={L.latLng([40.6501, -73.9495800])} >
+      <Popup>
+        <p>This is Brooklyn</p>
+      </Popup>
     </Marker>
-    <Marker latLng={L.latLng([40.771133, -73.974187])}>
-      <DivIcon options={{iconAnchor: [54, 54]}}>
-        <div class='div-icon'>
-          <img src='/park_icon.png' alt='park_icon' style="width: 45px;">
-          <span>Central Park</span>
-        </div>
-      </DivIcon>
-    </Marker>
+
 	</Leaflet>
 </div>
 
 <style>
-  .div-icon {
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    padding: 1em;
-    white-space: nowrap;
-    color: #076900;
-    font-size: 14px;
-    font-weight: 800;
-    font-family: 'Overpass Variable', sans-serif;
-  }
-
   .map-container {
     height: 550px;
     min-width: 600px;
