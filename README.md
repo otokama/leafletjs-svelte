@@ -47,5 +47,3 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing sup
 - [ ] Polygon
 - [ ] Rectangle
 - [ ] Multi-Rectangle
-
-_Last Update: May 25 2023_
