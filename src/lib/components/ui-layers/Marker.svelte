@@ -9,8 +9,9 @@
 	export let marker: Marker | undefined = undefined;
 
   setContext(L.Marker, () => marker);
-  // L.Icon.Default.prototype.options.iconUrl = '/marker-icon.png';
-  // L.Icon.Default.prototype.options.shadowUrl = '/marker-shadow.png';
+  L.Icon.Default.prototype.options.iconUrl = '/marker-icon.png';
+  L.Icon.Default.prototype.options.shadowUrl = '/marker-shadow.png';
+  L.Icon.Default.prototype.options.iconRetinaUrl = '/marker-icon-2x.png';
 
 	$: if (!marker) {
     // update the default marker icon and shadow url
