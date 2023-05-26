@@ -8,7 +8,7 @@
   <a
     id='title'
     href='/'
-    style='margin-left: 1rem; margin-right: auto;'
+    style='margin-left: 1.3em; margin-right: auto;'
   >
     LeafletJS-Svelte
   </a>
@@ -49,7 +49,7 @@
   nav a {
     text-decoration: none;
     font-size: large;
-    margin: 1em 1em 1em 0;
+    margin: 1em 1.2em 1em 0;
     transition: 200ms;
     color: black;
   }
