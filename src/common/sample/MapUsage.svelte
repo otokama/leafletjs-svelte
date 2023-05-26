@@ -5,13 +5,13 @@
     TileLayerOptions
   } from 'leaflet';
   import Leaflet from '$lib/components/Leaflet.svelte';
-  import TileLayer from '$lib/components/TileLayer.svelte';
+  import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 
   let map: Map;
   const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
   const mapOption: MapOptions = {
     center: [40.7249822, -74.006205],
-    zoom: 13
+    zoom: 11
   };
   const tileLayerOption: TileLayerOptions = {
     attribution: `&copy;<a href="https://www.openstreetmap.org/copyright"

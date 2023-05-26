@@ -37,7 +37,8 @@
 		flex-direction: column;
 		font-family: 'Overpass Variable', sans-serif;
 		list-style-type: none;
-    box-shadow: rgb(221, 221, 221) 0 0 0.6rem;
+    background-color: #676778;
+    box-shadow: rgba(67, 67, 67, 0.6) 0 0 0.5em;
     z-index: 5;
 	}
 
@@ -55,24 +56,22 @@
 
 	li a {
 		text-decoration: none;
-		color: rgb(93, 93, 93);
-		font-weight: 500;
+		color: rgb(222, 222, 222);
+		font-weight: 400;
 		transition: 250ms;
 	}
 
 	li a:hover {
-		color: rgb(0, 77, 202);
     text-decoration: underline;
 	}
 
 	.active-link {
-		color: rgb(0, 116, 248);
     text-decoration: underline;
 	}
 
 	.nav-title {
-		color: rgb(34, 34, 34);
+		color: rgb(245, 245, 245);
 		font-size: 19px;
-		font-weight: 700;
+		font-weight: 500;
 	}
 </style>

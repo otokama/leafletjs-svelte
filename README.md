@@ -1,14 +1,14 @@
 # Leafletjs-svelte 
 
-Svelte component for [LeafletJS](https://leafletjs.com/) with geospatial annotation support.
+Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing support.
 
 
-## Supported Components:
+## Components:
 
 - [x] Map
  
 **UI layers:**
-- [ ] Marker
+- [x] Marker
 - [ ] Popup
 - [ ] Tooltip
 
@@ -24,7 +24,6 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with geospatial annotat
 - [ ] GeoJSON
 
 **Vector layers:**
-- [ ] Path
 - [ ] Polyline
 - [ ] Polygon
 - [ ] Rectangle

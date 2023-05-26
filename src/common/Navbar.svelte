@@ -33,7 +33,7 @@
     flex-direction: row-reverse;
     font-family: 'Nunito Variable', sans-serif;
     font-weight: 400;
-    box-shadow: rgb(210, 210, 210) 0 0 0.6rem;
+    box-shadow: rgb(48, 48, 48, 0.3) 0 0 0.5em;
     background-color: white;
     z-index: 10;
   }

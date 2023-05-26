@@ -10,36 +10,88 @@ body {
 }
 
 main {
-  margin: 6rem auto;
-  max-width: 70rem;
+  margin: 6em auto 5em auto;
+  max-width: 70em;
 }
 
-/* map container in examples */
-.map-container {
-  height: 550px;
-  min-width: 600px;
-  margin: 0.5em 1em;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 1rem;
+.leaflet-container {
+  z-index: 1;
 }
 
 /* Markdown Styling*/
-
 .home-doc {
-  margin: 5em 4em 5em 10em;
+  margin: 5em 7em;
   font-family: 'Overpass Variable', sans-serif;
 }
 
+.home-doc h2 {
+  padding: auto 2em;
+  border-block-end: solid 3px #1EB300;
+}
+
 .doc {
-  margin: 0 0 0 15rem;
+  margin: 0 1.5em 0 14.5rem;
   font-family: 'Overpass Variable', sans-serif;
 }
 
 /* inline code */
 .doc p code {
   padding: 0.15em 0.3em 0.15em 0.3em;
-  margin: 0.2em;
-  background-color: rgb(233, 233, 233);
+  margin: auto 0.2em;
+  background-color: rgb(236, 236, 236);
   border-radius: 0.2em;
   font-size: 0.85em;
+  letter-spacing: 0.5px;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+/* table */
+.doc table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.doc table td, th {
+  border: 1px solid #eeeeee;
+  padding: 0.5em 1em;
+}
+
+.doc table th {
+  padding-top: 0.6em;
+  padding-bottom: 0.3em;
+  text-align: left;
+  background-color: #ececec;
+  font-size: 15px;
+}
+
+.doc table td {
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.doc table td code {
+  font-size: 13px;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-weight: bold;
+}
+
+.language-svelte {
+  margin: 0;
+}
+
+.div-icon-marker {
+  background-color: transparent;
+}
+
+.example {
+  margin: auto 5em;
+  border: solid 1px rgb(219, 219, 219);
+  border-radius: 0.4em;
+  overflow: hidden;
+  box-shadow: rgb(224, 224, 224) 1px 2px 0.5em;
+}
+
+/* map container in examples */
+.map-container {
+  height: 300px;
 }
