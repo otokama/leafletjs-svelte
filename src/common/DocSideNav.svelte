@@ -11,7 +11,8 @@
 
   $: if (expandSideNav) {
     tempExpandSideNav = false;
-  } 
+  }
+
 </script>
 
 {#if docsSummary && docsSummary.size > 0}
@@ -28,6 +29,7 @@
               <a 
                 href={doc.path}
                 class={$page.url.pathname === doc.path ? 'active-link' : ''}
+                on:click={() => tempExpandSideNav = false}
               >
                 {doc.title}
               </a>
@@ -81,6 +83,7 @@
 		color: rgb(222, 222, 222);
 		font-weight: 400;
 		transition: 250ms;
+    cursor: pointer;
 	}
 
 	li a:hover {
