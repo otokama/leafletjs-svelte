@@ -9,11 +9,11 @@
 	export let marker: Marker | undefined = undefined;
 
   setContext(L.Marker, () => marker);
+  L.Icon.Default.prototype.options.iconUrl = '/marker-icon.png';
+  L.Icon.Default.prototype.options.shadowUrl = '/marker-shadow.png';
 
 	$: if (!marker) {
     // update the default marker icon and shadow url
-    L.Icon.Default.prototype.options.iconUrl = '/marker-icon.png';
-    L.Icon.Default.prototype.options.shadowUrl = '/marker-shadow.png';
     marker = L.marker(latLng, options).addTo(getMap());
 	}
 
