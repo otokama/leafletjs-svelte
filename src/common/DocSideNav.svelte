@@ -82,7 +82,6 @@
 		text-decoration: none;
 		color: rgb(222, 222, 222);
 		font-weight: 400;
-		transition: 250ms;
     cursor: pointer;
 	}
 
