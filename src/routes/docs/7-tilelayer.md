@@ -13,11 +13,15 @@ Used to load and display tile layers on the map.
 
 ### TileLayer Properties
 
+<div class='doc-table-container'>
+
 | Props | Type | Default | Description | Required |
 | --- | --- | --- | --- | -- |
 | `tileURL` | `string` | `undefined` | TileLayer's URL template | `true` | 
 | `options` | [`TileLayerOptions`](https://leafletjs.com/reference.html#tilelayer) | `undefined` | Describes the property of the TileLayer. | `true` |
 | `tileLayer` | [`TileLayer`](https://leafletjs.com/reference.html#tilelayer) | `undefined` | The underlying Leaflet TileLayer object instance. | `false` |
+
+</div>
 
 <br>
 

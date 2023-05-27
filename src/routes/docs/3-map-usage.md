@@ -11,6 +11,8 @@ order: 3
 
 ### Map Properties
 
+<div class='doc-table-container'>
+
 | Props | Type | Default | Description | Required |
 | --- | --- | --- | --- | -- |
 | `options` | [`MapOptions`](https://leafletjs.com/reference.html#map-option) | `undefined` | Describes the property of the Map. | `false` |
@@ -19,6 +21,8 @@ order: 3
 | `height` | string | `100%` | The height of the map in a map container. Make sure the map container or the map has a defined height. | `false` |
 | `width` | string | `100%` | The width of the map in a map container. | `false` |
  
+</div>
+
 <br>
 
 ## Usage Example
