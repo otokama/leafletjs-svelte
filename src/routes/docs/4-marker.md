@@ -15,11 +15,15 @@ Used to display clickable/draggable icons on the map.
 
 ### Marker Properties
 
-| Props | Type | Default | Description | Required |
-| --- | --- | --- | --- | --| 
-| `latLng` | [`LatLng`](https://leafletjs.com/reference.html#latlng) | `undefined` | Coordinates of the marker | `true` |
-| `options` | [`MarkerOptions`](https://leafletjs.com/reference.html#marker) | `undefined` | Describes the property of the marker | `false` |
-| `marker` | [`Marker`](https://leafletjs.com/reference.html#marker-l-marker) | `undefined` | The underlying Leaflet Marker object instance | `false` |
+<div class='doc-table-container'>
+
+  | Props | Type | Default | Description | Required |
+  | --- | --- | --- | --- | --| 
+  | `latLng` | [`LatLng`](https://leafletjs.com/reference.html#latlng) | `undefined` | Coordinates of the marker | `true` |
+  | `options` | [`MarkerOptions`](https://leafletjs.com/reference.html#marker) | `undefined` | Describes the property of the marker | `false` |
+  | `marker` | [`Marker`](https://leafletjs.com/reference.html#marker-l-marker) | `undefined` | The underlying Leaflet Marker object instance | `false` |
+
+</div>
 <br>
 
 ## Basic Marker
@@ -44,9 +48,13 @@ Displays an icon for a marker.
 
 ### Icon Properties
 
-| Props | Type | Default | Description | Required |
-| --- | --- | --- | --- | -- | 
-| `options` | [`IconOptions`](https://leafletjs.com/reference.html#icon) | `undefined` | Describes property of the icon | `true`
+<div class='doc-table-container'>
+
+  | Props | Type | Default | Description | Required |
+  | --- | --- | --- | --- | -- | 
+  | `options` | [`IconOptions`](https://leafletjs.com/reference.html#icon) | `undefined` | Describes property of the icon | `true`
+</div>
+
 
 <br><br>
 
@@ -82,9 +90,13 @@ Display a lightweight icon for markers that uses a simple `<div>` element
 
 ### DivIcon Properties
 
-| Props | Type | Default | Description | Required |
-| --- | --- | --- | --- | -- |
-| `options` | [`DivIconOptions`](https://leafletjs.com/reference.html#divicon) | `undefined` | Describes property of the DivIcon | `true`
+<div class='doc-table-container'>
+
+  | Props | Type | Default | Description | Required |
+  | --- | --- | --- | --- | -- |
+  | `options` | [`DivIconOptions`](https://leafletjs.com/reference.html#divicon) | `undefined` | Describes property of the DivIcon | `true`
+
+</div>
 
 <br><br>
 

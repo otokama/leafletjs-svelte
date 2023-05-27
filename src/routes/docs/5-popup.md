@@ -14,10 +14,14 @@ Used to open popups in certain places of the map.
 
 ### Popup Properties
 
+<div class='doc-table-container'>
+
 | Props | Type | Default | Description | Required |
 | --- | --- | --- | --- | --| 
 | `options` | [`PopupOptions`](https://leafletjs.com/reference.html#popup) | `{}` | Describes the property of the popup. | `false` |
 | `popup` | [`Popup`](https://leafletjs.com/reference.html#popup) | `undefined` | The underlying Leaflet Popup object instance. | `false` |
+</div>
+
 <br>
 
 ## Example

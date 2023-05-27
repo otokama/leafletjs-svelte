@@ -13,11 +13,15 @@ Used to display WMS services as tile layers on the map.
 
 ### TileLayer Properties
 
+<div class='doc-table-container'>
+
 | Props | Type | Default | Description | Required |
 | --- | --- | --- | --- | -- |
 | `tileURL` | `string` | `undefined` | TileLayer's URL template | `true` | 
 | `options` | [`WMSOptions`](https://leafletjs.com/reference.html#tilelayer-wms-option) | `undefined` | Describes the property of the TileLayer.WMS. | `true` |
 | `tileLayer` | [`TileLayer.WMS`](https://leafletjs.com/reference.html#tilelayer-wms) | `undefined` | The underlying Leaflet TileLayer.WMS object instance. | `false` |
+
+</div>
 
 <br>
 

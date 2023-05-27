@@ -24,12 +24,6 @@ main {
   font-family: 'Overpass Variable', sans-serif;
 }
 
-@media screen and (min-width: 764px) {
-  .home-doc {
-    margin: 5em 7em;
-  }
-}
-
 .home-doc h2 {
   padding: auto 2em;
   border-block-end: solid 3px #1EB300;
@@ -42,6 +36,9 @@ main {
 }
 
 @media screen and (min-width: 764px) {
+  .home-doc {
+    margin: 5em 7em;
+  }
   .doc {
     margin: 0 2em 0 2em;
   }
@@ -63,6 +60,10 @@ main {
 }
 
 /* table */
+.doc-table-container {
+  overflow-x: auto;
+}
+
 .doc table {
   border-collapse: collapse;
   width: 100%;
@@ -100,11 +101,17 @@ main {
 }
 
 .example {
-  margin: auto 5em;
+  margin: auto 1em;
   border: solid 1px rgb(219, 219, 219);
   border-radius: 0.4em;
   overflow: hidden;
   box-shadow: rgb(224, 224, 224) 1px 2px 0.5em;
+}
+
+@media screen and (min-width: 764px) {
+  .example {
+    margin: auto 5em;
+  }
 }
 
 /* map container in examples */

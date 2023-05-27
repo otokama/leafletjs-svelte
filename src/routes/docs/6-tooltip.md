@@ -14,10 +14,15 @@ Used to display small texts on top of map layers.
 
 ### Tooltip Properties
 
+<div class='doc-table-container'>
+
 | Props | Type | Default | Description | Required |
 | --- | --- | --- | --- | --| 
 | `options` | [`TooltipOptions`](https://leafletjs.com/reference.html#tooltip) | `{}` | Describes the property of the tooltip. | `false` |
 | `tooltip` | [`Tooltip`](https://leafletjs.com/reference.html#tooltip) | `undefined` | The underlying Leaflet Tooltip object instance. | `false` |
+
+</div>
+
 <br>
 
 ## Example
