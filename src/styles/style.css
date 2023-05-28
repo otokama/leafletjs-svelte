@@ -31,7 +31,7 @@ main {
 
 .doc {
   font-family: 'Overpass Variable', sans-serif;
-  transition: 150ms;
+  transition: 50ms;
   margin: 0 1em 0 1em;
 }
 
@@ -117,4 +117,10 @@ main {
 /* map container in examples */
 .map-container {
   height: 300px;
+}
+
+@media screen and (min-width: 764px) {
+  .map-container {
+    height: 400px;
+  }
 }
