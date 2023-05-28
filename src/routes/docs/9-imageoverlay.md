@@ -44,7 +44,6 @@ order: 8
       <ImageOverlay {imageUrl} bounds={imageBounds} options={imageOverlayOptions} />
     </Leaflet>
   </div>
-
   ```
 
 </div>
