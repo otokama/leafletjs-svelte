@@ -10,7 +10,7 @@
   let expandSideNav: boolean = true;
   let pageWidth: number = 0;
   
-  $: if (pageWidth < 850) {
+  $: if (pageWidth < 764) {
     expandSideNav = false;
   } else {
     expandSideNav = true;
