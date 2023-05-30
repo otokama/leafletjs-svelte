@@ -39,8 +39,7 @@
     top: 0;
     width: 100%;
     display: flex;
-    font-family: 'Nunito Variable', sans-serif;
-    font-weight: 400;
+    font-family: 'Overpass Variable', sans-serif;
     box-shadow: rgb(48, 48, 48, 0.3) 0 0 0.5em;
     background-color: white;
     z-index: 10;
@@ -55,15 +54,12 @@
   }
 
   nav a:hover {
-    color: rgb(0, 77, 202);
+    text-decoration: underline;
   }
 
   .active-link {
     color: rgb(0, 116, 248);
-  }
-
-  #title:hover {
-    color: rgb(0, 93, 26);
+    text-decoration: underline;
   }
 
 </style>

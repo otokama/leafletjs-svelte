@@ -64,6 +64,7 @@
     background-color: #676778;
     box-shadow: rgba(67, 67, 67, 0.6) 0 0 0.5em;
     z-index: 5;
+    overflow-y: auto;
 	}
 
   ul ul {

@@ -29,11 +29,9 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing sup
 - [ ] Rectangle
 - [ ] Circle
 - [ ] CircleMarker
-- [ ] SVGOverlay
 
 **Controls:**
 - [ ] Zoom
-- [ ] Attribution
 - [ ] Layers
 - [ ] Scale
 
