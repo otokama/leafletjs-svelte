@@ -6,7 +6,7 @@
   export let options: IconOptions;
   let icon: Icon;
 
-  let getMarker: () => Marker = getContext(L.Marker);
+  let getMarker: () => Marker = getContext(L.Layer);
   
   $: if (!icon) {
     icon = L.icon(options);

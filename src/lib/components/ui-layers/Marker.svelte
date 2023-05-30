@@ -8,7 +8,7 @@
 	const getMap: () => Map = getContext(L);
 	export let marker: Marker | undefined = undefined;
 
-  setContext(L.Marker, () => marker);
+  setContext(L.Layer, () => marker);
   
   L.Icon.Default.prototype.options.iconUrl = '/marker-icon.png';
   L.Icon.Default.prototype.options.shadowUrl = '/marker-shadow.png';

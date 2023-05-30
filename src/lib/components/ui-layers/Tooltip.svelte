@@ -1,12 +1,12 @@
 <script lang='ts'>
   import { getContext, onDestroy } from "svelte";
-  import type { Marker, Tooltip, TooltipOptions } from 'leaflet';
+  import type { Layer, Tooltip, TooltipOptions } from 'leaflet';
   import L from 'leaflet';
 
   export let options: TooltipOptions = {};
   export let tooltip: Tooltip | undefined = undefined;
   
-  let getMarker: () => Marker = getContext(L.Marker);
+  let getLayer: () => Layer = getContext(L.Layer);
   let tooltipHtml: HTMLElement;
 
   $: if (!tooltip && tooltipHtml) {
@@ -15,12 +15,12 @@
     } else {
       tooltip = L.tooltip(options);
     }
-    getMarker().bindTooltip(tooltip);
+    getLayer().bindTooltip(tooltip);
   }
 
   onDestroy(() => {
     if (tooltip) {
-      getMarker().unbindTooltip();
+      getLayer().unbindTooltip();
       tooltip.remove();
     }
   });
