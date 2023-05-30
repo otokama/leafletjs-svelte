@@ -1,12 +1,12 @@
 <script lang='ts'>
   import { getContext, onDestroy } from "svelte";
-  import type { Marker, Popup, PopupOptions } from 'leaflet';
+  import type { Layer, Popup, PopupOptions } from 'leaflet';
   import L from 'leaflet';
 
   export let options: PopupOptions = {};
   export let popup: Popup | undefined = undefined;
   
-  let getMarker: () => Marker = getContext(L.Marker);
+  let getLayer: () => Layer = getContext(L.Layer);
   let popupHtml: HTMLElement;
 
   $: if (!popup && popupHtml) {
@@ -15,12 +15,12 @@
     } else {
       popup = L.popup(options);
     }
-    getMarker().bindPopup(popup);
+    getLayer().bindPopup(popup);
   } 
 
   onDestroy(() => {
     if (popup) {
-      getMarker().unbindPopup();
+      getLayer().unbindPopup();
       popup.remove();
     }
   });

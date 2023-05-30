@@ -5,7 +5,7 @@
 
 	export let options: DivIconOptions = {};
 	let divIcon: DivIcon;
-	let getMarker: () => Marker = getContext(L.Marker);
+	let getMarker: () => Marker = getContext(L.Layer);
 
 	let divIconHtml: HTMLElement;
 

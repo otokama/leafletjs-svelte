@@ -22,6 +22,7 @@ order: 9
 | `videoOverlay` | [`VideoOverlay`](https://leafletjs.com/reference.html#videooverlay) | `undefined` | The underlying Leaflet VideoOverlay object instance. | `false` |
 
 </div>
+<br>
 
 ## Example
 
