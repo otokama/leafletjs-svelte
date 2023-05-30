@@ -24,12 +24,6 @@
 
 </script>
 
-<svelte:head>
-  <title>
-    Sandbox - leafletjs-svelte
-  </title>
-</svelte:head>
-
 <div class='map-container'>
   <Leaflet bind:map={map} options={mapOption}>
     <TileLayer tileURL={mapURL} options={tileLayerOption} />

@@ -55,7 +55,7 @@
     height: 100%;
 		top: 0;
 		left: 0;
-    width: 9rem;
+    width: 9em;
     padding: 4.5em 2em 0 1.5em;
 		display: flex;
 		flex-direction: column;
@@ -81,8 +81,8 @@
 
 	li a {
 		text-decoration: none;
-		color: rgb(222, 222, 222);
-		font-weight: 400;
+		color: #fefefe;
+		font-weight: 300;
     cursor: pointer;
 	}
 
@@ -91,7 +91,7 @@
 	}
 
 	.active-link {
-    text-decoration: underline;
+    font-weight: 600;
 	}
 
 	.nav-title {

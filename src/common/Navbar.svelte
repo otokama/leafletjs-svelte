@@ -29,7 +29,7 @@
     href='https://github.com/otokama/leafletjs-svelte'
     target="_blank"
   >
-    <Fa icon={faGithub} />
+    <Fa icon={faGithub} size='1.6x'/>
   </a>
 </nav>
 
@@ -39,6 +39,8 @@
     top: 0;
     width: 100%;
     display: flex;
+    flex-direction: row;
+    align-items: center;
     font-family: 'Overpass Variable', sans-serif;
     box-shadow: rgb(48, 48, 48, 0.3) 0 0 0.5em;
     background-color: white;
@@ -48,13 +50,14 @@
   nav a {
     text-decoration: none;
     font-size: large;
-    margin: 1em 1.2em 1em 0;
+    margin: 0.8em 1.4em 0.8em 0;
     transition: 200ms;
     color: black;
   }
 
   nav a:hover {
     text-decoration: underline;
+    color: rgb(0, 116, 248);
   }
 
   .active-link {
