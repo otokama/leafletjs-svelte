@@ -18,17 +18,17 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing sup
 - [x] ImageOverlay
 - [x] VideoOverlay
 
-**Other layers:**
-- [ ] LayerGroup
-- [ ] FeatureGroup
-- [ ] GeoJSON
-
 **Vector layers:**
 - [x] Polyline
 - [ ] Polygon
 - [ ] Rectangle
 - [ ] Circle
 - [ ] CircleMarker
+
+**Other layers:**
+- [ ] LayerGroup
+- [ ] FeatureGroup
+- [ ] GeoJSON
 
 **Controls:**
 - [ ] Zoom
