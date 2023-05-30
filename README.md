@@ -24,16 +24,14 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing sup
 - [ ] GeoJSON
 
 **Vector layers:**
-- [ ] Polyline
+- [x] Polyline
 - [ ] Polygon
 - [ ] Rectangle
 - [ ] Circle
 - [ ] CircleMarker
-- [ ] SVGOverlay
 
 **Controls:**
 - [ ] Zoom
-- [ ] Attribution
 - [ ] Layers
 - [ ] Scale
 
