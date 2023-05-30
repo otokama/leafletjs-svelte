@@ -21,11 +21,13 @@ A class for drawing polyline overlays on a map.
 | Props | Type | Default | Description | Required |
 | --- | --- | --- | --- | -- |
 | `latLngs` | [`LatLng[]`](https://leafletjs.com/reference.html#latlng) | `undefined` | An array of geographical points (latitude and longitude). | `true` | 
-| `options` | [`PolylineOptions`](https://leafletjs.com/reference.html#polyline-option) | `undefined` | Describes the property of the Polyline. | `true` |
+| `options` | [`PolylineOptions`](https://leafletjs.com/reference.html#polyline-option) | `undefined` | Describes the property of the Polyline. | `false` |
 | `polyline` | [`Polyline`](https://leafletjs.com/reference.html#polyline) | `undefined` | The underlying Leaflet Polyline object instance. | `false` |
 
 </div>
 <br>
+
+<section id='polyline-usage-example'>
 
 ## Example
 
@@ -50,6 +52,8 @@ A class for drawing polyline overlays on a map.
   ```
 
 </div>
+
+</section>
 <br>
 
 ## Polyline binding with Popup
