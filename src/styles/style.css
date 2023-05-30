@@ -48,6 +48,10 @@ main {
   margin: 0 1.5em 0 14.5rem;
 }
 
+.doc h1, h2, h3 {
+  font-weight: 500;
+}
+
 /* inline code */
 .doc p code {
   padding: 0.15em 0.3em 0.15em 0.3em;
