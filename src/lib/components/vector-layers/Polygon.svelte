@@ -1,10 +1,10 @@
 <script lang='ts'>
   import { getContext, setContext } from 'svelte';
-	import type { Map, Polygon, PolygonOptions, LatLng } from 'leaflet';
+	import type { Map, Polygon, PolylineOptions, LatLng } from 'leaflet';
 	import L from 'leaflet';
 
   export let latLngs: LatLng[] | number[][];
-	export let options: PolygonOptions = {};
+	export let options: PolylineOptions = {};
   export let polygon: Polygon | undefined = undefined;
 
   const getMap: () => Map = getContext(L);

@@ -30,7 +30,7 @@ Used to open popups in certain places of the map.
   <PopupUsage />
 
   ```svelte
-  <Leaflet bind:map options={mapOption}>
+  <Leaflet options={mapOption}>
     <TileLayer tileURL={mapURL} options={tileLayerOption} />
 
     <Marker latLng={L.latLng([40.7249822, -74.006205])}>

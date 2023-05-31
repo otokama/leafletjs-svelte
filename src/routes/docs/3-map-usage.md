@@ -25,7 +25,7 @@ order: 3
 
 <br>
 
-## Usage Example
+## Usage
 Below is a minimal effort to setup a Leaflet map:
 
 <div class='example'>

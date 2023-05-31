@@ -32,7 +32,7 @@ Used to display small texts on top of map layers.
   <TooltipUsage/>
 
   ```svelte
-  <Leaflet bind:map options={mapOption}>
+  <Leaflet options={mapOption}>
     <TileLayer tileURL={mapURL} options={tileLayerOption} />
 
     <Marker latLng={L.latLng([37.229572, -80.413940])} >

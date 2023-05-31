@@ -1,7 +1,7 @@
 ---
 title: VideoOverlay
 category: Raster Layers
-order: 9
+order: 10
 ---
 
 <script>
@@ -37,7 +37,7 @@ order: 9
   </script>
 
   <div class="map-container">
-    <Leaflet bind:map options={mapOption}>
+    <Leaflet options={mapOption}>
       <TileLayer tileURL={mapURL} options={tileLayerOption} />
       <VideoOverlay video={videoUrl} bounds={videoBounds} />
     </Leaflet>

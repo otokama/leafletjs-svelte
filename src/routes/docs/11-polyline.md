@@ -44,7 +44,7 @@ A class for drawing polyline overlays on a map.
     ];
   </script>
 
-  <Leaflet options={mapOption} bind:map={map}>
+  <Leaflet options={mapOption} >
     <TileLayer tileURL={mapURL} options={tileLayerOption} />
     <Polyline options={{ color: 'green' }} latLngs={polylineLatLngs} />
   </Leaflet>

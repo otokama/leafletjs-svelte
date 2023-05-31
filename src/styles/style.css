@@ -29,6 +29,22 @@ main {
   border-block-end: solid 3px #1EB300;
 }
 
+.home-doc ul {
+  padding-inline-start: 0.5em;
+}
+
+.home-doc .task-list-item {
+  margin-bottom: 0.4em;
+}
+
+.home-doc .task-list-item::marker{
+  content: '';
+}
+
+/* .home-doc .task-list-item [type='checkbox']:disabled {
+  opacity: 1;
+} */
+
 .doc {
   font-family: 'Overpass Variable', sans-serif;
   transition: 50ms;
