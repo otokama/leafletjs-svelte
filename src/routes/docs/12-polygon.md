@@ -31,7 +31,7 @@ Drawing polygon overlays on a map.
   <PolygonUsage />
 
   ```svelte
-  <Leaflet options={mapOption} bind:map>
+  <Leaflet options={mapOption} >
     <TileLayer tileURL={mapURL} options={tileLayerOption} />
 
     <Polygon options={{ color: 'purple' }} latLngs={utahBorderCoor}>

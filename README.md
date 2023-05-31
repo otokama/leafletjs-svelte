@@ -21,9 +21,9 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing sup
 **Vector layers:**
 - [x] Polyline
 - [x] Polygon
+- [x] Circle
+- [x] CircleMarker
 - [ ] Rectangle
-- [ ] Circle
-- [ ] CircleMarker
 
 **Other layers:**
 - [ ] LayerGroup
