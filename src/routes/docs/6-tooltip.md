@@ -1,5 +1,5 @@
 ---
-title: ToolTip
+title: Tooltip
 category: UI Layers
 order: 6
 ---
@@ -8,7 +8,7 @@ order: 6
 </script>
 
 
-# ToolTip
+# Tooltip
 
 Used to display small texts on top of map layers.
 

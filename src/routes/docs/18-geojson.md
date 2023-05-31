@@ -1,7 +1,7 @@
 ---
 title: GeoJSON
 category: Other Layers
-order: 15
+order: 18
 ---
 
 # GeoJSON
