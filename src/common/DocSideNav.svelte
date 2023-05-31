@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import type { Docs } from '../routes/docs/types.js';
-  import { fade, fly } from 'svelte/transition';
+  import { fade, fly, slide } from 'svelte/transition';
   import Fa from 'svelte-fa';
   import { faBars, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 	export let docsSummary: Map<string, Docs[]>;
@@ -19,7 +19,7 @@
   {#if expandSideNav || tempExpandSideNav}
     <ul
       class='sidenav'
-      transition:fly={{x: -50, duration: 200}}
+      transition:slide={{duration: 200, axis: 'x'}}
     >
       {#each categories as category}
         <span class="nav-title">{category}</span>
@@ -64,6 +64,8 @@
     background-color: #676778;
     box-shadow: rgba(67, 67, 67, 0.6) 0 0 0.5em;
     z-index: 5;
+    white-space: nowrap;
+    overflow-x: hidden;
     overflow-y: auto;
 	}
 
