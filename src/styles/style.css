@@ -68,6 +68,10 @@ main {
   font-weight: 500;
 }
 
+.doc p {
+  color: #444444;
+}
+
 /* inline code */
 .doc p code {
   padding: 0.15em 0.3em 0.15em 0.3em;
@@ -77,6 +81,7 @@ main {
   font-size: 0.85em;
   letter-spacing: 0.5px;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  color: #444444;
 }
 
 /* table */
@@ -87,6 +92,7 @@ main {
 .doc table {
   border-collapse: collapse;
   width: 100%;
+  color: #444444;
 }
 
 .doc table td, th {

@@ -7,11 +7,10 @@
   import LayerGroup from '$lib/components/other-layers/LayerGroup.svelte';
   import Tooltip from '$lib/components/ui-layers/Tooltip.svelte';
 
-	let map: Map;
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
   const mapOption: MapOptions = {
-    center: [39.554883059924016, -111.55517578125001],
-    zoom: 6
+    center: [39.554883059924016, -107.55517578125001],
+    zoom: 5
   };
   const tileLayerOption: TileLayerOptions = {
     attribution: `&copy;<a href="https://www.openstreetmap.org/copyright"
@@ -39,8 +38,10 @@
 	];
 
   let layerGroup: L.LayerGroup;
+  let coloradoPolygon: L.Polygon;
   
   $: if (layerGroup) {
+    layerGroup.addLayer(coloradoPolygon)
     layerGroup.eachLayer((layer) => {
       layer.bindPopup(L.popup({ content: 'State Border' }))
     });
@@ -49,27 +50,14 @@
 
 </script>
 
-<svelte:head>
-	<title>Sandbox - leafletjs-svelte</title>
-</svelte:head>
-
 <div class="map-container">
-	<Leaflet bind:map options={mapOption}>
+	<Leaflet options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
     <LayerGroup bind:layerGroup>
-      <Polygon latLngs={utahBorderCoor} />
+      <Polygon latLngs={utahBorderCoor} options={{color: 'green'}} />
     </LayerGroup>
-    <Polygon latLngs={coloradoBorderCoor}>
+    <Polygon latLngs={coloradoBorderCoor} bind:polygon={coloradoPolygon} >
       <Tooltip options={{direction: 'top'}}>Colorado</Tooltip>
     </Polygon>
 	</Leaflet>
 </div>
-
-<style>
-  .map-container {
-    height: 550px;
-    min-width: 600px;
-    margin: 0.5em 1em;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 1rem;
-  }
-</style>

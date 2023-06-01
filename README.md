@@ -26,8 +26,8 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing sup
 - [x] Rectangle
 
 **Other layers:**
-- [ ] LayerGroup
-- [ ] FeatureGroup
+- [x] LayerGroup
+- [x] FeatureGroup
 - [ ] GeoJSON
 
 **Controls:**
