@@ -1,0 +1,203 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -114.049072,
+              42.000325
+            ],
+            [
+              -111.060791,
+              42.008489
+            ],
+            [
+              -111.060791,
+              40.996484
+            ],
+            [
+              -109.061279,
+              41.004775
+            ],
+            [
+              -109.061279,
+              37.011326
+            ],
+            [
+              -114.060059,
+              37.011326
+            ],
+            [
+              -114.049072,
+              42.000325
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "title": "utah",
+        "label": "Utah",
+        "name": "utah",
+        "color": "#6DBDFE",
+        "stroke": "#6DBDFE",
+        "stroke-width": 1,
+        "fill": "#6DBDFE",
+        "fill-opacity": 0.5,
+        "confidence": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -109.083252,
+              41.004775
+            ],
+            [
+              -102.062988,
+              41.004775
+            ],
+            [
+              -102.041016,
+              37.002553
+            ],
+            [
+              -109.050293,
+              37.011326
+            ],
+            [
+              -109.083252,
+              41.004775
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "title": "colorado",
+        "label": "Colorado",
+        "name": "colorado",
+        "color": "#6DFE73",
+        "stroke": "#6DFE73",
+        "stroke-width": 1,
+        "fill": "#6DFE73",
+        "fill-opacity": 0.5,
+        "confidence": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -111.060791,
+              45.011419
+            ],
+            [
+              -111.060791,
+              41.004775
+            ],
+            [
+              -104.0625,
+              41.004775
+            ],
+            [
+              -104.0625,
+              45.003651
+            ],
+            [
+              -111.060791,
+              45.011419
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "title": "wy",
+        "label": "Wyoming",
+        "name": "wy",
+        "color": "#6D8FFE",
+        "stroke": "#6D8FFE",
+        "stroke-width": 1,
+        "fill": "#6D8FFE",
+        "fill-opacity": 0.5,
+        "confidence": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -103.051758,
+              36.985003
+            ],
+            [
+              -103.029785,
+              36.509636
+            ],
+            [
+              -103.051758,
+              32.026706
+            ],
+            [
+              -106.589355,
+              31.989442
+            ],
+            [
+              -106.589355,
+              31.802893
+            ],
+            [
+              -108.215332,
+              31.802893
+            ],
+            [
+              -108.215332,
+              31.334871
+            ],
+            [
+              -109.050293,
+              31.316101
+            ],
+            [
+              -109.072266,
+              37.002553
+            ],
+            [
+              -103.051758,
+              36.985003
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "title": "new mexico",
+        "label": "New Mexico",
+        "name": "new mexico",
+        "color": "#FE6D6D",
+        "stroke": "#FE6D6D",
+        "stroke-width": 1,
+        "fill": "#FE6D6D",
+        "fill-opacity": 0.5,
+        "confidence": 1
+      }
+    }
+  ]
+}
