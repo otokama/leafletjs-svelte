@@ -1,11 +1,10 @@
 <script lang="ts">
-	import type { Map, MapOptions, TileLayerOptions } from 'leaflet';
+	import type { MapOptions, TileLayerOptions } from 'leaflet';
 	import L from 'leaflet';
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 	import Polygon from '$lib/components/vector-layers/Polygon.svelte';
 	import FeatureGroup from '$lib/components/other-layers/FeatureGroup.svelte';
-	import Tooltip from '$lib/components/ui-layers/Tooltip.svelte';
 
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {

@@ -30,13 +30,17 @@
 
 	onDestroy(() => {
     if (marker) {
-      if (getLayerGroup) {
+      if (getLayerGroup && getLayerGroup().hasLayer(marker)) {
         getLayerGroup().removeLayer(marker);
-      } else {
+      }
+      if (getFeatureGroup && getFeatureGroup().hasLayer(marker)) {
+        getFeatureGroup().removeLayer(marker);
+      }
+      if (!getLayerGroup && !getFeatureGroup){
         marker.removeFrom(getMap());
       }
     }
-	});
+  });
 </script>
 
 {#if marker}

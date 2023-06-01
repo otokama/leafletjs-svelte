@@ -55,17 +55,16 @@
     height: 100%;
 		top: 0;
 		left: 0;
-    width: 9em;
-    padding: 4.5em 2em 0 1.5em;
+    width: auto;
+    margin-top: 0;
+    padding: 5.5em 2em 0 1.5em;
 		display: flex;
 		flex-direction: column;
 		font-family: 'Overpass Variable', sans-serif;
-		list-style-type: none;
     background-color: #676778;
     box-shadow: rgba(67, 67, 67, 0.6) 0 0 0.5em;
     z-index: 5;
     white-space: nowrap;
-    overflow-x: hidden;
     overflow-y: auto;
 	}
 

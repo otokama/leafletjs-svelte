@@ -22,6 +22,7 @@ main {
 .home-doc {
   margin: 0 1.5em;
   font-family: 'Overpass Variable', sans-serif;
+  color: #343434;
 }
 
 .home-doc h2 {
@@ -149,4 +150,25 @@ main {
   .map-container {
     height: 400px;
   }
+}
+
+/* hiding leaflet tooltip triangle */
+.doc .leaflet-tooltip-top:before, 
+.leaflet-tooltip-bottom:before, 
+.leaflet-tooltip-left:before, 
+.leaflet-tooltip-right:before {
+  border: none !important;
+}
+
+/* example geojson tooltip style */
+.doc .example-geojson-tooltip {
+  font-family: 'Overpass Variable', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: rgb(246, 246, 246);
+  backdrop-filter: blur(10px);
+  border-radius: 0.3em;
+  border: none;
+  box-shadow: none;
+  padding: 0.4em 0.6em 0.2em 0.6em;
 }
