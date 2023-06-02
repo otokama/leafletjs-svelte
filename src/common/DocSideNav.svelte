@@ -15,31 +15,33 @@
 
 </script>
 
-{#if docsSummary && docsSummary.size > 0}
-  {#if expandSideNav || tempExpandSideNav}
-    <ul
-      class='sidenav'
-      transition:slide={{duration: 200, axis: 'x'}}
-    >
-      {#each categories as category}
-        <span class="nav-title">{category}</span>
-        <ul>
-          {#each docsSummary.get(category) as doc}
-            <li>
-              <a 
-                href={doc.path}
-                class={$page.url.pathname === doc.path ? 'active-link' : ''}
-                on:click={() => tempExpandSideNav = false}
-              >
-                {doc.title}
-              </a>
-            </li>
-          {/each}
-        </ul>
-      {/each}
-    </ul>
+<div class='sidenav-container'>
+  {#if docsSummary && docsSummary.size > 0}
+    {#if expandSideNav || tempExpandSideNav}
+      <ul
+        class='sidenav'
+        transition:slide={{duration: 200, axis: 'x'}}
+      >
+        {#each categories as category}
+          <span class="nav-title">{category}</span>
+          <ul>
+            {#each docsSummary.get(category) as doc}
+              <li>
+                <a 
+                  href={doc.path}
+                  class={$page.url.pathname === doc.path ? 'active-link' : ''}
+                  on:click={() => tempExpandSideNav = false}
+                >
+                  {doc.title}
+                </a>
+              </li>
+            {/each}
+          </ul>
+        {/each}
+      </ul>
+    {/if}
   {/if}
-{/if}
+</div>
 
 <button
   class='sidenav-toggle'
@@ -50,22 +52,24 @@
 </button>
 
 <style>
-	.sidenav {
-		position: fixed;
+  .sidenav-container {
+    position: fixed;
     height: 100%;
 		top: 0;
 		left: 0;
     width: auto;
-    margin-top: 0;
-    padding: 5.5em 2em 0 1.5em;
-		display: flex;
-		flex-direction: column;
-		font-family: 'Overpass Variable', sans-serif;
+    overflow-y: auto;
     background-color: #676778;
     box-shadow: rgba(67, 67, 67, 0.6) 0 0 0.5em;
     z-index: 5;
+  }
+	.sidenav {
+    padding: 5.5em 2em 2em 1.5em;
+		display: flex;
+		flex-direction: column;
+		font-family: 'Overpass Variable', sans-serif;
     white-space: nowrap;
-    overflow-y: auto;
+    margin: 0;
 	}
 
   ul ul {

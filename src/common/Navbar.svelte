@@ -50,9 +50,15 @@
   nav a {
     text-decoration: none;
     font-size: large;
-    margin: 0.8em 1.4em 0.8em 0;
+    margin: 0.5em 1.4em 0.3em 0;
     transition: 200ms;
     color: black;
+  }
+
+  @media screen and (min-width: 764px) {
+    nav a {
+      margin: 0.8em 1.4em 0.7em 0;
+    }
   }
 
   nav a:hover {
@@ -62,7 +68,6 @@
 
   .active-link {
     color: rgb(0, 116, 248);
-    text-decoration: underline;
   }
 
 </style>
