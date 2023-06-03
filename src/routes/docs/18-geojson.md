@@ -39,7 +39,7 @@ Represents a GeoJSON object or an array of GeoJSON objects. Allows you to parse 
     }
 
     const geojsonOptions: GeoJSONOptions = {
-      onEachFeature(feature, layer) {
+      onEachFeature: function(feature, layer) {
         layer.bindTooltip(feature.properties.label, {
           className: 'example-geojson-tooltip',
           direction: 'center'
@@ -53,15 +53,14 @@ Represents a GeoJSON object or an array of GeoJSON objects. Allows you to parse 
     };
   </script>
 
-  {#await getGeoJSON() then geojsonData}
-    <div class="map-container">
-      <Leaflet options={mapOption}>
-        <TileLayer tileURL={mapURL} options={tileLayerOption} />
-        <GeoJson data={geojsonData} options={geojsonOptions}>
-        </GeoJson>
-      </Leaflet>
-    </div>
-  {/await}
+  <div class="map-container">
+    <Leaflet options={mapOption}>
+      <TileLayer tileURL={mapURL} options={tileLayerOption} />
+      {#await getGeoJSON() then geojsonData}
+        <GeoJson data={geojsonData} options={geojsonOptions} />
+      {/await}
+    </Leaflet>
+  </div>
   ```
 
 </div>
