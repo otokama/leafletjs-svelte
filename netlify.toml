@@ -1,4 +1,4 @@
-CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
+CYPRESS_CACHE_FOLDER = "/opt/build/repo/node_modules/CypressBinary/12.13.0/Cypress/Cypress"
 TERM = "xterm"
 [[plugins]]
   package = "netlify-plugin-cypress"
