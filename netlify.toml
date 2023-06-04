@@ -1,0 +1,9 @@
+[build]
+command = "npm run build"
+publish = "build"
+
+[build.environment]
+CYPRESS_CACHE_FOLDER = "/opt/buildhome/.cache/Cypress"
+TERM = "xterm"
+[[plugins]]
+  package = "netlify-plugin-cypress"
