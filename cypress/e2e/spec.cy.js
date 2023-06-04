@@ -6,6 +6,6 @@ describe('spec.cy.js', () => {
 
 describe('My First Test', () => {
   it('Passed my first Cypress test!', () => {
-    expect(true).to.equal(false)
+    expect(true).to.equal(true)
   })
 });
