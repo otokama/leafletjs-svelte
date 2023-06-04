@@ -4,8 +4,14 @@ describe('spec.cy.js', () => {
   }
 });
 
-describe('My First Test', () => {
-  it('Passed my first Cypress test!', () => {
+describe('My First Test Run', () => {
+  it('Failed my first Cypress test!', () => {
+    expect(true).to.equal(false)
+  })
+});
+
+describe('My Second Test Run', () => {
+  it('Passed my second Cypress test!', () => {
     expect(true).to.equal(true)
   })
 });
