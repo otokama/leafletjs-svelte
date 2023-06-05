@@ -18,3 +18,6 @@ jobs:
           build: npm run build
           start: npm run dev -- --port 8080 --host
           wait-on: 'http://localhost:8080'
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

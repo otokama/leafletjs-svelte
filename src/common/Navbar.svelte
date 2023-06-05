@@ -1,5 +1,4 @@
 <script>
-  import { page } from '$app/stores';
   import Fa from 'svelte-fa';
   import { faGithub } from '@fortawesome/free-brands-svg-icons';
   import { base } from '$app/paths';
@@ -13,14 +12,7 @@
   >
     LeafletJS-Svelte
   </a>
-  <!-- <a
-    class={$page.url.pathname === '/sandbox' ? 'active-link' : ''}
-    href='/sandbox'
-  >
-    Sandbox
-  </a> -->
   <a
-    class={$page.url.pathname.split('/')[1] === 'docs' ? 'active-link' : ''}
     href="{base}/docs/1-getting-started"
   >
     Docs
@@ -64,10 +56,6 @@
 
   nav a:hover {
     text-decoration: underline;
-    color: rgb(0, 116, 248);
-  }
-
-  .active-link {
     color: rgb(0, 116, 248);
   }
 
