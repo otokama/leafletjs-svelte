@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getContext, setContext, onDestroy } from 'svelte';
+  import { base } from '$app/paths';
 	import L from 'leaflet';
 	import type { Map, Marker, MarkerOptions, LatLng, LayerGroup, FeatureGroup } from 'leaflet';
 	export let latLng: LatLng;
@@ -11,9 +12,9 @@
   const getFeatureGroup: () => FeatureGroup = getContext(L.FeatureGroup);
   setContext(L.Layer, () => marker);
   
-  L.Icon.Default.prototype.options.iconUrl = '/marker-icon.png';
-  L.Icon.Default.prototype.options.shadowUrl = '/marker-shadow.png';
-  L.Icon.Default.prototype.options.iconRetinaUrl = '/marker-icon-2x.png';
+  L.Icon.Default.prototype.options.iconUrl = `${base}/asset/marker-icon.png`;
+  L.Icon.Default.prototype.options.shadowUrl = `${base}/asset/marker-shadow.png`;
+  L.Icon.Default.prototype.options.iconRetinaUrl = `${base}/asset/marker-icon-2x.png`;
 
 	$: if (!marker) {
     marker = L.marker(latLng, options);

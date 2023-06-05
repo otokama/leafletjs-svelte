@@ -6,7 +6,7 @@ on:
         - main
 
 jobs:
-  cypress-test:
+  cypress-run:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -20,7 +20,7 @@ jobs:
           wait-on: 'http://localhost:8080'
   
   build_site:
-    needs: cypress-test
+    needs: cypress-run
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
