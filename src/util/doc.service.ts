@@ -1,4 +1,6 @@
 import type { DocFrontmatter, Docs } from "../routes/docs/types.js";
+import { dev } from "$app/environment";
+import { base } from "$app/paths";
 export async function getCategorizedDocs() {
   const allDocsFiles = import.meta.glob('/src/routes/docs/*.md');
   const iterableDocFiles = Object.entries(allDocsFiles);
@@ -18,7 +20,11 @@ export async function getCategorizedDocs() {
 
   let categorizedSummary = new Map<string, Docs[]>();
   for (let doc of allDocs) {
-    const { meta, path } = doc;
+    const { meta } = doc;
+    let { path } = doc;
+    if (!dev) {
+      path = base + path;
+    }
     if (!categorizedSummary.has(meta.category)) {
       categorizedSummary.set(meta.category, [{
         title: meta.title,
