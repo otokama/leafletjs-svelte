@@ -16,7 +16,8 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           build: npm run build
-          start: npm start
+          start: npm run dev -- --port 8080 --host
+          wait-on: 'http://localhost:8080'
   
   build_site:
     runs-on: ubuntu-latest
