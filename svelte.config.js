@@ -17,8 +17,6 @@ const config = {
 
   kit: {
     adapter: adapter({
-      pages: 'build',
-      assets: 'build',
       fallback: undefined,
       precompress: false,
       strict: true
@@ -32,7 +30,23 @@ const config = {
         '/docs',
         '/sandbox',
         '/docs/1-getting-started',
+        '/docs/2-demo',
         '/docs/3-map-usage',
+        '/docs/4-marker',
+        '/docs/5-popup',
+        '/docs/6-tooltip',
+        '/docs/7-tilelayer',
+        '/docs/8-tilelayerwms',
+        '/docs/9-imageoverlay',
+        '/docs/10-videooverlay',
+        '/docs/11-polyline',
+        '/docs/12-polygon',
+        '/docs/13-circle',
+        '/docs/14-circlemarker',
+        '/docs/15-rectangle',
+        '/docs/16-layergroup',
+        '/docs/17-featuregroup',
+        '/docs/18-geojson'
       ]
     }
   }

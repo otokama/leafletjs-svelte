@@ -21,7 +21,7 @@
   </a> -->
   <a
     class={$page.url.pathname.split('/')[1] === 'docs' ? 'active-link' : ''}
-    href={base + '/docs/1-getting-started'}
+    href="{base}/docs/1-getting-started"
   >
     Docs
   </a>
