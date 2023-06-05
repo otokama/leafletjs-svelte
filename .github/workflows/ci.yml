@@ -32,7 +32,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           build: npm run build
-          start: npm run dev -- --port 8080 --host
+          start: npm run dev -- --port 8080
           wait-on: 'http://localhost:8080'
           record: true
         env:
