@@ -1,11 +1,12 @@
 describe('spec.cy.js', () => {
   it('should visit'), () => {
     cy.visit('/');
+    expect(true).to.equal(true)
   }
 });
 
 describe('My First Test Run', () => {
-  it('Failed my first Cypress test!', () => {
+  it('Passed my first Cypress test!', () => {
     expect(true).to.equal(true)
   })
 });
