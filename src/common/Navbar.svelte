@@ -2,12 +2,13 @@
   import { page } from '$app/stores';
   import Fa from 'svelte-fa';
   import { faGithub } from '@fortawesome/free-brands-svg-icons';
+  import { base } from '$app/paths';
 </script>
 
 <nav>
   <a
     id='title'
-    href='/'
+    href="{base}/"
     style='margin-left: 1.3em; margin-right: auto;'
   >
     LeafletJS-Svelte
@@ -20,7 +21,7 @@
   </a> -->
   <a
     class={$page.url.pathname.split('/')[1] === 'docs' ? 'active-link' : ''}
-    href='/docs/1-getting-started'
+    href={base + '/docs/1-getting-started'}
   >
     Docs
   </a>
