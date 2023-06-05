@@ -1,4 +1,4 @@
-name: deploy
+name: Deploy
 
 on: 
     push:
@@ -6,13 +6,30 @@ on:
         - main
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
+  ci:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [19]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Cypress run
+      
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run:
+          npm ci
+      
+      - name: Run unit tests
+        run:
+          npm run test:unit
+      
+      - name: Run e2e tests
         uses: cypress-io/github-action@v5
         with:
           build: npm run build
@@ -23,7 +40,7 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
   
   build_site:
-    needs: cypress-run
+    needs: ci
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

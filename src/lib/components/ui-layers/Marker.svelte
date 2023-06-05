@@ -12,9 +12,9 @@
   const getFeatureGroup: () => FeatureGroup = getContext(L.FeatureGroup);
   setContext(L.Layer, () => marker);
   
-  L.Icon.Default.prototype.options.iconUrl = `${base}/asset/marker-icon.png`;
-  L.Icon.Default.prototype.options.shadowUrl = `${base}/asset/marker-shadow.png`;
-  L.Icon.Default.prototype.options.iconRetinaUrl = `${base}/asset/marker-icon-2x.png`;
+  L.Icon.Default.prototype.options.iconUrl = `${base}/leaflet-asset/marker-icon.png`;
+  L.Icon.Default.prototype.options.shadowUrl = `${base}/leaflet-asset/marker-shadow.png`;
+  L.Icon.Default.prototype.options.iconRetinaUrl = `${base}/leaflet-asset/leaflet-marker-icon-2x.png`;
 
 	$: if (!marker) {
     marker = L.marker(latLng, options);
