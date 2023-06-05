@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { GeoJSONOptions, MapOptions, TileLayerOptions } from 'leaflet';
 	import L from 'leaflet';
+  import { base } from '$app/paths';
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
   import GeoJson from '$lib/components/other-layers/GeoJSON.svelte';
@@ -21,7 +22,7 @@
 	};
 
   async function getGeoJSON() {
-    const res = await fetch('/geojson/example.geojson');
+    const res = await fetch(`${base}/geojson/example.geojson`);
     return await res.json();
   }
 
