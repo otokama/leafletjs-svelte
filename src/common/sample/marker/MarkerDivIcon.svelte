@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Map, MapOptions, TileLayerOptions, IconOptions } from 'leaflet';
+  import { base } from '$app/paths';
 	import L from 'leaflet';
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
@@ -30,7 +31,7 @@
     <Marker latLng={L.latLng([40.771133, -73.974187])}>
       <DivIcon options={{iconAnchor: [54, 54]}}>
         <div class='div-icon'>
-          <img src='/park_icon.png' alt='park_icon' style="width: 45px;">
+          <img src="{base}/park_icon.png" alt='park_icon' style="width: 45px;">
           <span>Central Park</span>
         </div>
       </DivIcon>
