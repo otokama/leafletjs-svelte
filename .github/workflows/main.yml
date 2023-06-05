@@ -6,7 +6,7 @@ on:
         - main
 
 jobs:
-  cypress-run:
+  cypress-test:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -20,6 +20,7 @@ jobs:
           wait-on: 'http://localhost:8080'
   
   build_site:
+    needs: cypress-test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,7 +37,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: 'https://otokama.github.io/leafletjs-svelte'
+          BASE_PATH: '/leafletjs-svelte'
         run: |
           npm run build
           touch build/.nojekyll
