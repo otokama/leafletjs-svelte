@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Map, MapOptions, TileLayerOptions, IconOptions } from 'leaflet';
+  import { base } from '$app/paths';
 	import L from 'leaflet';
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
@@ -22,7 +23,7 @@
   };
   
   const markerIconOptions: IconOptions = {
-    iconUrl: '/svelte_logo.svg',
+    iconUrl: `${base}/svelte_logo.svg`,
     iconSize: [35, 35]
   };
 
