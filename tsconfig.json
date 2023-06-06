@@ -8,6 +8,7 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"strict": true,
-		"moduleResolution": "NodeNext"
+		"moduleResolution": "NodeNext",
+    "types": ["vitest/globals"]
 	}
 }

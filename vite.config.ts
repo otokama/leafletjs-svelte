@@ -10,7 +10,7 @@ export default defineConfig({
       targets: [
         {
           src: './node_modules/leaflet/dist/images/*',
-          dest: 'asset/'
+          dest: 'leaflet-asset/'
         }
       ]
     })
