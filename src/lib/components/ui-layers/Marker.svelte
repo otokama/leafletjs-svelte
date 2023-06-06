@@ -6,15 +6,18 @@
 	export let latLng: LatLng;
 	export let options: MarkerOptions | undefined = undefined;
 	export let marker: Marker | undefined = undefined;
+  import { dev } from '$app/environment';
 
 	const getMap: () => Map = getContext(L);
   const getLayerGroup: () => LayerGroup = getContext(L.LayerGroup);
   const getFeatureGroup: () => FeatureGroup = getContext(L.FeatureGroup);
   setContext(L.Layer, () => marker);
   
-  L.Icon.Default.prototype.options.iconUrl = `${base}/leaflet-asset/marker-icon.png`;
-  L.Icon.Default.prototype.options.shadowUrl = `${base}/leaflet-asset/marker-shadow.png`;
-  L.Icon.Default.prototype.options.iconRetinaUrl = `${base}/leaflet-asset/leaflet-marker-icon-2x.png`;
+  if (!dev) {
+    L.Icon.Default.prototype.options.iconUrl = `${base}/leaflet-asset/marker-icon.png`;
+    L.Icon.Default.prototype.options.shadowUrl = `${base}/leaflet-asset/marker-shadow.png`;
+    L.Icon.Default.prototype.options.iconRetinaUrl = `${base}/leaflet-asset/leaflet-marker-icon-2x.png`;
+  }
 
 	$: if (!marker) {
     marker = L.marker(latLng, options);
