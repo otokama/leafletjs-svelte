@@ -1,7 +1,8 @@
 # Leafletjs-svelte 
 
-Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing support.
+Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing support (coming soon...).
 
+TODO:
 
 ## Components:
 
