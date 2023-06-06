@@ -1,8 +1,13 @@
 <script lang="ts">
 	import { getContext, setContext, onDestroy } from 'svelte';
 	import L from 'leaflet';
-	import type { Map, Marker, MarkerOptions, LatLng, LayerGroup, FeatureGroup } from 'leaflet';
-	export let latLng: LatLng;
+	import type { Map, Marker, MarkerOptions, LatLng, LayerGroup, FeatureGroup, Icon } from 'leaflet';
+	
+  import markerIconUrl from '../../leaflet-img/marker-icon.png';
+  import markerIcon2xUrl from '../../leaflet-img/marker-icon-2x.png';
+  import markerShadowUrl from '../../leaflet-img/marker-shadow.png';
+
+  export let latLng: LatLng;
 	export let options: MarkerOptions | undefined = undefined;
 	export let marker: Marker | undefined = undefined;
 
@@ -13,6 +18,15 @@
 
 	$: if (!marker) {
     marker = L.marker(latLng, options);
+    if (!options || !options.icon) {
+      const defaultIcon: Icon = L.icon({
+        iconUrl: markerIconUrl,
+        iconRetinaUrl: markerIcon2xUrl,
+        shadowUrl: markerShadowUrl,
+        shadowRetinaUrl: markerShadowUrl
+      });
+      marker.setIcon(defaultIcon);
+    }
     if (getLayerGroup) {
       marker.addTo(getLayerGroup());
     }
