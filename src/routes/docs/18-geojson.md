@@ -53,7 +53,7 @@ Represents a GeoJSON object or an array of GeoJSON objects. Allows you to parse 
     };
   </script>
 
-  <div class="map-container">
+  <div class="map-container geojson-map">
     <Leaflet options={mapOption}>
       <TileLayer tileURL={mapURL} options={tileLayerOption} />
       {#await getGeoJSON() then geojsonData}
