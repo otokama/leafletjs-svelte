@@ -42,7 +42,7 @@
 
 </script>
 
-<div class="map-container">
+<div class="map-container geojson-map">
   <Leaflet options={mapOption}>
     <TileLayer tileURL={mapURL} options={tileLayerOption} />
     {#await getGeoJSON() then geojsonData}
