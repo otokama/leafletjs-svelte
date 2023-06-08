@@ -152,16 +152,16 @@ main {
   }
 }
 
-/* hiding leaflet tooltip triangle */
-.doc .leaflet-tooltip-top:before, 
-.leaflet-tooltip-bottom:before, 
-.leaflet-tooltip-left:before, 
+/* hiding leaflet tooltip triangle in GeoJSON example */
+.geojson-map .leaflet-tooltip-top:before
+.leaflet-tooltip-bottom:before
+.leaflet-tooltip-left:before
 .leaflet-tooltip-right:before {
   border: none !important;
 }
 
 /* example geojson tooltip style */
-.doc .example-geojson-tooltip {
+.geojson-map .example-geojson-tooltip {
   font-family: 'Overpass Variable', sans-serif;
   font-size: 14px;
   font-weight: 500;

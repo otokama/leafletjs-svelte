@@ -22,8 +22,13 @@
       const defaultIcon: Icon = L.icon({
         iconUrl: markerIconUrl,
         iconRetinaUrl: markerIcon2xUrl,
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
         shadowUrl: markerShadowUrl,
-        shadowRetinaUrl: markerShadowUrl
+        shadowSize: [41, 41],
+        shadowRetinaUrl: markerShadowUrl,
+        tooltipAnchor: [16, -28]
       });
       marker.setIcon(defaultIcon);
     }

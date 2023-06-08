@@ -46,3 +46,8 @@ TODO:
 - [ ] Polygon
 - [ ] Rectangle
 - [ ] Multi-Rectangle
+
+## Misc:
+
+- [ ] E2E Testing
+- [ ] Component Testing
