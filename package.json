@@ -14,7 +14,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "coverage": "vitest run --coverage",
     "test:e2e": "cypress run",
-    "test:unit": "cypress run --component",
+    "test:unit": "cypress run --component --record",
     "cypress": "cypress open",
     "gh-pages": "npm run build && npx gh-pages -d build",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
