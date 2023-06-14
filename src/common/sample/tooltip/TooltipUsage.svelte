@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Map, MapOptions, TileLayerOptions, IconOptions } from 'leaflet';
-  import L from 'leaflet';
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 	import Marker from '$lib/components/ui-layers/Marker.svelte';
@@ -27,11 +26,11 @@
 	<Leaflet bind:map options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
 
-    <Marker latLng={L.latLng([37.229572, -80.413940])} >
+    <Marker latLng={[37.229572, -80.413940]} >
       <Tooltip options={{direction: 'top', content: 'Blacksburg, VA', offset: [-15, -20]}} />
     </Marker>
     
-    <Marker latLng={L.latLng([37.12985, -80.40894])} >
+    <Marker latLng={[37.12985, -80.40894]} >
       <Tooltip options={{direction: 'left', offset: [-30, 0]}}>
         <span>Christiansburg, VA</span>
       </Tooltip>

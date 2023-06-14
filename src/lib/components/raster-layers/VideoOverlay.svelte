@@ -1,18 +1,18 @@
 <script lang="ts">
 	import { getContext, onDestroy } from 'svelte';
-	import L from 'leaflet';
+	import { leaflet as L } from '$lib/stores/leaflet.js';
 	import type { Map, LatLngBounds, VideoOverlay, VideoOverlayOptions } from 'leaflet';
 
 	export let video: string | string[] | HTMLVideoElement;
-  export let bounds: LatLngBounds;
+  export let bounds: LatLngBounds | number[][];
 	export let options: VideoOverlayOptions | undefined = undefined;
 	export let videoOverlay: VideoOverlay | undefined = undefined;
   
-	const getMap: () => Map = getContext(L);
+	const getMap: () => Map = getContext($L);
 
 	$: {
 		if (!videoOverlay) {
-			videoOverlay = L.videoOverlay(video, bounds, options).addTo(getMap());
+			videoOverlay = $L.videoOverlay(video, bounds as LatLngBounds, options).addTo(getMap());
 		}
 	}
 

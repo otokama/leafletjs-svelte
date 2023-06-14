@@ -1,6 +1,5 @@
 <script lang="ts">
-	import type { Map, MapOptions, TileLayerOptions, IconOptions } from 'leaflet';
-  import L from 'leaflet';
+	import type { Map, MapOptions, TileLayerOptions } from 'leaflet';
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
   import ImageOverlay from '$lib/components/raster-layers/ImageOverlay.svelte';
@@ -19,7 +18,7 @@
     subdomains: 'abcd'
   };
   const imageUrl = 'https://maps.lib.utexas.edu/maps/historical/newark_nj_1922.jpg';
-  const imageBounds = L.latLngBounds([[40.712216, -74.22655], [40.773941, -74.12544]]);
+  const imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
   const imageOverlayOptions = { opacity: 0.7 };
 </script>
 

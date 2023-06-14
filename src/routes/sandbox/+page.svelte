@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Map, MapOptions, TileLayerOptions } from 'leaflet';
-  import L from 'leaflet';
+  import type L from "leaflet/index.js";
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
   import Polygon from '$lib/components/vector-layers/Polygon.svelte';
@@ -37,12 +37,12 @@
 		[37.011326, -109.050293],
 		[41.004775, -109.083252]
 	];
-
+  let leaflet: typeof L;
   let layerGroup: L.LayerGroup;
   
-  $: if (layerGroup) {
+  $: if (layerGroup && leaflet) {
     layerGroup.eachLayer((layer) => {
-      layer.bindPopup(L.popup({ content: 'State Border' }))
+      layer.bindPopup(leaflet.popup({ content: 'State Border' }))
     });
   }
 
@@ -54,7 +54,7 @@
 </svelte:head>
 
 <div class="map-container">
-	<Leaflet bind:map options={mapOption}>
+	<Leaflet bind:map options={mapOption} bind:Leaflet={leaflet}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
     <LayerGroup bind:layerGroup>
       <Polygon latLngs={utahBorderCoor} />

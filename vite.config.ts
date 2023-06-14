@@ -6,9 +6,6 @@ export default defineConfig({
 	plugins: [
     sveltekit()
   ],
-	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
-	},
   server: {
     fs: {
       allow: [

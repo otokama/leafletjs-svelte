@@ -2,7 +2,11 @@
 
 Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing support (coming soon...).
 
-TODO:
+- Written in TypeScript.
+
+- Supports skipping initializing Leaflet in SSR environments but instead only hydrate maps on the client-side.
+
+### TODO:
 
 ## Components:
 
@@ -47,7 +51,7 @@ TODO:
 - [ ] Rectangle
 - [ ] Multi-Rectangle
 
-## Misc:
+## Testing:
 
 - [ ] E2E Testing
 - [ ] Component Testing

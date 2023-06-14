@@ -1,19 +1,19 @@
 <script lang='ts'>
   import { getContext, onDestroy, setContext } from 'svelte';
 	import type { Map, CircleMarker, CircleMarkerOptions, LatLng, LayerGroup, FeatureGroup } from 'leaflet';
-	import L from 'leaflet';
+	import { leaflet as L } from '$lib/stores/leaflet.js';
 
   export let latLng: LatLng | number[];
 	export let options: CircleMarkerOptions = { radius: 10 };
   export let circleMarker: CircleMarker | undefined = undefined;
 
-  const getMap: () => Map = getContext(L);
-  const getLayerGroup: () => LayerGroup = getContext(L.LayerGroup);
-  const getFeatureGroup: () => FeatureGroup = getContext(L.FeatureGroup);
-  setContext(L.Layer, () => circleMarker);
+  const getMap: () => Map = getContext($L);
+  const getLayerGroup: () => LayerGroup = getContext($L.LayerGroup);
+  const getFeatureGroup: () => FeatureGroup = getContext($L.FeatureGroup);
+  setContext($L.Layer, () => circleMarker);
 
   $: if (!circleMarker) {
-    circleMarker = L.circleMarker(latLng as LatLng, options);
+    circleMarker = $L.circleMarker(latLng as LatLng, options);
     if (getLayerGroup) {
       circleMarker.addTo(getLayerGroup());
     }
@@ -21,7 +21,7 @@
       circleMarker.addTo(getFeatureGroup());
     }
     if (!getLayerGroup && !getFeatureGroup){
-      circleMarker = L.circleMarker(latLng as LatLng, options).addTo(getMap());
+      circleMarker = $L.circleMarker(latLng as LatLng, options).addTo(getMap());
     }
   }
 

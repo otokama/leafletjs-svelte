@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Map, MapOptions, TileLayerOptions, IconOptions } from 'leaflet';
   import { base } from '$app/paths';
-	import L from 'leaflet';
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 	import Marker from '$lib/components/ui-layers/Marker.svelte';
@@ -33,7 +32,7 @@
 	<Leaflet bind:map options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
 
-    <Marker latLng={L.latLng([40.6501, -73.9495800])}>
+    <Marker latLng={[40.6501, -73.9495800]}>
       <Icon options={markerIconOptions} />
     </Marker>
  

@@ -1,25 +1,25 @@
 <script lang="ts">
 	import { getContext, setContext, onDestroy } from 'svelte';
-	import L from 'leaflet';
+  import { leaflet as L } from '$lib/stores/leaflet.js';
 	import type { Map, Marker, MarkerOptions, LatLng, LayerGroup, FeatureGroup, Icon } from 'leaflet';
 	
   import markerIconUrl from '../../leaflet-img/marker-icon.png';
   import markerIcon2xUrl from '../../leaflet-img/marker-icon-2x.png';
   import markerShadowUrl from '../../leaflet-img/marker-shadow.png';
 
-  export let latLng: LatLng;
+  export let latLng: LatLng | number[];
 	export let options: MarkerOptions | undefined = undefined;
 	export let marker: Marker | undefined = undefined;
 
-	const getMap: () => Map = getContext(L);
-  const getLayerGroup: () => LayerGroup = getContext(L.LayerGroup);
-  const getFeatureGroup: () => FeatureGroup = getContext(L.FeatureGroup);
-  setContext(L.Layer, () => marker);
+	const getMap: () => Map = getContext($L);
+  const getLayerGroup: () => LayerGroup = getContext($L.LayerGroup);
+  const getFeatureGroup: () => FeatureGroup = getContext($L.FeatureGroup);
+  setContext($L.Layer, () => marker);
 
 	$: if (!marker) {
-    marker = L.marker(latLng, options);
+    marker = $L.marker(latLng as LatLng, options);
     if (!options || !options.icon) {
-      const defaultIcon: Icon = L.icon({
+      const defaultIcon: Icon = $L.icon({
         iconUrl: markerIconUrl,
         iconRetinaUrl: markerIcon2xUrl,
         iconSize: [25, 41],

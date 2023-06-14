@@ -1,19 +1,19 @@
 <script lang='ts'>
   import { getContext, onDestroy, setContext } from 'svelte';
 	import type { Map, Circle, CircleOptions, LatLng, LayerGroup, FeatureGroup } from 'leaflet';
-	import L from 'leaflet';
+  import { leaflet as L} from '$lib/stores/leaflet.js';
 
   export let latLng: LatLng | number[];
 	export let options: CircleOptions = { radius: 200 };
   export let circle: Circle | undefined = undefined;
 
-  const getMap: () => Map = getContext(L);
-  const getLayerGroup: () => LayerGroup = getContext(L.LayerGroup);
-  const getFeatureGroup: () => FeatureGroup = getContext(L.FeatureGroup);
-  setContext(L.Layer, () => circle);
+  const getMap: () => Map = getContext($L);
+  const getLayerGroup: () => LayerGroup = getContext($L.LayerGroup);
+  const getFeatureGroup: () => FeatureGroup = getContext($L.FeatureGroup);
+  setContext($L.Layer, () => circle);
 
   $: if (!circle) {
-    circle = L.circle(latLng as LatLng, options);
+    circle = $L.circle(latLng as LatLng, options);
     if (getLayerGroup) {
       circle.addTo(getLayerGroup());
     }
