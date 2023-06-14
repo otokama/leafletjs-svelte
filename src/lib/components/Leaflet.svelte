@@ -1,32 +1,47 @@
 <script lang="ts">
-	import L from 'leaflet';
-	import { createEventDispatcher, setContext } from 'svelte';
-	import type { Map, MapOptions, LatLngBounds } from 'leaflet';
+	import { createEventDispatcher, onDestroy, onMount, setContext } from 'svelte';
+	import { leaflet } from '../stores/leaflet.js';
+  import type { Map, MapOptions, LatLngBounds} from 'leaflet';
+  import type L from "leaflet/index.js";
+
 
 	export let map: Map | undefined = undefined;
 	export let options: MapOptions | undefined = undefined;
 	export let bounds: LatLngBounds | undefined = undefined;
 	export let height: string = '100%';
 	export let width: string = '100%';
+  export let Leaflet: typeof L | undefined = undefined;
+  
+  let mapEle: HTMLElement;
+  
+  $: if ($leaflet) {
+    setContext($leaflet, () => map);
+  }
 
-	setContext(L, () => map);
+  onMount(async () => {
+    const L = (await import('leaflet')).default;
+    $leaflet = L;
+    Leaflet = L;
+    if (mapEle) {
+      map = L.map(mapEle, options);
+      if (bounds && map) {
+        map.fitBounds(bounds);
+      }
+      if (window.Cypress) {
+        window.leafletmap = map;
+      }
+    }
+  });
 
-	function initLeaflet(node: any) {
-		map = L.map(node, options);
-		if (bounds) {
-			map.fitBounds(bounds);
-		}
-		return {
-			destroy: () => {
-				if (map) {
-					map.remove();
-				}
-			}
-		};
-	}
+  onDestroy(() => {
+    if (map) {
+      map.remove();
+    }
+  });
+  
 </script>
 
-<div style={`height:${height}; width:${width};`} use:initLeaflet>
+<div style={`height:${height}; width:${width};`} bind:this={mapEle}>
 	{#if map}
 		<slot />
 	{/if}

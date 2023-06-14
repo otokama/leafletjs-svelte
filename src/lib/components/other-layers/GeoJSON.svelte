@@ -1,19 +1,19 @@
 <script lang='ts'>
   import { setContext, getContext, onDestroy } from "svelte";
   import type { Map, GeoJSON, GeoJSONOptions, LayerGroup, FeatureGroup } from "leaflet";
-  import L from 'leaflet';
+  import { leaflet as L } from '$lib/stores/leaflet.js';
   
   export let data: any = undefined;
   export let geojson: GeoJSON | undefined = undefined;
   export let options: GeoJSONOptions | undefined = undefined;
 
-  const getMap: () => Map = getContext(L);
-  const getLayerGroup: () => LayerGroup = getContext(L.LayerGroup);
-  const getFeatureGroup: () => FeatureGroup = getContext(L.FeatureGroup);
-  setContext(L.Layer, () => geojson);
+  const getMap: () => Map = getContext($L);
+  const getLayerGroup: () => LayerGroup = getContext($L.LayerGroup);
+  const getFeatureGroup: () => FeatureGroup = getContext($L.FeatureGroup);
+  setContext($L.Layer, () => geojson);
   
   $: if (!geojson) {
-    geojson = L.geoJSON(data, options);
+    geojson = $L.geoJSON(data, options);
     if (getLayerGroup) {
       geojson.addTo(getLayerGroup());
     }

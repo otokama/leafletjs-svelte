@@ -10,7 +10,7 @@ order: 18
 
 # GeoJSON
 
-Represents a GeoJSON object or an array of GeoJSON objects. Allows you to parse GeoJSON data and display it on the map.
+Parse GeoJSON data and display it on the map.
 
 ### GeoJSON Properties
 

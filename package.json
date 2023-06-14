@@ -1,7 +1,7 @@
 {
   "name": "leafletjs-svelte",
-  "version": "0.0.3",
-  "description": "Svelte component for LeafletJS",
+  "version": "0.0.4",
+  "description": "Svelte component for LeafletJS written in TypeScript, supports SSR context.",
   "license": "MIT",
   "scripts": {
     "dev": "vite dev",
@@ -12,9 +12,9 @@
     "prepublishOnly": "npm run package",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "test:unit": "vitest",
     "coverage": "vitest run --coverage",
     "test:e2e": "cypress run",
+    "test:unit": "cypress run --component --record",
     "cypress": "cypress open",
     "gh-pages": "npm run build && npx gh-pages -d build",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
@@ -29,7 +29,8 @@
   "files": [
     "dist",
     "!dist/**/*.test.*",
-    "!dist/**/*.spec.*"
+    "!dist/**/*.spec.*",
+    "!dist/**/*.cy.*"
   ],
   "peerDependencies": {
     "svelte": "^3.59.1"
@@ -56,7 +57,7 @@
     "@typescript-eslint/parser": "^5.59.6",
     "@vitest/coverage-c8": "^0.31.4",
     "@vitest/ui": "^0.31.4",
-    "cypress": "^12.13.0",
+    "cypress": "^12.14.0",
     "eslint": "^8.41.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-svelte": "^2.28.0",
@@ -84,6 +85,13 @@
     "leaflet": "^1.9.4"
   },
   "homepage": "https://otokama.github.io/leafletjs-svelte/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/otokama/leafletjs-svelte"
+  },
+  "bugs": {
+    "url": "https://github.com/otokama/leafletjs-svelte/issues"
+  },
   "keywords": [
     "svelte",
     "leaflet"

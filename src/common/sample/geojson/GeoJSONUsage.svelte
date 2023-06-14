@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { GeoJSONOptions, MapOptions, TileLayerOptions } from 'leaflet';
-	import L from 'leaflet';
   import { base } from '$app/paths';
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';

@@ -10,6 +10,8 @@ order: 10
 
 # VideoOverlay
 
+Used to load and display a video player over specific bounds of the map.
+
 ### VideoOverlay Properties
 
 <div class='doc-table-container'>

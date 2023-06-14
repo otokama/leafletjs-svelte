@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 	import type { Marker, DivIcon, DivIconOptions } from 'leaflet';
-	import L from 'leaflet';
+  import { leaflet as L } from '$lib/stores/leaflet.js';
 
 	export let options: DivIconOptions = {};
 	let divIcon: DivIcon;
-	let getMarker: () => Marker = getContext(L.Layer);
+	let getMarker: () => Marker = getContext($L.Layer);
 
 	let divIconHtml: HTMLElement;
 
 	$: if (!divIcon && divIconHtml) {
     if (divIconHtml.innerHTML) {
-      divIcon = L.divIcon({
+      divIcon = $L.divIcon({
         html: divIconHtml.innerHTML,
         className: 'div-icon-marker',
         ...options

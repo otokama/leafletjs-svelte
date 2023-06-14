@@ -10,6 +10,8 @@ order: 9
 
 # ImageOverlay
 
+Used to load and display a single image over specific bounds of the map.
+
 ### ImageOverlay Properties
 
 <div class='doc-table-container'>

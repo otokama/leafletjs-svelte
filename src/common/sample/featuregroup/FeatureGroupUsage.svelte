@@ -1,11 +1,10 @@
 <script lang="ts">
 	import type { MapOptions, TileLayerOptions } from 'leaflet';
-	import L from 'leaflet';
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 	import Polygon from '$lib/components/vector-layers/Polygon.svelte';
 	import FeatureGroup from '$lib/components/other-layers/FeatureGroup.svelte';
-
+  import type L from 'leaflet/index.js';
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {
 		center: [39.554883059924016, -107.55517578125001],
@@ -46,15 +45,15 @@
 	];
 
 	let featureGroup: L.FeatureGroup;
-
-  $: if (featureGroup) {
-    featureGroup.bindTooltip(L.tooltip({ content: 'State Border' }));
+  let leaflet: typeof L;
+  $: if (featureGroup && leaflet) {
+    featureGroup.bindTooltip(leaflet.tooltip({ content: 'State Border' }));
   }
 
 </script>
 
 <div class="map-container">
-	<Leaflet options={mapOption}>
+	<Leaflet options={mapOption} bind:Leaflet={leaflet}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
 		<FeatureGroup bind:featureGroup>
       <Polygon latLngs={coloradoBorderCoor} />

@@ -1,19 +1,19 @@
 <script lang='ts'>
   import { getContext, onDestroy, setContext } from 'svelte';
 	import type { Map, Polyline, PolylineOptions, LatLng, LayerGroup, FeatureGroup } from 'leaflet';
-	import L from 'leaflet';
+	import { leaflet as L } from '$lib/stores/leaflet.js';
 
   export let latLngs: LatLng[] | number[][];
 	export let options: PolylineOptions = {};
   export let polyline: Polyline | undefined = undefined;
 
-  const getMap: () => Map = getContext(L);
-  const getLayerGroup: () => LayerGroup = getContext(L.LayerGroup);
-  const getFeatureGroup: () => FeatureGroup = getContext(L.FeatureGroup);
-  setContext(L.Layer, () => polyline);
+  const getMap: () => Map = getContext($L);
+  const getLayerGroup: () => LayerGroup = getContext($L.LayerGroup);
+  const getFeatureGroup: () => FeatureGroup = getContext($L.FeatureGroup);
+  setContext($L.Layer, () => polyline);
 
   $: if (!polyline) {
-    polyline = L.polyline(latLngs as LatLng[], options);
+    polyline = $L.polyline(latLngs as LatLng[], options);
 
     if (getLayerGroup) {
       polyline.addTo(getLayerGroup());
