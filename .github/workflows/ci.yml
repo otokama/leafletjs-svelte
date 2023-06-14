@@ -26,12 +26,8 @@ jobs:
           npm ci
       
       - name: Run unit tests
-        uses: cypress-io/github-action@v5
         run:
           npm run test:unit
-        with:
-          build: npm run build
-          record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       
