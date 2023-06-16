@@ -6,11 +6,10 @@ order: 1
 
 # Installation
 
-Make sure you have at least `node v14.0` installed.
   ```bash
-  $ npm install -D leafletjs-svelte leaflet
+  $ npm install -D leafletjs-svelte
   ```
-Import stylesheet for Leaflet in your app entry point, or in `src/routes/layout.svelte`:
+Import stylesheet for Leaflet in your app entry point:
   ```js
   import 'leaflet/dist/leaflet.css';
   ```

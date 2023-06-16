@@ -27,7 +27,6 @@ const config = {
     prerender: {
       entries: [
         '/',
-        '/docs',
         '/sandbox',
         '/docs/1-getting-started',
         '/docs/2-demo',

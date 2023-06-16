@@ -1,16 +1,27 @@
 # Leafletjs-svelte 
 
-Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing support (coming soon...).
-
+Svelte component for [LeafletJS](https://leafletjs.com/).
 - Written in TypeScript.
-
 - Supports skipping initializing Leaflet in SSR environments but instead only hydrate maps on the client-side.
+- Vector drawing support (coming soon...)
 
-### TODO:
+## Install
+
+  ```bash
+  $ npm install -D leafletjs-svelte
+  ```
+Import stylesheet for Leaflet in your app entry point:
+  ```js
+  import 'leaflet/dist/leaflet.css';
+  ```
+Component Import:
+  ```js
+  <script>
+    import { Leaflet } from 'leafletjs-svelte';
+  </script>
+  ```
 
 ## Components:
-
-- [x] Map
  
 **UI layers:**
 - [x] Marker
@@ -35,12 +46,9 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing sup
 - [x] FeatureGroup
 - [x] GeoJSON
 
-**Controls:**
-- [ ] Zoom
-- [ ] Layers
-- [ ] Scale
+## Supported Plugins:
 
-## Vector Drawing:
+### Vector Drawing (In progress...):
 
 - [ ] Circle
 - [ ] CircleMarker
@@ -50,8 +58,3 @@ Svelte component for [LeafletJS](https://leafletjs.com/) with vector drawing sup
 - [ ] Polygon
 - [ ] Rectangle
 - [ ] Multi-Rectangle
-
-## Testing:
-
-- [ ] E2E Testing
-- [ ] Component Testing
