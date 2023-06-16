@@ -1,5 +1,5 @@
 @import 'leaflet/dist/leaflet.css';
-
+@import '/src/styles/highlight/prism-base16-ateliersulphurpool.light.css';
 @import '@fontsource-variable/nunito';
 @import '@fontsource-variable/overpass';
 @import '@fontsource/jetbrains-mono';
@@ -32,6 +32,10 @@ main {
 
 .home-doc ul {
   padding-inline-start: 0.5em;
+}
+
+.home-doc li {
+  padding: 0.3em 0;
 }
 
 .home-doc .task-list-item {
@@ -74,13 +78,14 @@ main {
 }
 
 /* inline code */
-.doc p code {
-  padding: 0.15em 0.3em 0.15em 0.3em;
-  margin: auto 0.2em;
-  background-color: rgb(236, 236, 236);
-  border-radius: 0.2em;
+p code {
+  padding: 0.4em;
+  margin: 0 0.2em;
+  background-color: #e5eef5;
+  border-radius: 0.3em;
   font-size: 0.85em;
   letter-spacing: 0.5px;
+  white-space: nowrap;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   color: #444444;
 }

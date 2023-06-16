@@ -7,9 +7,8 @@ Svelte component for [LeafletJS](https://leafletjs.com/).
 
 ## Install
 
-Make sure you have at least `node v14.0` installed.
   ```bash
-  $ npm install -D leafletjs-svelte leaflet
+  $ npm install -D leafletjs-svelte
   ```
 Import stylesheet for Leaflet in your app entry point:
   ```js
@@ -23,8 +22,6 @@ Component Import:
   ```
 
 ## Components:
-
-- [x] Map
  
 **UI layers:**
 - [x] Marker
@@ -49,12 +46,9 @@ Component Import:
 - [x] FeatureGroup
 - [x] GeoJSON
 
-**Controls:**
-- [ ] Zoom
-- [ ] Layers
-- [ ] Scale
+## Supported Plugins:
 
-## Vector Drawing:
+### Vector Drawing (In progress...):
 
 - [ ] Circle
 - [ ] CircleMarker
@@ -64,8 +58,3 @@ Component Import:
 - [ ] Polygon
 - [ ] Rectangle
 - [ ] Multi-Rectangle
-
-## Testing:
-
-- [ ] E2E Testing
-- [ ] Component Testing
