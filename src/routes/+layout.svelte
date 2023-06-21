@@ -8,10 +8,6 @@
 
 <Navbar />
 
-{#key $page.url.pathname.slice(0, 5)}
-  <div in:fade={{duration: 150}}>
-    <main>
-      <slot />
-    </main>
-  </div>
-{/key}
+<main>
+  <slot />
+</main>
