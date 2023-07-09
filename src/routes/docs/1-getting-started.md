@@ -7,7 +7,7 @@ order: 1
 # Installation
   Node 16 or higher is required.
   ```bash
-  $ npm install -D leafletjs-svelte
+  $ npm install leaflet leafletjs-svelte
   ```
 Import stylesheet for Leaflet in your app entry point:
   ```js
