@@ -5,7 +5,7 @@ order: 1
 ---
 
 # Installation
-
+  Node 16 or higher is required.
   ```bash
   $ npm install -D leafletjs-svelte
   ```
