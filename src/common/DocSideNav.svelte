@@ -20,7 +20,7 @@
     {#if expandSideNav || tempExpandSideNav}
       <ul
         class='sidenav'
-        transition:slide|local={{duration: 200, axis: 'x'}}
+        transition:slide={{duration: 200, axis: 'x'}}
       >
         {#each categories as category}
           <span class="nav-title">{category}</span>
