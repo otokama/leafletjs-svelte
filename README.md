@@ -5,10 +5,10 @@ Svelte component for [LeafletJS](https://leafletjs.com/).
 - Supports skipping initializing Leaflet in SSR environments but instead only hydrate maps on the client-side.
 - Vector drawing support (coming soon...)
 
-## Install
-
+## Installation
+  Node 16 or higher is required.
   ```bash
-  $ npm install -D leafletjs-svelte
+  $ npm install leaflet leafletjs-svelte
   ```
 Import stylesheet for Leaflet in your app entry point:
   ```js
