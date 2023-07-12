@@ -4,10 +4,10 @@
 	import type { Map, LatLngBounds, VideoOverlay, VideoOverlayOptions } from 'leaflet';
 
 	export let video: string | string[] | HTMLVideoElement;
-  export let bounds: LatLngBounds | number[][];
+	export let bounds: LatLngBounds | number[][];
 	export let options: VideoOverlayOptions | undefined = undefined;
 	export let videoOverlay: VideoOverlay | undefined = undefined;
-  
+
 	const getMap: () => Map = getContext($L);
 
 	$: {
@@ -17,8 +17,8 @@
 	}
 
 	onDestroy(() => {
-    if (videoOverlay) {
-      videoOverlay.removeFrom(getMap())
-    }
-  });
+		if (videoOverlay) {
+			videoOverlay.removeFrom(getMap());
+		}
+	});
 </script>

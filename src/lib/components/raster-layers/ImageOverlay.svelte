@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { getContext, onDestroy } from 'svelte';
-  import { leaflet as L } from '$lib/stores/leaflet.js';
-	import type { Map, LatLngBounds,ImageOverlay, ImageOverlayOptions } from 'leaflet';
+	import { leaflet as L } from '$lib/stores/leaflet.js';
+	import type { Map, LatLngBounds, ImageOverlay, ImageOverlayOptions } from 'leaflet';
 
 	export let imageUrl: string;
-  export let bounds: LatLngBounds | number[][];
+	export let bounds: LatLngBounds | number[][];
 	export let options: ImageOverlayOptions | undefined = undefined;
 	export let imageOverlay: ImageOverlay | undefined = undefined;
-  
+
 	const getMap: () => Map = getContext($L);
 
 	$: {
@@ -17,8 +17,8 @@
 	}
 
 	onDestroy(() => {
-    if (imageOverlay) {
-      imageOverlay.removeFrom(getMap())
-    }
-  });
+		if (imageOverlay) {
+			imageOverlay.removeFrom(getMap());
+		}
+	});
 </script>
