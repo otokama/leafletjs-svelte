@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { getContext, onDestroy, onMount } from 'svelte';
+	import { getContext, onDestroy } from 'svelte';
 	import type { Map, TileLayer, TileLayerOptions } from 'leaflet';
-  import { leaflet as L } from '../../stores/leaflet.js';
+	import { leaflet as L } from '$lib/stores/leaflet.js';
 
 	export let tileURL: string;
 	export let options: TileLayerOptions | undefined = undefined;
 	export let tileLayer: TileLayer | undefined = undefined;
-  
+
 	const getMap: () => Map = getContext($L);
 
 	$: {
@@ -16,8 +16,8 @@
 	}
 
 	onDestroy(() => {
-    if (tileLayer) {
-      tileLayer.removeFrom(getMap())
-    }
-  });
+		if (tileLayer) {
+			tileLayer.removeFrom(getMap());
+		}
+	});
 </script>

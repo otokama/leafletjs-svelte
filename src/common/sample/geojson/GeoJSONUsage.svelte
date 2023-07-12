@@ -4,7 +4,6 @@
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
   import GeoJson from '$lib/components/other-layers/GeoJSON.svelte';
-	import FeatureGroup from '$lib/components/other-layers/FeatureGroup.svelte';
 
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {
