@@ -1,15 +1,15 @@
 <script>
-  import { fade } from 'svelte/transition';
-  import { page } from '$app/stores';
-  export let data;
+	import { page } from '$app/stores';
+	import { fade } from 'svelte/transition';
+	export let data;
 </script>
 
 <svelte:head>
-  <title>{data.docs.title} - Docs - leafletjs-svelte</title>
+	<title>{data.docs.title} - Docs - leafletjs-svelte</title>
 </svelte:head>
 
 {#key $page.url.pathname}
-  <div in:fade={{duration: 100}}>
-    <svelte:component this={data.content} />
-  </div>
+	<div in:fade={{ duration: 100 }}>
+		<svelte:component this={data.content} />
+	</div>
 {/key}
