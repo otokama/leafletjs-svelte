@@ -52,7 +52,7 @@
 </svelte:head>
 
 <div class="map-container">
-	<Leaflet bind:map options={mapOption} bind:Leaflet={leaflet}>
+	<Leaflet bind:map options={mapOption} bind:Leaflet={leaflet} enableDraw>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
 		<LayerGroup bind:layerGroup>
 			<Polygon latLngs={utahBorderCoor} />

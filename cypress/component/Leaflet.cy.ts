@@ -4,7 +4,7 @@ import * as L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 describe('Leaflet', () => {
-  it('mounts Leaflet map with a tilelayer', () => {
+  it('mounts Leaflet basemap with a tilelayer', () => {
     cy.mount(BaseMap);
     cy.window().should('have.property', 'leafletmap').then((mapObj: any) => {
       const map: Map = mapObj as Map;
