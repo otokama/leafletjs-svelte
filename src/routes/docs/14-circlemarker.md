@@ -30,14 +30,12 @@ A circle of a fixed size with radius specified in pixels.
   <CircleMarkerUsage />
 
   ```svelte
-  <Leaflet options={mapOption} >
+  <Leaflet options={mapOption}>
     <TileLayer tileURL={mapURL} options={tileLayerOption} />
-    
-    <Circle latLng={[47.61322, -122.3465]} options={{radius: 700}}/>
-    <Circle latLng={[47.600164266, -122.288998844]} options={{radius: 800}}>
-      <Tooltip options={{ content: 'Leschi, Seattle' }} />
-    </Circle>
-
+    <CircleMarker latLng={[47.61322, -122.3465]} options={{ radius: 20 }} />
+    <CircleMarker latLng={[47.600164266, -122.288998844]} options={{ color: 'green', radius: 30 }}>
+      <Tooltip options={{ content: 'Leschi, Seattle', offset: [35, 0] }} />
+    </CircleMarker>
   </Leaflet>
   ```
 
