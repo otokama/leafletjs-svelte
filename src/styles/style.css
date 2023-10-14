@@ -6,44 +6,44 @@
 @import '@fontsource/fira-mono';
 
 body {
-  margin: 0;
+	margin: 0;
 }
 
 main {
-  margin: 6em auto 5em auto;
-  max-width: 70em;
+	margin: 6em auto 5em auto;
+	max-width: 70em;
 }
 
 .leaflet-container {
-  z-index: 1;
+	z-index: 1;
 }
 
 /* Markdown Styling*/
 .home-doc {
-  margin: 0 1.5em;
-  font-family: 'Overpass Variable', sans-serif;
-  color: #343434;
+	margin: 0 1.5em;
+	font-family: 'Overpass Variable', sans-serif;
+	color: #343434;
 }
 
 .home-doc h2 {
-  padding: auto 2em;
-  border-block-end: solid 3px #1EB300;
+	padding: auto 2em;
+	border-block-end: solid 3px #1eb300;
 }
 
 .home-doc ul {
-  padding-inline-start: 0.5em;
+	padding-inline-start: 0.5em;
 }
 
 .home-doc li {
-  padding: 0.3em 0;
+	padding: 0.3em 0;
 }
 
 .home-doc .task-list-item {
-  margin-bottom: 0.4em;
+	margin-bottom: 0.4em;
 }
 
-.home-doc .task-list-item::marker{
-  content: '';
+.home-doc .task-list-item::marker {
+	content: '';
 }
 
 /* .home-doc .task-list-item [type='checkbox']:disabled {
@@ -51,129 +51,133 @@ main {
 } */
 
 .doc {
-  font-family: 'Overpass Variable', sans-serif;
-  transition: 50ms;
-  margin: 0 1em 0 1em;
+	font-family: 'Overpass Variable', sans-serif;
+	transition: 50ms;
+	margin: 0 1em 0 1em;
 }
 
 @media screen and (min-width: 764px) {
-  .home-doc {
-    margin: 5em 7em;
-  }
-  .doc {
-    margin: 0 2em 0 2em;
-  }
+	.home-doc {
+		margin: 5em 7em;
+	}
+	.doc {
+		margin: 0 2em 0 2em;
+	}
 }
 
 .sidenav-doc {
-  margin: 0 1.5em 0 14.5rem;
+	margin: 0 1.5em 0 14.5rem;
 }
 
-.doc h1, h2, h3 {
-  font-weight: 500;
+.doc h1,
+h2,
+h3 {
+	font-weight: 500;
 }
 
 .doc p {
-  color: #444444;
+	color: #444444;
 }
 
 /* inline code */
 p code {
-  padding: 0.4em;
-  margin: 0 0.2em;
-  background-color: #e5eef5;
-  border-radius: 0.3em;
-  font-size: 0.85em;
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  color: #444444;
-}
+	padding: 0.4em;
+	margin: 0 0.2em;
+	background-color: #e5eef5;
+	border-radius: 0.3em;
+	font-size: 0.85em;
+	letter-spacing: 0.5px;
+	white-space: nowrap;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	color: #444444;
+}Ø
 
 /* table */
 .doc-table-container {
-  overflow-x: auto;
+	overflow-x: auto;
 }
 
 .doc table {
-  border-collapse: collapse;
-  width: 100%;
-  color: #444444;
+	border-collapse: collapse;
+	width: 100%;
+	color: #444444;
 }
 
-.doc table td, th {
-  border: 1px solid #eeeeee;
-  padding: 0.5em 1em;
+.doc table td,
+th {
+	border: 1px solid #eeeeee;
+	padding: 0.5em 1em;
 }
 
 .doc table th {
-  padding-top: 0.6em;
-  padding-bottom: 0.3em;
-  text-align: left;
-  background-color: #ececec;
-  font-size: 15px;
+	padding-top: 0.6em;
+	padding-bottom: 0.3em;
+	text-align: left;
+	background-color: #ececec;
+	font-size: 15px;
 }
 
 .doc table td {
-  font-weight: 300;
-  font-size: 15px;
+	font-weight: 300;
+	font-size: 15px;
 }
 
 .doc table td code {
-  font-size: 14px;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 14px;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
 .language-svelte {
-  margin: 0;
+	margin: 0;
 }
 
 .div-icon-marker {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 .example {
-  margin: auto 1em;
-  border: solid 1px rgb(219, 219, 219);
-  border-radius: 0.4em;
-  overflow: hidden;
-  box-shadow: rgb(224, 224, 224) 1px 2px 0.5em;
+	margin: auto 1em;
+	border: solid 1px rgb(219, 219, 219);
+	border-radius: 0.4em;
+	overflow: hidden;
+	box-shadow: rgb(224, 224, 224) 1px 2px 0.5em;
 }
 
 @media screen and (min-width: 764px) {
-  .example {
-    margin: auto 5em;
-  }
+	.example {
+		margin: auto 5em;
+	}
 }
 
 /* map container in examples */
 .map-container {
-  height: 300px;
+	height: 300px;
 }
 
 @media screen and (min-width: 764px) {
-  .map-container {
-    height: 400px;
-  }
+	.map-container {
+		height: 400px;
+	}
 }
 
 /* hiding leaflet tooltip triangle in GeoJSON example */
-.geojson-map .leaflet-tooltip-top:before
-.leaflet-tooltip-bottom:before
-.leaflet-tooltip-left:before
-.leaflet-tooltip-right:before {
-  border: none !important;
+.geojson-map
+	.leaflet-tooltip-top:before
+	.leaflet-tooltip-bottom:before
+	.leaflet-tooltip-left:before
+	.leaflet-tooltip-right:before {
+	border: none !important;
 }
 
 /* example geojson tooltip style */
 .geojson-map .example-geojson-tooltip {
-  font-family: 'Overpass Variable', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  background-color: rgb(246, 246, 246);
-  backdrop-filter: blur(10px);
-  border-radius: 0.3em;
-  border: none;
-  box-shadow: none;
-  padding: 0.4em 0.6em 0.2em 0.6em;
+	font-family: 'Overpass Variable', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	background-color: rgb(246, 246, 246);
+	backdrop-filter: blur(10px);
+	border-radius: 0.3em;
+	border: none;
+	box-shadow: none;
+	padding: 0.4em 0.6em 0.2em 0.6em;
 }

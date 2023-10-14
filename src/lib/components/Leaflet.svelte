@@ -3,8 +3,8 @@
 
 	import type LeafletType from 'leaflet';
 	import { onDestroy, onMount, setContext } from 'svelte';
-	import { leaflet } from '../stores/leaflet.js';
 	import fixEditCircleClass from '../../misc/fix-edit-circle.js';
+	import { leaflet } from '../stores/leaflet.js';
 	export let map: Map | undefined = undefined;
 	export let options: MapOptions | undefined = undefined;
 	export let bounds: LatLngBounds | undefined = undefined;
@@ -15,15 +15,15 @@
 	export let onMapReady: ((map: L.Map) => void) | undefined = undefined;
 
 	let mapEle: HTMLElement;
-  let leafletDraw: any;
+	let leafletDraw: any;
 
 	$: if ($leaflet) {
 		setContext($leaflet, () => map);
 	}
 
-  $: if (leafletDraw) {
-    fixEditCircleClass();
-  }
+	$: if (leafletDraw) {
+		fixEditCircleClass();
+	}
 
 	onMount(async () => {
 		var L = await import('leaflet');
@@ -37,7 +37,7 @@
 
 			if (enableDraw) {
 				leafletDraw = await import('leaflet-draw');
-        await import("leaflet-draw/dist/leaflet.draw-src.css");
+				await import('leaflet-draw/dist/leaflet.draw-src.css');
 				(window as any).type = Symbol();
 
 				const drawnItems = new L.FeatureGroup();
