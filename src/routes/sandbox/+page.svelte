@@ -62,11 +62,11 @@
 		});
 	};
 
-	const addLayer = (layerGroup: L.LayerGroup) => {
-		layerGroup.eachLayer((layer) => {
-			layer.bindPopup(L.popup({ content: 'State Border' }));
-		});
-	};
+	// const addLayer = (layerGroup: L.LayerGroup) => {
+	// 	layerGroup.eachLayer((layer) => {
+	// 		layer.bindPopup(L.popup({ content: 'State Border' }));
+	// 	});
+	// };
 </script>
 
 <svelte:head>
@@ -77,13 +77,13 @@
 	<div class="debug-map-container">
 		<Leaflet options={mapOption} bind:Leaflet={L} {onMapReady} enableDraw>
 			<TileLayer tileURL={mapURL} options={tileLayerOption} />
-			<LayerGroup onLayerGroupReady={addLayer}>
+			<!-- <LayerGroup onLayerGroupReady={addLayer}>
 				<Polygon latLngs={utahBorderCoor} />
 				<Polygon latLngs={wyBorderCoor} />
-			</LayerGroup>
-			<Polygon latLngs={coloradoBorderCoor}>
+			</LayerGroup> -->
+			<!-- <Polygon latLngs={coloradoBorderCoor}>
 				<Tooltip options={{ direction: 'top' }}>Colorado</Tooltip>
-			</Polygon>
+			</Polygon> -->
 		</Leaflet>
 	</div>
 
@@ -109,9 +109,22 @@
 	}
 
 	#geojson-renderer {
-		font-size: 0.85em;
-		letter-spacing: 0.5px;
-		font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-		color: #444444;
+		font-family: 'Fira Mono', 'Ubuntu Mono', monospace;
+		font-size: 13px;
+		line-height: 1.4;
+		direction: ltr;
+		text-align: left;
+		white-space: pre;
+		word-spacing: normal;
+		word-break: normal;
+		-moz-tab-size: 4;
+		-o-tab-size: 4;
+		tab-size: 4;
+		-webkit-hyphens: none;
+		-moz-hyphens: none;
+		-ms-hyphens: none;
+		hyphens: none;
+		background: #f6fafd;
+		color: #5e6687;
 	}
 </style>
