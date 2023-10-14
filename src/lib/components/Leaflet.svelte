@@ -3,7 +3,7 @@
 
 	import type LeafletType from 'leaflet';
 	import { onDestroy, onMount, setContext } from 'svelte';
-	import fixEditCircleClass from '../../misc/fix-edit-circle.js';
+	import fixEditCircleClass from '../misc/fix-edit-circle.js';
 	import { leaflet } from '../stores/leaflet.js';
 	export let map: Map | undefined = undefined;
 	export let options: MapOptions | undefined = undefined;
