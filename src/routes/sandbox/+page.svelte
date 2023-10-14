@@ -4,10 +4,11 @@
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 	import Tooltip from '$lib/components/ui-layers/Tooltip.svelte';
 	import Polygon from '$lib/components/vector-layers/Polygon.svelte';
-	import type { Map, MapOptions, TileLayerOptions } from 'leaflet';
-	import type L from 'leaflet/index.js';
+	import type { DrawLayerType } from '$lib/types/DrawLayerTypes.js';
+	import { layerToGeojson } from '$lib/util/draw-helpers.js';
+	import type LType from 'leaflet';
+	import type { MapOptions, TileLayerOptions } from 'leaflet';
 
-	let map: Map;
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {
 		center: [39.554883059924016, -111.55517578125001],
@@ -37,37 +38,80 @@
 		[37.011326, -109.050293],
 		[41.004775, -109.083252]
 	];
-	let leaflet: typeof L;
-	let layerGroup: L.LayerGroup;
 
-	$: if (layerGroup && leaflet) {
-		layerGroup.eachLayer((layer) => {
-			layer.bindPopup(leaflet.popup({ content: 'State Border' }));
-		});
+	const wyBorderCoor = [
+		[45.011419, -111.060791],
+		[41.004775, -111.060791],
+		[41.004775, -104.0625],
+		[45.003651, -104.0625],
+		[45.011419, -111.060791]
+	];
+	let L: typeof LType;
+	let formattedGeojsonStr: string = '';
+	let geojsonRenderer: HTMLElement;
+
+	$: if (geojsonRenderer) {
+		geojsonRenderer.innerText = formattedGeojsonStr;
 	}
+
+	const onMapReady = (map: LType.Map) => {
+		map.on('draw:created', (e: any) => {
+			const layer: L.Layer = e.layer;
+			const layerType: DrawLayerType = e.layerType;
+			formattedGeojsonStr = JSON.stringify(layerToGeojson(layer, layerType), undefined, 2);
+		});
+	};
+
+	const addLayer = (layerGroup: L.LayerGroup) => {
+		layerGroup.eachLayer((layer) => {
+			layer.bindPopup(L.popup({ content: 'State Border' }));
+		});
+	};
 </script>
 
 <svelte:head>
 	<title>Sandbox - leafletjs-svelte</title>
 </svelte:head>
 
-<div class="map-container">
-	<Leaflet bind:map options={mapOption} bind:Leaflet={leaflet} enableDraw>
-		<TileLayer tileURL={mapURL} options={tileLayerOption} />
-		<LayerGroup bind:layerGroup>
-			<Polygon latLngs={utahBorderCoor} />
-		</LayerGroup>
-		<Polygon latLngs={coloradoBorderCoor}>
-			<Tooltip options={{ direction: 'top' }}>Colorado</Tooltip>
-		</Polygon>
-	</Leaflet>
+<div class="example">
+	<div class="debug-map-container">
+		<Leaflet options={mapOption} bind:Leaflet={L} {onMapReady} enableDraw>
+			<TileLayer tileURL={mapURL} options={tileLayerOption} />
+			<LayerGroup onLayerGroupReady={addLayer}>
+				<Polygon latLngs={utahBorderCoor} />
+				<Polygon latLngs={wyBorderCoor} />
+			</LayerGroup>
+			<Polygon latLngs={coloradoBorderCoor}>
+				<Tooltip options={{ direction: 'top' }}>Colorado</Tooltip>
+			</Polygon>
+		</Leaflet>
+	</div>
+
+	<div class="debug-view">
+		{#if formattedGeojsonStr}
+			<p style="margin: 0;">GeoJSON created:</p>
+			<pre bind:this={geojsonRenderer} id="geojson-renderer" />
+		{/if}
+	</div>
 </div>
 
 <style>
-	.map-container {
-		height: 550px;
-		min-width: 600px;
-		margin: 0.5em 1em;
-		box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 1rem;
+	.debug-map-container {
+		height: 40vh;
+	}
+
+	.debug-view {
+		height: 40vh;
+		font-family: 'Overpass Variable', sans-serif;
+		padding: 1em;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+
+	#geojson-renderer {
+		font-size: 0.85em;
+		letter-spacing: 0.5px;
+		font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+		color: #444444;
 	}
 </style>
