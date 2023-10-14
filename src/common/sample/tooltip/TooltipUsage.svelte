@@ -3,9 +3,8 @@
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 	import Marker from '$lib/components/ui-layers/Marker.svelte';
 	import Tooltip from '$lib/components/ui-layers/Tooltip.svelte';
-	import type { Map, MapOptions, TileLayerOptions } from 'leaflet';
+	import type { MapOptions, TileLayerOptions } from 'leaflet';
 
-	let map: Map;
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {
 		center: [37.229572, -80.41394],
@@ -22,7 +21,7 @@
 </script>
 
 <div class="map-container">
-	<Leaflet bind:map options={mapOption}>
+	<Leaflet options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
 
 		<Marker latLng={[37.229572, -80.41394]}>

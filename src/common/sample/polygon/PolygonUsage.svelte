@@ -6,7 +6,6 @@
 	import Polygon from '$lib/components/vector-layers/Polygon.svelte';
 	import type { MapOptions, TileLayerOptions } from 'leaflet';
 
-	let map: L.Map;
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {
 		center: [39.35129, -108.495483],
@@ -39,7 +38,7 @@
 </script>
 
 <div class="map-container">
-	<Leaflet options={mapOption} bind:map>
+	<Leaflet options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
 
 		<Polygon options={{ color: 'purple' }} latLngs={utahBorderCoor}>

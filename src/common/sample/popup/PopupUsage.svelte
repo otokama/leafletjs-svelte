@@ -6,7 +6,6 @@
 	import type { Map, MapOptions, TileLayerOptions } from 'leaflet';
 	import '/src/styles/style.css';
 
-	let map: Map;
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {
 		center: [40.7249822, -74.006205],
@@ -23,7 +22,7 @@
 </script>
 
 <div class="map-container">
-	<Leaflet bind:map options={mapOption}>
+	<Leaflet options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
 
 		<Marker latLng={[40.7249822, -74.006205]}>

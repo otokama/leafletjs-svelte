@@ -2,9 +2,8 @@
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import ImageOverlay from '$lib/components/raster-layers/ImageOverlay.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
-	import type { Map, MapOptions, TileLayerOptions } from 'leaflet';
+	import type { MapOptions, TileLayerOptions } from 'leaflet';
 
-	let map: Map;
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {
 		center: [40.743657, -74.1723667],
@@ -26,7 +25,7 @@
 </script>
 
 <div class="map-container">
-	<Leaflet bind:map options={mapOption}>
+	<Leaflet options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
 		<ImageOverlay {imageUrl} bounds={imageBounds} options={imageOverlayOptions} />
 	</Leaflet>
