@@ -29,7 +29,7 @@ const config = {
         '/',
         '/sandbox',
         '/docs/1-getting-started',
-        '/docs/2-demo',
+        // '/docs/2-demo',
         '/docs/3-map-usage',
         '/docs/4-marker',
         '/docs/5-popup',
@@ -45,7 +45,8 @@ const config = {
         '/docs/15-rectangle',
         '/docs/16-layergroup',
         '/docs/17-featuregroup',
-        '/docs/18-geojson'
+        '/docs/18-geojson',
+        '/docs/19-drawtool',
       ]
     }
   }
