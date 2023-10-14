@@ -5,7 +5,6 @@
 	import CircleMarker from '$lib/components/vector-layers/CircleMarker.svelte';
 	import type { MapOptions, TileLayerOptions } from 'leaflet';
 
-	let map: L.Map;
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {
 		center: [47.60621, -122.32207],
@@ -21,7 +20,7 @@
 </script>
 
 <div class="map-container">
-	<Leaflet options={mapOption} bind:map>
+	<Leaflet options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
 		<CircleMarker latLng={[47.61322, -122.3465]} options={{ radius: 20 }} />
 
