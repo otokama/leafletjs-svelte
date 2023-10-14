@@ -11,7 +11,10 @@
 	export let height: string = '100%';
 	export let width: string = '100%';
 	export let Leaflet: typeof LeafletType | undefined = undefined;
+
 	export let enableDraw: boolean = false;
+	export let drawOptions: LeafletType.Control.DrawConstructorOptions | undefined = undefined;
+
 	export let onMapReady: ((map: L.Map) => void) | undefined = undefined;
 
 	let mapEle: HTMLElement;
@@ -21,6 +24,7 @@
 		setContext($leaflet, () => map);
 	}
 
+  // fix edit circle radius
 	$: if (leafletDraw) {
 		fixEditCircleClass();
 	}
@@ -36,23 +40,7 @@
 			}
 
 			if (enableDraw) {
-				leafletDraw = await import('leaflet-draw');
-				await import('leaflet-draw/dist/leaflet.draw-src.css');
-				(window as any).type = Symbol();
-
-				const drawnItems = new L.FeatureGroup();
-				const drawControl = new L.Control.Draw({
-					edit: {
-						featureGroup: drawnItems
-					}
-				});
-				map.addLayer(drawnItems);
-				map.addControl(drawControl);
-
-				map.on('draw:created', (e) => {
-					const layer = e.layer;
-					drawnItems.addLayer(layer);
-				});
+				await initDrawTool(map);
 			}
 
 			if (onMapReady) {
@@ -63,6 +51,29 @@
 			}
 		}
 	});
+
+	const initDrawTool = async (map: LeafletType.Map) => {
+		leafletDraw = await import('leaflet-draw');
+		await import('leaflet-draw/dist/leaflet.draw-src.css');
+		(window as any).type = Symbol(); // fix rectangle draw tool
+
+		const drawnItems = new $leaflet.FeatureGroup();
+		let defaultDrawOptions: LeafletType.Control.DrawConstructorOptions = {
+			edit: {
+				featureGroup: drawnItems
+			}
+		};
+
+		const drawControl = new $leaflet.Control.Draw(drawOptions ? drawOptions : defaultDrawOptions);
+
+		map.addLayer(drawnItems);
+		map.addControl(drawControl);
+
+		map.on('draw:created', (e) => {
+			const layer = e.layer;
+			drawnItems.addLayer(layer);
+		});
+	};
 
 	onDestroy(() => {
 		if (map) {
