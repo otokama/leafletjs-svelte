@@ -11,7 +11,7 @@ body {
 
 main {
 	margin: 6em auto 5em auto;
-	max-width: 70em;
+	max-width: 100em;
 }
 
 .leaflet-container {
@@ -77,6 +77,7 @@ h3 {
 
 .doc p {
 	color: #444444;
+  line-height: 1.6;
 }
 
 /* inline code */
@@ -156,7 +157,7 @@ th {
 
 @media screen and (min-width: 764px) {
 	.map-container {
-		height: 400px;
+		height: 500px;
 	}
 }
 
