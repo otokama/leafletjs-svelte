@@ -2,7 +2,7 @@
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 	import type { DrawLayerType } from '$lib/types/DrawLayerTypes.js';
-	import { satelliteImageryURL } from '$lib/util/mapUtils.js';
+	import { mapTilerURL } from '$lib/util/mapUtils.js';
 	import type LType from 'leaflet';
 	import type { MapOptions, TileLayerOptions } from 'leaflet';
 
@@ -33,7 +33,7 @@
 
 <div class="map-container draw-container">
 	<Leaflet options={mapOption} bind:Leaflet={L} enableDraw {onMapReady}>
-		<TileLayer tileURL={satelliteImageryURL} options={tileLayerOption} />
+		<TileLayer tileURL={mapTilerURL} options={tileLayerOption} />
 	</Leaflet>
 </div>
 
