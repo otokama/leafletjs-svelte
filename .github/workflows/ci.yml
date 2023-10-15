@@ -27,7 +27,7 @@ jobs:
       
       - name: Run unit tests
         run:
-          npm run test:unit
+          npm run unit-test
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       

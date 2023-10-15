@@ -2,6 +2,8 @@
 	import { base } from '$app/paths';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 	import Fa from 'svelte-fa';
+
+  const isDev = import.meta.env.DEV;
 </script>
 
 <nav>
@@ -10,6 +12,9 @@
 	</a>
 	<a href="{base}/docs/1-getting-started"> Docs </a>
 
+  {#if isDev}
+    <a href="/sandbox">Sandbox</a>
+  {/if}
 	<a href="https://github.com/otokama/leafletjs-svelte" target="_blank">
 		<Fa icon={faGithub} size="1.6x" />
 	</a>

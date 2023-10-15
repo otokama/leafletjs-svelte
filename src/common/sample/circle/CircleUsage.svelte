@@ -5,7 +5,6 @@
 	import Circle from '$lib/components/vector-layers/Circle.svelte';
 	import type { MapOptions, TileLayerOptions } from 'leaflet';
 
-	let map: L.Map;
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {
 		center: [47.60621, -122.33207],
@@ -21,7 +20,7 @@
 </script>
 
 <div class="map-container">
-	<Leaflet options={mapOption} bind:map>
+	<Leaflet options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
 		<Circle latLng={[47.61322, -122.3465]} options={{ radius: 700, color: 'red' }} />
 

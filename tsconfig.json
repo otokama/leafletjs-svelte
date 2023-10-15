@@ -9,6 +9,6 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"moduleResolution": "NodeNext",
-    "types": ["vitest/globals"]
+		"types": ["vitest/globals"]
 	}
 }
