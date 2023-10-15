@@ -19,7 +19,7 @@ order: 3
 | `bounds` | [`L.LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds) | `undefined` | Fit the map to the specified bounds. | `false` |
 | `height` | string | `100%` | The height of the map in a map container. Make sure the map container or the map has a defined height. | `false` |
 | `width` | string | `100%` | The width of the map in a map container. | `false` |
-| `enableDraw` | `boolean` | `false` | Enables [basic draw tool](/docs/19-drawtool) | `false` |
+| `enableDraw` | `boolean` | `false` | Enables basic draw tool | `false` |
 | `drawOptions` | [`Control.Draw`](https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#control-draw) | `undefined` | Options to configure the draw plugin | `false` |
 | `onMapReady` | `(map: L.Map) => void` | `undefined` | A callback function which is called when the map has been mounted | `false` |
 | `Leaflet` | L | `undefined` | The Leaflet namespace that encapsulates the core functionality and classes provided by the Leaflet library. You can use two way binding to get access to the Leaflet namespace. | `false` |
