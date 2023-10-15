@@ -1,10 +1,9 @@
 
 const satelliteImageryURL =
-	'https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=GkYr5Cb2AvoR2Id4tCHT';
+	'https://api.maptiler.com/maps/satellite/{z}/{x}/{y}.jpg?key=GkYr5Cb2AvoR2Id4tCHT';
 const mapTilerURL =
 	'https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}@2x.png?key=GkYr5Cb2AvoR2Id4tCHT';
 const cartoMapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
-
 
 function getGooglePlaceCoordinates(place) {
 	const loc = place.geometry.location;

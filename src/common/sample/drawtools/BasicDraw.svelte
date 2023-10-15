@@ -2,19 +2,17 @@
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 	import type { DrawLayerType } from '$lib/types/DrawLayerTypes.js';
-	import { mapTilerURL } from '$lib/util/mapUtils.js';
+	import { satelliteImageryURL } from '$lib/util/mapUtils.js';
 	import type LType from 'leaflet';
 	import type { MapOptions, TileLayerOptions } from 'leaflet';
 
 	const mapOption: MapOptions = {
-		center: [39.554883059924016, -111.55517578125001],
-		zoom: 6
+		center: [47.615884, -122.189426],
+		zoom: 12
 	};
 	const tileLayerOption: TileLayerOptions = {
-		attribution: `&copy;<a href="https://www.openstreetmap.org/copyright"
-      target="_blank">OpenStreetMap</a>&copy;
-      <a href="https://carto.com/attributions" target="_blank">CARTO</a>`,
-		maxNativeZoom: 21,
+		attribution: `<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>`,
+		maxNativeZoom: 20,
 		maxZoom: 19
 	};
 
@@ -35,12 +33,12 @@
 
 <div class="map-container draw-container">
 	<Leaflet options={mapOption} bind:Leaflet={L} enableDraw {onMapReady}>
-		<TileLayer tileURL={mapTilerURL} options={tileLayerOption} />
+		<TileLayer tileURL={satelliteImageryURL} options={tileLayerOption} />
 	</Leaflet>
 </div>
 
 <style>
 	.draw-container {
-		min-height: 390px;
+		min-height: 450px;
 	}
 </style>

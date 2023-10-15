@@ -1,10 +1,13 @@
 <script lang="ts">
 	import type { LatLngBounds, Map, MapOptions } from 'leaflet';
-
 	import type LeafletType from 'leaflet';
 	import { onDestroy, onMount, setContext } from 'svelte';
 	import fixEditCircleClass from '../misc/fix-edit-circle.js';
 	import { leaflet } from '../stores/leaflet.js';
+	import markerIcon2xUrl from '../leaflet-img/marker-icon-2x.png';
+	import markerIconUrl from '../leaflet-img/marker-icon.png';
+	import markerShadowUrl from '../leaflet-img/marker-shadow.png';
+
 	export let map: Map | undefined = undefined;
 	export let options: MapOptions | undefined = undefined;
 	export let bounds: LatLngBounds | undefined = undefined;
@@ -24,7 +27,7 @@
 		setContext($leaflet, () => map);
 	}
 
-  // fix edit circle radius
+	// fix edit circle radius
 	$: if (leafletDraw) {
 		fixEditCircleClass();
 	}
@@ -53,21 +56,48 @@
 	});
 
 	const initDrawTool = async (map: LeafletType.Map) => {
-		leafletDraw = await import('leaflet-draw');
 		await import('leaflet-draw/dist/leaflet.draw-src.css');
+		leafletDraw = await import('leaflet-draw');
 		(window as any).type = Symbol(); // fix rectangle draw tool
 
 		const drawnItems = new $leaflet.FeatureGroup();
-		let defaultDrawOptions: LeafletType.Control.DrawConstructorOptions = {
+		const defaultIcon: LeafletType.Icon = $leaflet.icon({
+			iconUrl: markerIconUrl,
+			iconRetinaUrl: markerIcon2xUrl,
+			iconSize: [25, 41],
+			iconAnchor: [12, 41],
+			popupAnchor: [1, -34],
+			shadowUrl: markerShadowUrl,
+			shadowSize: [41, 41],
+			shadowRetinaUrl: markerShadowUrl,
+			tooltipAnchor: [16, -28]
+		});
+
+		const defaultDrawOptions: LeafletType.Control.DrawConstructorOptions = {
 			edit: {
 				featureGroup: drawnItems
+			},
+			draw: {
+				marker: {
+					icon: defaultIcon
+				}
 			}
 		};
 
+		// set the default icon if not provided in drawOptions:
+		if (
+			drawOptions &&
+			drawOptions.draw &&
+			drawOptions.draw.marker &&
+			!drawOptions.draw.marker.icon
+		) {
+			drawOptions.draw.marker.icon = defaultIcon;
+		}
+
 		const drawControl = new $leaflet.Control.Draw(drawOptions ? drawOptions : defaultDrawOptions);
 
-		map.addLayer(drawnItems);
 		map.addControl(drawControl);
+		map.addLayer(drawnItems);
 
 		map.on('draw:created', (e) => {
 			const layer = e.layer;
