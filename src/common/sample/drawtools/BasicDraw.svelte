@@ -27,10 +27,6 @@
 	};
 </script>
 
-<svelte:head>
-	<title>Sandbox - leafletjs-svelte</title>
-</svelte:head>
-
 <div class="map-container draw-container">
 	<Leaflet options={mapOption} bind:Leaflet={L} enableDraw {onMapReady}>
 		<TileLayer tileURL={mapTilerURL} options={tileLayerOption} />
