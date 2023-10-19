@@ -1,4 +1,5 @@
 import Leaflet from './components/Leaflet.svelte';
+import LayerControl from './components/control/LayerControl.svelte';
 import FeatureGroup from './components/other-layers/FeatureGroup.svelte';
 import GeoJSON from './components/other-layers/GeoJSON.svelte';
 import LayerGroup from './components/other-layers/LayerGroup.svelte';
@@ -16,26 +17,26 @@ import CircleMarker from './components/vector-layers/CircleMarker.svelte';
 import Polygon from './components/vector-layers/Polygon.svelte';
 import Polyline from './components/vector-layers/Polyline.svelte';
 import Rectangle from './components/vector-layers/Rectangle.svelte';
-import LayerControl from './components/control/LayerControl.svelte';
 
 export {
-	Circle,
-	CircleMarker,
-	DivIcon,
-	FeatureGroup,
-	GeoJSON,
-	Icon,
-	ImageOverlay,
-	LayerGroup,
-	Leaflet,
+  Circle,
+  CircleMarker,
+  DivIcon,
+  FeatureGroup,
+  GeoJSON,
+  Icon,
+  ImageOverlay,
   LayerControl,
-	Marker,
-	Polygon,
-	Polyline,
-	Popup,
-	Rectangle,
-	TileLayer,
-	TileLayerWMS,
-	Tooltip,
-	VideoOverlay
+  LayerGroup,
+  Leaflet,
+  Marker,
+  Polygon,
+  Polyline,
+  Popup,
+  Rectangle,
+  TileLayer,
+  TileLayerWMS,
+  Tooltip,
+  VideoOverlay
 };
+
