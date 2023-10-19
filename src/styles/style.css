@@ -84,14 +84,14 @@ h3 {
 p code {
 	padding: 0.4em;
 	margin: 0 0.2em;
-	background-color: #e5eef5;
+	background-color: #f1f6fa;
 	border-radius: 0.3em;
 	font-size: 0.85em;
 	letter-spacing: 0.5px;
 	white-space: nowrap;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	color: #444444;
-}Ø
+}
 
 /* table */
 .doc-table-container {

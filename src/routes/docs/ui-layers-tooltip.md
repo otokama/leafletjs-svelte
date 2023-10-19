@@ -1,7 +1,7 @@
 ---
 title: Tooltip
 category: UI Layers
-order: 6
+order: 3
 ---
 <script>
   import TooltipUsage from '/src/common/sample/tooltip/TooltipUsage.svelte';

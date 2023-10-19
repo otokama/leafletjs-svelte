@@ -1,7 +1,7 @@
 ---
   title: TileLayer
   category: Raster Layers
-  order: 7
+  order: 1
 ---
 <script>
   import MapUsage from '/src/common/sample/MapUsage.svelte';
@@ -20,6 +20,7 @@ Used to load and display tile layers on the map.
 | `tileURL` | `string` | `undefined` | TileLayer's URL template | `true` | 
 | `options` | [`TileLayerOptions`](https://leafletjs.com/reference.html#tilelayer) | `undefined` | Describes the property of the TileLayer. | `true` |
 | `tileLayer` | [`TileLayer`](https://leafletjs.com/reference.html#tilelayer) | `undefined` | The underlying Leaflet TileLayer object instance. | `false` |
+| `layerControlName`| `string` | `undefined` | Layer control key. | `false` |
 
 </div>
 
