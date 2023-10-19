@@ -16,14 +16,26 @@ import CircleMarker from './components/vector-layers/CircleMarker.svelte';
 import Polygon from './components/vector-layers/Polygon.svelte';
 import Polyline from './components/vector-layers/Polyline.svelte';
 import Rectangle from './components/vector-layers/Rectangle.svelte';
+import LayerControl from './components/control/LayerControl.svelte';
 
 export {
-  Circle,
-  CircleMarker, DivIcon, FeatureGroup,
-  GeoJSON, Icon,
-  ImageOverlay, LayerGroup, Leaflet,
-  Marker, Polygon,
-  Polyline, Popup, Rectangle, TileLayer,
-  TileLayerWMS, Tooltip, VideoOverlay
+	Circle,
+	CircleMarker,
+	DivIcon,
+	FeatureGroup,
+	GeoJSON,
+	Icon,
+	ImageOverlay,
+	LayerGroup,
+	Leaflet,
+  LayerControl,
+	Marker,
+	Polygon,
+	Polyline,
+	Popup,
+	Rectangle,
+	TileLayer,
+	TileLayerWMS,
+	Tooltip,
+	VideoOverlay
 };
-
