@@ -48,13 +48,12 @@ Component Import:
 
 ## Supported Plugins:
 
-### Vector Drawing (In progress...):
+### Vector Drawing:
 
-- [ ] Circle
-- [ ] CircleMarker
-- [ ] Line
-- [ ] Marker
-- [ ] Polyline
-- [ ] Polygon
-- [ ] Rectangle
+- [x] Circle
+- [x] CircleMarker
+- [x] Marker
+- [x] Polyline
+- [x] Polygon
+- [x] Rectangle
 - [ ] Multi-Rectangle

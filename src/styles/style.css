@@ -10,7 +10,7 @@ body {
 }
 
 main {
-	margin: 6em auto 5em auto;
+	margin: 4em auto 5em auto;
 	max-width: 100em;
 }
 
@@ -53,7 +53,7 @@ main {
 .doc {
 	font-family: 'Overpass Variable', sans-serif;
 	transition: 50ms;
-	margin: 0 1em 0 1em;
+	margin: 0 1.4em;
 }
 
 @media screen and (min-width: 764px) {
@@ -61,32 +61,34 @@ main {
 		margin: 5em 7em;
 	}
 	.doc {
-		margin: 0 2em 0 2em;
+		margin: 0 2em;
+	}
+	main {
+		margin: 6em auto 5em auto;
+		max-width: 100em;
 	}
 }
 
 .sidenav-doc {
-	margin: 0 1.5em 0 14.5rem;
+	margin: 0 2em 0 14rem;
 }
 
-.doc h1,
-h2,
-h3 {
+.doc h1, h2, h3 {
 	font-weight: 500;
 }
 
 .doc p {
 	color: #444444;
-  line-height: 1.6;
+	line-height: 1.6;
 }
 
 /* inline code */
 p code {
-	padding: 0.4em;
+	padding: 0.3em;
 	margin: 0 0.2em;
 	background-color: #f1f6fa;
 	border-radius: 0.3em;
-	font-size: 0.85em;
+	font-size: 0.8em;
 	letter-spacing: 0.5px;
 	white-space: nowrap;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -137,7 +139,7 @@ th {
 }
 
 .example {
-	margin: auto 1em;
+	margin: auto 0em;
 	border: solid 1px rgb(219, 219, 219);
 	border-radius: 0.4em;
 	overflow: hidden;
@@ -146,13 +148,13 @@ th {
 
 @media screen and (min-width: 764px) {
 	.example {
-		margin: auto 5em;
+		margin: auto 2.5em;
 	}
 }
 
 /* map container in examples */
 .map-container {
-	height: 300px;
+	height: 400px;
 }
 
 @media screen and (min-width: 764px) {
