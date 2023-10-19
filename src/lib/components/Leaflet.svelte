@@ -1,12 +1,13 @@
 <script lang="ts">
+  import type LeafletType from 'leaflet';
 	import type { LatLngBounds, Map, MapOptions } from 'leaflet';
-	import type LeafletType from 'leaflet';
 	import { onDestroy, onMount, setContext } from 'svelte';
-	import fixEditCircleClass from '../misc/fix-edit-circle.js';
-	import { leaflet } from '../stores/leaflet.js';
 	import markerIcon2xUrl from '../leaflet-img/marker-icon-2x.png';
 	import markerIconUrl from '../leaflet-img/marker-icon.png';
 	import markerShadowUrl from '../leaflet-img/marker-shadow.png';
+	import fixEditCircleClass from '../misc/fix-edit-circle.js';
+	import { leaflet } from '../stores/leaflet.js';
+	import { hasBaseLayer } from '../stores/map.js';
 
 	export let map: Map | undefined = undefined;
 	export let options: MapOptions | undefined = undefined;
@@ -36,6 +37,7 @@
 		var L = await import('leaflet');
 		$leaflet = L;
 		Leaflet = L;
+		$hasBaseLayer = false;
 		if (mapEle) {
 			map = L.map(mapEle, options);
 			if (bounds && map) {

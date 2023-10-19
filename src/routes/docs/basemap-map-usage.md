@@ -1,7 +1,7 @@
 ---
 title: Leaflet
 category: Basemap
-order: 3
+order: 1
 ---
 <script>
   import MapUsage from '/src/common/sample/MapUsage.svelte';

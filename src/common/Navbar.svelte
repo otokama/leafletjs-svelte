@@ -10,10 +10,10 @@
 	<a id="title" href="{base}/" style="margin-left: 1.3em; margin-right: auto;">
 		LeafletJS-Svelte
 	</a>
-	<a href="{base}/docs/1-getting-started"> Docs </a>
+	<a href="{base}/docs/getting-started"> Docs </a>
 
   {#if isDev}
-    <a href="/sandbox">Sandbox</a>
+    <a href="/sandbox/1">Sandbox</a>
   {/if}
 	<a href="https://github.com/otokama/leafletjs-svelte" target="_blank">
 		<Fa icon={faGithub} size="1.6x" />

@@ -1,7 +1,7 @@
 ---
 title: Circle
 category: Vector Layers
-order: 13
+order: 3
 ---
 <script>
   import CircleUsage from '/src/common/sample/circle/CircleUsage.svelte';

@@ -1,7 +1,7 @@
 ---
 title: CircleMarker
 category: Vector Layers
-order: 14
+order: 4
 ---
 <script>
   import CircleMarkerUsage from '/src/common/sample/circle/CircleMarkerUsage.svelte';

@@ -1,7 +1,7 @@
 ---
 title: VideoOverlay
 category: Raster Layers
-order: 10
+order: 4
 ---
 
 <script>
@@ -22,6 +22,7 @@ Used to load and display a video player over specific bounds of the map.
 | `bounds` | [`LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds) | `undefined` | Geographical bounds of the video overlay. | `true` |
 | `options` | [`VideoOverlayOptions`](https://leafletjs.com/reference.html#videooverlay-option) | `undefined` | Describes the property of the VideoOverlay. | `false` |
 | `videoOverlay` | [`VideoOverlay`](https://leafletjs.com/reference.html#videooverlay) | `undefined` | The underlying Leaflet VideoOverlay object instance. | `false` |
+| `layerControlName`| `string` | `undefined` | Layer control key. | `false` |
 
 </div>
 <br>

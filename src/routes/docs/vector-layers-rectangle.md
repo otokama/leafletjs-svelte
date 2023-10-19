@@ -1,7 +1,7 @@
 ---
 title: Rectangle
 category: Vector Layers
-order: 15
+order: 5
 ---
 <script>
   import RectangleUsage from '/src/common/sample/polygon/RectangleUsage.svelte';

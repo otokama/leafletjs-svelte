@@ -1,7 +1,7 @@
 ---
 title: FeatureGroup
 category: Other Layers
-order: 17
+order: 1
 ---
 
 <script>

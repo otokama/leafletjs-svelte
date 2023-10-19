@@ -7,7 +7,7 @@
 	export let docsSummary: Map<string, Docs[]>;
 	export let expandSideNav: boolean = true;
 	let tempExpandSideNav: boolean = false;
-	const categories = [...docsSummary.keys()];
+	const categories = Array.from(docsSummary.keys());
 
 	$: if (expandSideNav) {
 		tempExpandSideNav = false;
@@ -21,7 +21,7 @@
 				{#each categories as category}
 					<span class="nav-title">{category}</span>
 					<ul>
-						{#each docsSummary.get(category) as doc}
+						{#each docsSummary.get(category) || [] as doc}
 							<li>
 								<a
 									href={doc.path}

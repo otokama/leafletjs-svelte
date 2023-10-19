@@ -1,7 +1,7 @@
 ---
 title: Marker
 category: UI Layers
-order: 4
+order: 1
 ---
 <script>
   import MarkerExample from '/src/common/sample/marker/MarkerExample.svelte';
