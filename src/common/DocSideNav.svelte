@@ -58,14 +58,21 @@
 		background-color: #676778;
 		box-shadow: rgba(67, 67, 67, 0.6) 0 0 0.5em;
 		z-index: 5;
+    /* border-top: solid 5em black; */
 	}
 	.sidenav {
-		padding: 5.5em 2em 2em 1.5em;
+    padding: 4em 2em 2em 1.5em;
 		display: flex;
 		flex-direction: column;
 		font-family: 'Overpass Variable', sans-serif;
 		white-space: nowrap;
 		margin: 0;
+	}
+
+	@media screen and (min-width: 764px) {
+		.sidenav {
+      padding: 5.5em 2em 2em 1.5em;
+    }
 	}
 
 	ul ul {
