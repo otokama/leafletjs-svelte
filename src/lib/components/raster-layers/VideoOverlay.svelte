@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { leaflet as L } from '$lib/stores/leaflet.js';
-	import type { Control, LatLngBounds, Map, VideoOverlay, VideoOverlayOptions } from 'leaflet';
 	import { getContext, onDestroy } from 'svelte';
+  import type { Map, Control, LatLngBounds, VideoOverlay, VideoOverlayOptions } from 'leaflet';
 
 	export let video: string | string[] | HTMLVideoElement;
 	export let bounds: LatLngBounds | number[][];

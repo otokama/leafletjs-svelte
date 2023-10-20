@@ -2,7 +2,7 @@
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
 	import Marker from '$lib/components/ui-layers/Marker.svelte';
-	import type { MapOptions, TileLayerOptions } from 'leaflet';
+	import type { Map, MapOptions, TileLayerOptions } from 'leaflet';
 
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { leaflet as L } from '$lib/stores/leaflet.js';
-	import type { Control, Map, TileLayer, WMSOptions } from 'leaflet';
 	import { getContext, onDestroy } from 'svelte';
+	import { leaflet as L } from '$lib/stores/leaflet.js';
+	import type { Map, Control, TileLayer, WMSOptions } from 'leaflet';
 
 	export let tileURL: string;
 	export let options: WMSOptions | undefined = undefined;

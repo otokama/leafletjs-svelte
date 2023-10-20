@@ -3,7 +3,7 @@
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import GeoJson from '$lib/components/other-layers/GeoJSON.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
-	import type { GeoJSONOptions, MapOptions, TileLayerOptions } from 'leaflet';
+	import type { GeoJSONOptions, MapOptions, TileLayerOptions } from 'leaflet;
 
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {

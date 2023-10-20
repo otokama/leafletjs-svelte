@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { leaflet as L } from '$lib/stores/leaflet.js';
-	import type { DivIcon, DivIconOptions, Marker } from 'leaflet';
 	import { getContext } from 'svelte';
+	import { leaflet as L } from '$lib/stores/leaflet.js';
+  import type { Marker, DivIcon, DivIconOptions } from 'leaflet';
 
 	export let options: DivIconOptions = {};
+  
 	let divIcon: DivIcon;
 	let getMarker: () => Marker = getContext($L.Layer);
-
 	let divIconHtml: HTMLElement;
 
 	$: if (!divIcon && divIconHtml) {

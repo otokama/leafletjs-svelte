@@ -1,8 +1,9 @@
 <script lang="ts">
-  import type { Control, Map, TileLayer, TileLayerOptions } from 'leaflet';
+	import { getContext, onDestroy } from 'svelte';
 	import { getContext, onDestroy } from 'svelte';
 	import { hasBaseLayer } from '../../stores/map.js';
 	import { leaflet as L } from '../../stores/leaflet.js';
+  import type { Map, Control, TileLayer, TileLayerOptions } from 'leaflet';
 
 	export let tileLayer: TileLayer | undefined = undefined;
 	export let tileURL: string;

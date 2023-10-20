@@ -1,7 +1,14 @@
 <script lang="ts">
 	import { leaflet as L } from '$lib/stores/leaflet.js';
-	import type { Control, ImageOverlay, ImageOverlayOptions, LatLngBounds, Map } from 'leaflet';
 	import { getContext, onDestroy } from 'svelte';
+	import { leaflet as L } from '$lib/stores/leaflet.js';
+	import type {
+    Map,
+    Control,
+    LatLngBounds,
+    ImageOverlay,
+    ImageOverlayOptions
+  } from 'leaflet';
 
 	export let imageUrl: string;
 	export let bounds: LatLngBounds | number[][];
