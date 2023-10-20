@@ -1,26 +1,31 @@
 ---
-title: Usage
-category: Map
-order: 3
+title: Leaflet
+category: Basemap
+order: 1
 ---
 <script>
   import MapUsage from '/src/common/sample/MapUsage.svelte';
 </script>
 
-# Map
+# Base Map
 
-### Map Properties
+### Leaflet Properties
 
 <div class='doc-table-container'>
 
 | Props | Type | Default | Description | Required |
 | --- | --- | --- | --- | -- |
-| `options` | [`MapOptions`](https://leafletjs.com/reference.html#map-option) | `undefined` | Describes the property of the Map. | `false` |
-| `map` | [`Map`](https://leafletjs.com/reference.html#map) | `undefined` | The underlying Leaflet Map object instance. | `false` |
-| `bounds` | [`LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds) | `undefined` | Fit the map to the specified bounds. | `false` |
+| `options` | [`L.MapOptions`](https://leafletjs.com/reference.html#map-option) | `undefined` | Describes the property of the Map. | `false` |
+| `bounds` | [`L.LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds) | `undefined` | Fit the map to the specified bounds. | `false` |
 | `height` | string | `100%` | The height of the map in a map container. Make sure the map container or the map has a defined height. | `false` |
 | `width` | string | `100%` | The width of the map in a map container. | `false` |
- 
+| `enableDraw` | `boolean` | `false` | Enables basic draw tool | `false` |
+| `drawOptions` | [`Control.Draw`](https://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html#control-draw) | `undefined` | Options to configure the draw plugin | `false` |
+| `onMapReady` | `(map: L.Map) => void` | `undefined` | A callback function which is called when the map has been mounted | `false` |
+| `Leaflet` | L | `undefined` | The Leaflet namespace that encapsulates the core functionality and classes provided by the Leaflet library. You can use two way binding to get access to the Leaflet namespace. | `false` |
+| `map` | [`L.Map`](https://leafletjs.com/reference.html#map) | `undefined` | The underlying Leaflet Map object instance. | `false` |
+
+
 </div>
 
 <br>
@@ -38,11 +43,8 @@ Below is a minimal effort to setup a Leaflet map:
       Leaflet,
       TileLayer
     } from 'leafletjs-svelte';
-
-    let map: Map;
     
     const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
-    
     const mapOption: MapOptions = {
       center: [40.7249822, -74.006205],
       zoom: 13
@@ -60,7 +62,7 @@ Below is a minimal effort to setup a Leaflet map:
   </script>
 
   <div class='map-container'>
-    <Leaflet bind:map={map} options={mapOption}>
+    <Leaflet options={mapOption}>
       <TileLayer tileURL={mapURL} options={tileLayerOption} />
     </Leaflet>
   </div>

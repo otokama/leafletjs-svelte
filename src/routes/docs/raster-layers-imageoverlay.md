@@ -1,7 +1,7 @@
 ---
 title: ImageOverlay
 category: Raster Layers
-order: 9
+order: 3
 ---
 
 <script>
@@ -22,6 +22,7 @@ Used to load and display a single image over specific bounds of the map.
 | `bounds` | `LatLngBounds` | `undefined` | Geographical bounds of the image overlay. | `true` |  
 | `options` | [`ImageOverlayOptions`](https://leafletjs.com/reference.html#imageoverlay-option) | `undefined` | Describes the property of the ImageOverlay. | `false` |
 | `imageOverlay` | [`ImageOverlay`](https://leafletjs.com/reference.html#imageoverlay) | `undefined` | The underlying Leaflet ImageOverlay object instance. | `false` |
+| `layerControlName`| `string` | `undefined` | Layer control key. | `false` |
 
 </div>
 

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { GeoJSONOptions, MapOptions, TileLayerOptions } from 'leaflet';
-  import { base } from '$app/paths';
+	import { base } from '$app/paths';
 	import Leaflet from '$lib/components/Leaflet.svelte';
+	import GeoJson from '$lib/components/other-layers/GeoJSON.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
-  import GeoJson from '$lib/components/other-layers/GeoJSON.svelte';
+	import type { GeoJSONOptions, MapOptions, TileLayerOptions } from 'leaflet;
 
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {
@@ -19,32 +19,31 @@
 		subdomains: 'abcd'
 	};
 
-  async function getGeoJSON() {
-    const res = await fetch(`${base}/geojson/example.geojson`);
-    return await res.json();
-  }
+	async function getGeoJSON() {
+		const res = await fetch(`${base}/geojson/example.geojson`);
+		return await res.json();
+	}
 
-  const geojsonOptions: GeoJSONOptions = {
-    onEachFeature: function(feature, layer) {
-      layer.bindTooltip(feature.properties.label, {
-        className: 'example-geojson-tooltip',
-        direction: 'center'
-      });
-    },
-    style: function(feature) {
-      return {
-        color: feature?.properties.color
-      };
-    }
-  };
-
+	const geojsonOptions: GeoJSONOptions = {
+		onEachFeature: function (feature, layer) {
+			layer.bindTooltip(feature.properties.label, {
+				className: 'example-geojson-tooltip',
+				direction: 'center'
+			});
+		},
+		style: function (feature) {
+			return {
+				color: feature?.properties.color
+			};
+		}
+	};
 </script>
 
 <div class="map-container geojson-map">
-  <Leaflet options={mapOption}>
-    <TileLayer tileURL={mapURL} options={tileLayerOption} />
-    {#await getGeoJSON() then geojsonData}
-      <GeoJson data={geojsonData} options={geojsonOptions} />
-    {/await}
-  </Leaflet>
+	<Leaflet options={mapOption}>
+		<TileLayer tileURL={mapURL} options={tileLayerOption} />
+		{#await getGeoJSON() then geojsonData}
+			<GeoJson data={geojsonData} options={geojsonOptions} />
+		{/await}
+	</Leaflet>
 </div>

@@ -1,7 +1,7 @@
 ---
 title: Polygon
 category: Vector Layers
-order: 12
+order: 2
 ---
 
 <script>

@@ -1,7 +1,7 @@
 ---
 title: LayerGroup
 category: Other Layers
-order: 16
+order: 2
 ---
 
 <script>
@@ -20,6 +20,7 @@ Used to group several layers and handle them as one.
 | --- | --- | --- | --- | -- |
 | `options` | [`InteractiveLayerOptions and LayerOptions`](https://leafletjs.com/reference.html#layergroup-l-layergroup) | `undefined` | Describes the property of the LayerGroup. | `false` |
 | `layerGroup` | [`LayerGroup`](https://leafletjs.com/reference.html#layergroup-l-layergroup) | `undefined` | The underlying Leaflet LayerGroup object instance. | `false` |
+| `layerControlName`| `string` | `undefined` | Layer control key. | `false` |
 
 </div>
 <br>

@@ -1,7 +1,7 @@
 ---
 title: GeoJSON
 category: Other Layers
-order: 18
+order: 3
 ---
 
 <script>

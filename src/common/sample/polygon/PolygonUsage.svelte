@@ -1,12 +1,11 @@
 <script lang="ts">
-	import type { MapOptions, TileLayerOptions } from 'leaflet';
 	import Leaflet from '$lib/components/Leaflet.svelte';
 	import TileLayer from '$lib/components/raster-layers/TileLayer.svelte';
-  import Tooltip from '$lib/components/ui-layers/Tooltip.svelte';
-  import Popup from '$lib/components/ui-layers/Popup.svelte';
+	import Popup from '$lib/components/ui-layers/Popup.svelte';
+	import Tooltip from '$lib/components/ui-layers/Tooltip.svelte';
 	import Polygon from '$lib/components/vector-layers/Polygon.svelte';
+	import type { MapOptions, TileLayerOptions } from 'leaflet';
 
-	let map: L.Map;
 	const mapURL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const mapOption: MapOptions = {
 		center: [39.35129, -108.495483],
@@ -39,18 +38,17 @@
 </script>
 
 <div class="map-container">
-	<Leaflet options={mapOption} bind:map>
+	<Leaflet options={mapOption}>
 		<TileLayer tileURL={mapURL} options={tileLayerOption} />
 
 		<Polygon options={{ color: 'purple' }} latLngs={utahBorderCoor}>
-      <Popup>
-        <strong>Utah</strong>
-      </Popup>
-    </Polygon>
+			<Popup>
+				<strong>Utah</strong>
+			</Popup>
+		</Polygon>
 
-    <Polygon latLngs={coloradoBorderCoor}>
-      <Tooltip options={{direction: 'top'}}>Colorado</Tooltip>
-    </Polygon>
-
+		<Polygon latLngs={coloradoBorderCoor}>
+			<Tooltip options={{ direction: 'top' }}>Colorado</Tooltip>
+		</Polygon>
 	</Leaflet>
 </div>
