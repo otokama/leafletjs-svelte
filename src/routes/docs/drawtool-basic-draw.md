@@ -22,7 +22,7 @@ Utilizes the [Leaflet Draw](https://github.com/Leaflet/Leaflet.draw) plugin unde
 ```svelte
 <script>
   const onMapReady = (map) => {
-    map.on('draw:created', (e: any) => {
+    map.on("draw:created", (e: any) => {
       const layer = e.layer;
       const layerType = e.layerType;
       layer.bindTooltip(layerType);

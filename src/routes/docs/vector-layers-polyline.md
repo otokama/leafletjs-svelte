@@ -18,11 +18,11 @@ A class for drawing polyline overlays on a map.
 
 <div class='doc-table-container'>
 
-| Props | Type | Default | Description | Required |
-| --- | --- | --- | --- | -- |
-| `latLngs` | [`LatLng[]`](https://leafletjs.com/reference.html#latlng) | `undefined` | An array of geographical points (latitude and longitude). | `true` | 
-| `options` | [`PolylineOptions`](https://leafletjs.com/reference.html#polyline-option) | `undefined` | Describes the property of the Polyline. | `false` |
-| `polyline` | [`Polyline`](https://leafletjs.com/reference.html#polyline) | `undefined` | The underlying Leaflet Polyline object instance. | `false` |
+| Props      | Type                                                                      | Default     | Description                                               | Required |
+| ---------- | ------------------------------------------------------------------------- | ----------- | --------------------------------------------------------- | -------- |
+| `latLngs`  | [`LatLng[]`](https://leafletjs.com/reference.html#latlng)                 | `undefined` | An array of geographical points (latitude and longitude). | `true`   |
+| `options`  | [`PolylineOptions`](https://leafletjs.com/reference.html#polyline-option) | `undefined` | Describes the property of the Polyline.                   | `false`  |
+| `polyline` | [`Polyline`](https://leafletjs.com/reference.html#polyline)               | `undefined` | The underlying Leaflet Polyline object instance.          | `false`  |
 
 </div>
 <br>
@@ -34,22 +34,21 @@ A class for drawing polyline overlays on a map.
 <div class='example'>
   <PolylineUsage />
 
-  ```svelte
-  <script>
-    // ...
-    const polylineLatLngs = [
-      [45.51, -122.68],
-      [37.77, -122.43],
-      [34.04, -118.2]
-    ];
-  </script>
+```svelte
+<script>
+  // ...
+  const polylineLatLngs = [
+    [45.51, -122.68],
+    [37.77, -122.43],
+    [34.04, -118.2],
+  ];
+</script>
 
-  <Leaflet options={mapOption} >
-    <TileLayer tileURL={mapURL} options={tileLayerOption} />
-    <Polyline options={{ color: 'green' }} latLngs={polylineLatLngs} />
-  </Leaflet>
-
-  ```
+<Leaflet options={mapOption}>
+  <TileLayer tileURL={mapURL} options={tileLayerOption} />
+  <Polyline options={{ color: "green" }} latLngs={polylineLatLngs} />
+</Leaflet>
+```
 
 </div>
 
@@ -61,20 +60,17 @@ A class for drawing polyline overlays on a map.
 <div class='example'>
   <PolylinePopup/>
 
-  ```svelte
-  <Leaflet options={mapOption} bind:map={map}>
-    <TileLayer tileURL={mapURL} options={tileLayerOption} />
+```svelte
+<Leaflet options={mapOption} bind:map>
+  <TileLayer tileURL={mapURL} options={tileLayerOption} />
 
-    <Polyline
-      options={{color: 'green'}}
-      latLngs={polylineLatLngs}
-    >
-      <Popup>
-        <strong>LA to Portland</strong>
-      </Popup>
-    </Polyline>
-  </Leaflet>
-  ```
+  <Polyline options={{ color: "green" }} latLngs={polylineLatLngs}>
+    <Popup>
+      <strong>LA to Portland</strong>
+    </Popup>
+  </Polyline>
+</Leaflet>
+```
 
 </div>
 
@@ -85,19 +81,17 @@ A class for drawing polyline overlays on a map.
 <div class='example'>
   <PolylineTooltip/>
 
-  ```svelte
-  <Leaflet options={mapOption} bind:map={map}>
-    <TileLayer tileURL={mapURL} options={tileLayerOption} />
-    
-    <Polyline
-      options={{color: 'green'}}
-      latLngs={polylineLatLngs}
-    >
-      <Tooltip options={{direction: 'left'}}>
-        <strong>LA to Portland</strong>
-      </Tooltip>
-    </Polyline>
-  </Leaflet>
-  ```
+```svelte
+<Leaflet options={mapOption} bind:map>
+  <TileLayer tileURL={mapURL} options={tileLayerOption} />
+
+  <Polyline options={{ color: "green" }} latLngs={polylineLatLngs}>
+    <Tooltip options={{ direction: "left" }}>
+      <strong>LA to Portland</strong>
+    </Tooltip>
+  </Polyline>
+</Leaflet>
+```
 
 </div>
+

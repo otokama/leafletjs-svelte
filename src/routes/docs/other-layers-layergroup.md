@@ -16,11 +16,11 @@ Used to group several layers and handle them as one.
 
 <div class='doc-table-container'>
 
-| Props | Type | Default | Description | Required |
-| --- | --- | --- | --- | -- |
-| `options` | [`InteractiveLayerOptions and LayerOptions`](https://leafletjs.com/reference.html#layergroup-l-layergroup) | `undefined` | Describes the property of the LayerGroup. | `false` |
-| `layerGroup` | [`LayerGroup`](https://leafletjs.com/reference.html#layergroup-l-layergroup) | `undefined` | The underlying Leaflet LayerGroup object instance. | `false` |
-| `layerControlName`| `string` | `undefined` | Layer control key. | `false` |
+| Props              | Type                                                                                                       | Default     | Description                                        | Required |
+| ------------------ | ---------------------------------------------------------------------------------------------------------- | ----------- | -------------------------------------------------- | -------- |
+| `options`          | [`InteractiveLayerOptions and LayerOptions`](https://leafletjs.com/reference.html#layergroup-l-layergroup) | `undefined` | Describes the property of the LayerGroup.          | `false`  |
+| `layerGroup`       | [`LayerGroup`](https://leafletjs.com/reference.html#layergroup-l-layergroup)                               | `undefined` | The underlying Leaflet LayerGroup object instance. | `false`  |
+| `layerControlName` | `string`                                                                                                   | `undefined` | Layer control key.                                 | `false`  |
 
 </div>
 <br>
@@ -30,29 +30,30 @@ Used to group several layers and handle them as one.
 <div class='example'>
   <LayerGroupUsage/>
 
-  ```svelte
-  <script>
-    // ...
-    let layerGroup: L.LayerGroup;
-    let coloradoPolygon: L.Polygon;
-    
-    $: if (layerGroup) {
-      layerGroup.addLayer(coloradoPolygon)
-      layerGroup.eachLayer((layer) => {
-        layer.bindPopup(L.popup({ content: 'State Border' }))
-      });
-    }
-  </script>
+```svelte
+<script>
+  // ...
+  let layerGroup: L.LayerGroup;
+  let coloradoPolygon: L.Polygon;
 
-  <Leaflet options={mapOption}>
-    <TileLayer tileURL={mapURL} options={tileLayerOption} />
-    <LayerGroup bind:layerGroup>
-      <Polygon latLngs={utahBorderCoor} options={{color: 'green'}} />
-    </LayerGroup>
-    <Polygon latLngs={coloradoBorderCoor} bind:polygon={coloradoPolygon} >
-      <Tooltip options={{direction: 'top'}}>Colorado</Tooltip>
-    </Polygon>
-  </Leaflet>
-  ```
+  $: if (layerGroup) {
+    layerGroup.addLayer(coloradoPolygon);
+    layerGroup.eachLayer((layer) => {
+      layer.bindPopup(L.popup({ content: "State Border" }));
+    });
+  }
+</script>
+
+<Leaflet options={mapOption}>
+  <TileLayer tileURL={mapURL} options={tileLayerOption} />
+  <LayerGroup bind:layerGroup>
+    <Polygon latLngs={utahBorderCoor} options={{ color: "green" }} />
+  </LayerGroup>
+  <Polygon latLngs={coloradoBorderCoor} bind:polygon={coloradoPolygon}>
+    <Tooltip options={{ direction: "top" }}>Colorado</Tooltip>
+  </Polygon>
+</Leaflet>
+```
 
 </div>
+
