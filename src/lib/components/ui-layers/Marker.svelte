@@ -1,11 +1,19 @@
 <script lang="ts">
-  import { leaflet as L } from '$lib/stores/leaflet.js';
-  import type { FeatureGroup, Icon, LatLng, LayerGroup, Map, Marker, MarkerOptions } from 'leaflet';
-  import { getContext, onDestroy, setContext } from 'svelte';
+  import { leaflet as L } from "$lib/stores/leaflet.js";
+  import type {
+    FeatureGroup,
+    Icon,
+    LatLng,
+    LayerGroup,
+    Map,
+    Marker,
+    MarkerOptions,
+  } from "leaflet";
+  import { getContext, onDestroy, setContext } from "svelte";
 
-  import markerIcon2xUrl from '../../leaflet-img/marker-icon-2x.png';
-  import markerIconUrl from '../../leaflet-img/marker-icon.png';
-  import markerShadowUrl from '../../leaflet-img/marker-shadow.png';
+  import markerIcon2xUrl from "../../leaflet-img/marker-icon-2x.png";
+  import markerIconUrl from "../../leaflet-img/marker-icon.png";
+  import markerShadowUrl from "../../leaflet-img/marker-shadow.png";
 
   export let latLng: LatLng | number[];
   export let options: MarkerOptions | undefined = undefined;
@@ -28,7 +36,7 @@
         shadowUrl: markerShadowUrl,
         shadowSize: [41, 41],
         shadowRetinaUrl: markerShadowUrl,
-        tooltipAnchor: [16, -28]
+        tooltipAnchor: [16, -28],
       });
       marker.setIcon(defaultIcon);
     }

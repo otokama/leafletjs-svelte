@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { leaflet as L } from '$lib/stores/leaflet.js';
-  import type { Layer, Popup, PopupOptions } from 'leaflet';
-  import { getContext, onDestroy } from 'svelte';
+  import { leaflet as L } from "$lib/stores/leaflet.js";
+  import type { Layer, Popup, PopupOptions } from "leaflet";
+  import { getContext, onDestroy } from "svelte";
 
   export let options: PopupOptions = {};
   export let popup: Popup | undefined = undefined;
@@ -23,7 +23,7 @@
       getLayer().unbindPopup();
       popup.remove();
     }
-  );
+  });
 </script>
 
 <div bind:this={popupHtml} hidden>

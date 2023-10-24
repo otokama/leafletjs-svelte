@@ -1,7 +1,13 @@
 <script lang="ts">
-  import { leaflet as L } from '$lib/stores/leaflet.js';
-  import type { FeatureGroup, GeoJSON, GeoJSONOptions, LayerGroup, Map } from 'leaflet';
-  import { getContext, onDestroy, setContext } from 'svelte';
+  import { leaflet as L } from "$lib/stores/leaflet.js";
+  import type {
+    FeatureGroup,
+    GeoJSON,
+    GeoJSONOptions,
+    LayerGroup,
+    Map,
+  } from "leaflet";
+  import { getContext, onDestroy, setContext } from "svelte";
 
   export let data: any = undefined;
   export let geojson: GeoJSON | undefined = undefined;

@@ -1,13 +1,12 @@
 <script>
-  import README from '../../README.md';
+  import README from "../../README.md";
 </script>
 
 <svelte:head>
-  <title>
-    leafletjs-svelte
-  </title>
+  <title>leafletjs-svelte</title>
 </svelte:head>
 
-<div class='home-doc'>
+<div class="home-doc">
   <README />
 </div>
+

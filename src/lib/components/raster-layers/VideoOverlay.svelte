@@ -1,7 +1,13 @@
 <script lang="ts">
-  import { leaflet as L } from '$lib/stores/leaflet.js';
-  import type { Control, LatLngBounds, Map, VideoOverlay, VideoOverlayOptions } from 'leaflet';
-  import { getContext, onDestroy } from 'svelte';
+  import { leaflet as L } from "$lib/stores/leaflet.js";
+  import type {
+    Control,
+    LatLngBounds,
+    Map,
+    VideoOverlay,
+    VideoOverlayOptions,
+  } from "leaflet";
+  import { getContext, onDestroy } from "svelte";
 
   export let video: string | string[] | HTMLVideoElement;
   export let bounds: LatLngBounds | number[][];
@@ -9,11 +15,15 @@
   export let videoOverlay: VideoOverlay | undefined = undefined;
   export let layerControlName: string | undefined = undefined;
 
-  const getLayerControl: (() => Control.Layers) | undefined = getContext($L.Control.Layers);
+  const getLayerControl: (() => Control.Layers) | undefined = getContext(
+    $L.Control.Layers
+  );
   const getMap: () => Map = getContext($L);
   const map = getMap();
 
-  videoOverlay = $L.videoOverlay(video, bounds as LatLngBounds, options).addTo(getMap());
+  videoOverlay = $L
+    .videoOverlay(video, bounds as LatLngBounds, options)
+    .addTo(getMap());
 
   if (getLayerControl && layerControlName) {
     const layerControl = getLayerControl();

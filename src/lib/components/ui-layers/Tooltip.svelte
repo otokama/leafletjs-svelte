@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { leaflet as L } from '$lib/stores/leaflet.js';
-  import type { Layer, Tooltip, TooltipOptions } from 'leaflet';
-  import { getContext, onDestroy } from 'svelte';
+  import { leaflet as L } from "$lib/stores/leaflet.js";
+  import type { Layer, Tooltip, TooltipOptions } from "leaflet";
+  import { getContext, onDestroy } from "svelte";
 
   export let options: TooltipOptions = {};
   export let tooltip: Tooltip | undefined = undefined;

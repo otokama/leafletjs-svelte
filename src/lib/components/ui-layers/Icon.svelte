@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { leaflet as L } from '$lib/stores/leaflet.js';
-  import type { Icon, IconOptions, Marker } from 'leaflet';
-  import { getContext } from 'svelte';
+  import { leaflet as L } from "$lib/stores/leaflet.js";
+  import type { Icon, IconOptions, Marker } from "leaflet";
+  import { getContext } from "svelte";
 
   export let options: IconOptions;
   let icon: Icon;
