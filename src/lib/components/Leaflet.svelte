@@ -24,15 +24,9 @@
   export let onMapReady: ((map: L.Map) => void) | undefined = undefined;
 
   let mapEle: HTMLElement;
-  let leafletDraw: any;
 
   $: if ($leaflet) {
     setContext($leaflet, () => map);
-  }
-
-  // fix edit circle radius
-  $: if (leafletDraw) {
-    fixEditCircleClass();
   }
 
   onMount(async () => {
@@ -61,7 +55,8 @@
 
   const initDrawTool = async (map: LeafletType.Map) => {
     await import("leaflet-draw/dist/leaflet.draw-src.css");
-    leafletDraw = await import("leaflet-draw");
+    await import("leaflet-draw");
+    fixEditCircleClass();
     (window as any).type = Symbol(); // fix rectangle draw tool
 
     const drawnItems = new $leaflet.FeatureGroup();
