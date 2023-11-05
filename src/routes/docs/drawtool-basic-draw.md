@@ -30,7 +30,7 @@ Utilizes the [Leaflet Draw](https://github.com/Leaflet/Leaflet.draw) plugin unde
   };
 </script>
 
-<Leaflet options={mapOption} enableDraw>
+<Leaflet options={mapOption} enableDraw {onMapReady}>
   <TileLayer tileURL={mapURL} options={tileLayerOption} />
 </Leaflet>
 ```
